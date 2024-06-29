@@ -1,0 +1,14 @@
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\bin\Debug\Sistema Infracciones.exe.config
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\bin\Debug\Sistema Infracciones.exe
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\bin\Debug\Sistema Infracciones.pdb
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\bin\Debug\MaterialSkin.dll
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema Infracciones.csproj.AssemblyReference.cache
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema_Infracciones.Properties.Resources.resources
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema Infracciones.csproj.GenerateResource.cache
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema Infracciones.csproj.CoreCompileInputs.cache
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema .FD99DDB5.Up2Date
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema Infracciones.exe
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema Infracciones.pdb
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\bin\Debug\H.MaterialSkin.dll
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema_Infracciones.Index.resources
+C:\Users\PC1\source\repos\Sistema Infracciones\Sistema Infracciones\obj\Debug\Sistema_Infracciones.AgregarTipoInfraccion.resources

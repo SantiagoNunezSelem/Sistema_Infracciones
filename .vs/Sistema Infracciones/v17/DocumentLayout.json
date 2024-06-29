@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDAB8896-37DE-4EBA-94D3-CB0C84F67D3C}|Capa de Datos\\Capa de Datos.csproj|c:\\users\\pc1\\source\\repos\\sistema infracciones\\capa de datos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDAB8896-37DE-4EBA-94D3-CB0C84F67D3C}|Capa de Datos\\Capa de Datos.csproj|solutionrelative:capa de datos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|Capa de Negocios\\Capa de Negocios.csproj|c:\\users\\pc1\\source\\repos\\sistema infracciones\\capa de negocios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|Capa de Negocios\\Capa de Negocios.csproj|solutionrelative:capa de negocios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|c:\\users\\pc1\\source\\repos\\sistema infracciones\\sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|c:\\users\\pc1\\source\\repos\\sistema infracciones\\sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|c:\\users\\pc1\\source\\repos\\sistema infracciones\\sistema infracciones\\index.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\index.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cs",
+              "DocumentMoniker": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Sistema Infracciones\\Index.cs",
+              "RelativeDocumentMoniker": "Sistema Infracciones\\Index.cs",
+              "ToolTip": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Sistema Infracciones\\Index.cs",
+              "RelativeToolTip": "Sistema Infracciones\\Index.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAqwBwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T19:04:11.997Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Capa de Datos\\Program.cs",
+              "RelativeDocumentMoniker": "Capa de Datos\\Program.cs",
+              "ToolTip": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Capa de Datos\\Program.cs",
+              "RelativeToolTip": "Capa de Datos\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T20:28:15.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Capa de Negocios\\Program.cs",
+              "RelativeDocumentMoniker": "Capa de Negocios\\Program.cs",
+              "ToolTip": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Capa de Negocios\\Program.cs",
+              "RelativeToolTip": "Capa de Negocios\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T20:27:57.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Sistema Infracciones\\Index.cs",
+              "RelativeDocumentMoniker": "Sistema Infracciones\\Index.cs",
+              "ToolTip": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Sistema Infracciones\\Index.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema Infracciones\\Index.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T20:25:53.679Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Sistema Infracciones\\Index.Designer.cs",
+              "RelativeDocumentMoniker": "Sistema Infracciones\\Index.Designer.cs",
+              "ToolTip": "C:\\Users\\PC1\\source\\repos\\Sistema Infracciones\\Sistema Infracciones\\Index.Designer.cs",
+              "RelativeToolTip": "Sistema Infracciones\\Index.Designer.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAhwEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T20:23:04.247Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
