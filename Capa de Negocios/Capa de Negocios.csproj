@@ -43,8 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Administradora.cs" />
+    <Compile Include="Infraccion.cs" />
+    <Compile Include="InfraccionGrave.cs" />
+    <Compile Include="InfraccionLeve.cs" />
+    <Compile Include="PagoInfraccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
