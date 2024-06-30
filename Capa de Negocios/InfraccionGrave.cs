@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa_de_Negocios
+namespace CapaNegocio
 {
     internal class InfraccionGrave : Infraccion
     {
-        public InfraccionGrave(int codigo, string descripcion, decimal importe) :
-           base(codigo, descripcion, importe)
+        public InfraccionGrave(int codigo, string nombre, string descripcion, decimal importe) :
+           base(codigo, nombre,descripcion, importe)
         {
         }
 

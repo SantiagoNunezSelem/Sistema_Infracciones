@@ -8,8 +8,8 @@ namespace Capa_de_Negocios
 {
     internal class InfraccionLeve : Infraccion
     {
-        public InfraccionLeve(int codigo, string descripcion, decimal importe) :
-            base(codigo, descripcion, importe)
+        public InfraccionLeve(int codigo, string nombre, string descripcion, decimal importe) :
+            base(codigo, nombre, descripcion, importe)
         {
         }
 

@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa_de_Negocios
+namespace CapaNegocio
 {
     internal abstract class Infraccion
     {
         protected int codigo;
+        protected string nombre;
         protected string descripcion;
         protected decimal importe;
 
-        public Infraccion(int codigo, string descripcion, decimal importe)
+        public Infraccion(int codigo,string nombre, string descripcion, decimal importe)
         {
             this.codigo = codigo;
+            this.nombre = nombre;
             this.descripcion = descripcion;
             this.importe = importe;
         }

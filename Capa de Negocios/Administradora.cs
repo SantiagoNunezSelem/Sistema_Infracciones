@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa_de_Negocios
+namespace CapaNegocio
 {
     internal class Administradora
     {
@@ -14,6 +14,10 @@ namespace Capa_de_Negocios
         public Administradora()
         {
             infracciones = new List<Infraccion>();
+
+            //Hardcodeado
+            InfraccionGrave infra = new InfraccionGrave(1,"mal estacionamiento","soy una descripcion",5000);
+            infracciones.Add(infra);
         }
 
 
