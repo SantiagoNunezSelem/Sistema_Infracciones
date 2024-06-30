@@ -5,9 +5,9 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema Infracciones", "Sistema Infracciones\Sistema Infracciones.csproj", "{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa de Negocios", "Capa de Negocios\Capa de Negocios.csproj", "{5D0FEADC-065E-4719-916F-340318EDF56F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{5D0FEADC-065E-4719-916F-340318EDF56F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa de Datos", "Capa de Datos\Capa de Datos.csproj", "{EDAB8896-37DE-4EBA-94D3-CB0C84F67D3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{EDAB8896-37DE-4EBA-94D3-CB0C84F67D3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

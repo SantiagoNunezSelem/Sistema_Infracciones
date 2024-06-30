@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarInfraccionVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarInfraccionVehiculo.Designer.cs">
+      <DependentUpon>AgregarInfraccionVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradoraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministradoraForm.Designer.cs">
+      <DependentUpon>AdministradoraForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarInfraccionVehiculo.resx">
+      <DependentUpon>AgregarInfraccionVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +86,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CapaNegocio.Administradora.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{5d0feadc-065e-4719-916f-340318edf56f}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

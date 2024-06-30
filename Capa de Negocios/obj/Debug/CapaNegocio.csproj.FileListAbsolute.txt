@@ -1,2 +1,0 @@
-C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\Capa de Negocios\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
-C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\Capa de Negocios\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
