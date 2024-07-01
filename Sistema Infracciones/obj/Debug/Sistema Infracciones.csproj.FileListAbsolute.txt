@@ -41,3 +41,6 @@ C:\Sistema_Infracciones\Sistema Infracciones\bin\Debug\Capa de Negocios.exe.conf
 C:\Sistema_Infracciones\Sistema Infracciones\obj\Debug\Sistema .FD99DDB5.Up2Date
 C:\Sistema_Infracciones\Sistema Infracciones\obj\Debug\Sistema Infracciones.exe
 C:\Sistema_Infracciones\Sistema Infracciones\obj\Debug\Sistema Infracciones.pdb
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\Sistema Infracciones\bin\Debug\Capa de Negocios.exe
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\Sistema Infracciones\bin\Debug\Capa de Negocios.pdb
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\Sistema Infracciones\bin\Debug\Capa de Negocios.exe.config

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.inputDominioVehiculo = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.labelModeloVehiculo = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.labelDniPropietario = new MaterialSkin.Controls.MaterialMaskedTextBox();
@@ -39,6 +39,7 @@
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.labelGravedadInfraccion = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.labelNombre = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.infoBusquedaDominioVehiculo = new MaterialSkin.Controls.MaterialLabel();
             this.administradoraBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.administradoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.administradoraBindingSource1)).BeginInit();
@@ -50,54 +51,55 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(311, 122);
+            this.materialLabel1.Location = new System.Drawing.Point(311, 133);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(1, 0);
             this.materialLabel1.TabIndex = 1;
             // 
-            // materialMaskedTextBox1
+            // inputDominioVehiculo
             // 
-            this.materialMaskedTextBox1.AllowPromptAsInput = true;
-            this.materialMaskedTextBox1.AnimateReadOnly = false;
-            this.materialMaskedTextBox1.AsciiOnly = false;
-            this.materialMaskedTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox1.BeepOnError = false;
-            this.materialMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox1.Depth = 0;
-            this.materialMaskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox1.HidePromptOnLeave = false;
-            this.materialMaskedTextBox1.HideSelection = true;
-            this.materialMaskedTextBox1.Hint = "Dominio del Vehículo";
-            this.materialMaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox1.LeadingIcon = null;
-            this.materialMaskedTextBox1.Location = new System.Drawing.Point(41, 89);
-            this.materialMaskedTextBox1.Mask = "";
-            this.materialMaskedTextBox1.MaxLength = 32767;
-            this.materialMaskedTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox1.Name = "materialMaskedTextBox1";
-            this.materialMaskedTextBox1.PasswordChar = '\0';
-            this.materialMaskedTextBox1.PrefixSuffixText = null;
-            this.materialMaskedTextBox1.PromptChar = '_';
-            this.materialMaskedTextBox1.ReadOnly = false;
-            this.materialMaskedTextBox1.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox1.ResetOnPrompt = true;
-            this.materialMaskedTextBox1.ResetOnSpace = true;
-            this.materialMaskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox1.SelectedText = "";
-            this.materialMaskedTextBox1.SelectionLength = 0;
-            this.materialMaskedTextBox1.SelectionStart = 0;
-            this.materialMaskedTextBox1.ShortcutsEnabled = true;
-            this.materialMaskedTextBox1.Size = new System.Drawing.Size(223, 48);
-            this.materialMaskedTextBox1.SkipLiterals = true;
-            this.materialMaskedTextBox1.TabIndex = 4;
-            this.materialMaskedTextBox1.TabStop = false;
-            this.materialMaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.materialMaskedTextBox1.TrailingIcon = null;
-            this.materialMaskedTextBox1.UseAccent = false;
-            this.materialMaskedTextBox1.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox1.ValidatingType = null;
+            this.inputDominioVehiculo.AllowPromptAsInput = true;
+            this.inputDominioVehiculo.AnimateReadOnly = false;
+            this.inputDominioVehiculo.AsciiOnly = false;
+            this.inputDominioVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.inputDominioVehiculo.BeepOnError = false;
+            this.inputDominioVehiculo.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.inputDominioVehiculo.Depth = 0;
+            this.inputDominioVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputDominioVehiculo.HidePromptOnLeave = false;
+            this.inputDominioVehiculo.HideSelection = true;
+            this.inputDominioVehiculo.Hint = "Dominio del Vehículo";
+            this.inputDominioVehiculo.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.inputDominioVehiculo.LeadingIcon = null;
+            this.inputDominioVehiculo.Location = new System.Drawing.Point(41, 100);
+            this.inputDominioVehiculo.Mask = "";
+            this.inputDominioVehiculo.MaxLength = 32767;
+            this.inputDominioVehiculo.MouseState = MaterialSkin.MouseState.OUT;
+            this.inputDominioVehiculo.Name = "inputDominioVehiculo";
+            this.inputDominioVehiculo.PasswordChar = '\0';
+            this.inputDominioVehiculo.PrefixSuffixText = null;
+            this.inputDominioVehiculo.PromptChar = '_';
+            this.inputDominioVehiculo.ReadOnly = false;
+            this.inputDominioVehiculo.RejectInputOnFirstFailure = false;
+            this.inputDominioVehiculo.ResetOnPrompt = true;
+            this.inputDominioVehiculo.ResetOnSpace = true;
+            this.inputDominioVehiculo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.inputDominioVehiculo.SelectedText = "";
+            this.inputDominioVehiculo.SelectionLength = 0;
+            this.inputDominioVehiculo.SelectionStart = 0;
+            this.inputDominioVehiculo.ShortcutsEnabled = true;
+            this.inputDominioVehiculo.Size = new System.Drawing.Size(223, 48);
+            this.inputDominioVehiculo.SkipLiterals = true;
+            this.inputDominioVehiculo.TabIndex = 4;
+            this.inputDominioVehiculo.TabStop = false;
+            this.inputDominioVehiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.inputDominioVehiculo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.inputDominioVehiculo.TrailingIcon = null;
+            this.inputDominioVehiculo.UseAccent = false;
+            this.inputDominioVehiculo.UseSystemPasswordChar = false;
+            this.inputDominioVehiculo.ValidatingType = null;
+            this.inputDominioVehiculo.TextChanged += new System.EventHandler(this.inputDominioVehiculo_TextChanged);
             // 
             // labelModeloVehiculo
             // 
@@ -114,7 +116,7 @@
             this.labelModeloVehiculo.HideSelection = true;
             this.labelModeloVehiculo.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.labelModeloVehiculo.LeadingIcon = null;
-            this.labelModeloVehiculo.Location = new System.Drawing.Point(41, 159);
+            this.labelModeloVehiculo.Location = new System.Drawing.Point(41, 170);
             this.labelModeloVehiculo.Mask = "";
             this.labelModeloVehiculo.MaxLength = 32767;
             this.labelModeloVehiculo.MouseState = MaterialSkin.MouseState.OUT;
@@ -157,13 +159,14 @@
             this.materialComboBox1.Hint = "Tipo de Infracción";
             this.materialComboBox1.IntegralHeight = false;
             this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Location = new System.Drawing.Point(330, 89);
+            this.materialComboBox1.Location = new System.Drawing.Point(330, 100);
             this.materialComboBox1.MaxDropDownItems = 4;
             this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox1.Name = "materialComboBox1";
             this.materialComboBox1.Size = new System.Drawing.Size(183, 49);
             this.materialComboBox1.StartIndex = 0;
             this.materialComboBox1.TabIndex = 7;
+            this.materialComboBox1.SelectedIndexChanged += new System.EventHandler(this.materialComboBox1_SelectedIndexChanged);
             // 
             // labelDniPropietario
             // 
@@ -180,7 +183,7 @@
             this.labelDniPropietario.HideSelection = true;
             this.labelDniPropietario.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.labelDniPropietario.LeadingIcon = null;
-            this.labelDniPropietario.Location = new System.Drawing.Point(41, 230);
+            this.labelDniPropietario.Location = new System.Drawing.Point(41, 241);
             this.labelDniPropietario.Mask = "";
             this.labelDniPropietario.MaxLength = 32767;
             this.labelDniPropietario.MouseState = MaterialSkin.MouseState.OUT;
@@ -223,7 +226,7 @@
             this.labelImporte.HideSelection = true;
             this.labelImporte.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.labelImporte.LeadingIcon = null;
-            this.labelImporte.Location = new System.Drawing.Point(330, 305);
+            this.labelImporte.Location = new System.Drawing.Point(330, 316);
             this.labelImporte.Mask = "";
             this.labelImporte.MaxLength = 32767;
             this.labelImporte.MouseState = MaterialSkin.MouseState.OUT;
@@ -260,7 +263,7 @@
             this.labelDescInfraccion.Depth = 0;
             this.labelDescInfraccion.Enabled = false;
             this.labelDescInfraccion.HideSelection = true;
-            this.labelDescInfraccion.Location = new System.Drawing.Point(330, 159);
+            this.labelDescInfraccion.Location = new System.Drawing.Point(330, 170);
             this.labelDescInfraccion.MaxLength = 32767;
             this.labelDescInfraccion.MouseState = MaterialSkin.MouseState.OUT;
             this.labelDescInfraccion.Name = "labelDescInfraccion";
@@ -284,7 +287,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(330, 379);
+            this.materialButton1.Location = new System.Drawing.Point(330, 390);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -311,7 +314,7 @@
             this.labelGravedadInfraccion.HideSelection = true;
             this.labelGravedadInfraccion.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.labelGravedadInfraccion.LeadingIcon = null;
-            this.labelGravedadInfraccion.Location = new System.Drawing.Point(585, 305);
+            this.labelGravedadInfraccion.Location = new System.Drawing.Point(585, 316);
             this.labelGravedadInfraccion.Mask = "";
             this.labelGravedadInfraccion.MaxLength = 32767;
             this.labelGravedadInfraccion.MouseState = MaterialSkin.MouseState.OUT;
@@ -354,7 +357,7 @@
             this.labelNombre.HideSelection = true;
             this.labelNombre.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.labelNombre.LeadingIcon = null;
-            this.labelNombre.Location = new System.Drawing.Point(529, 90);
+            this.labelNombre.Location = new System.Drawing.Point(529, 101);
             this.labelNombre.Mask = "";
             this.labelNombre.MaxLength = 32767;
             this.labelNombre.MouseState = MaterialSkin.MouseState.OUT;
@@ -382,6 +385,18 @@
             this.labelNombre.UseSystemPasswordChar = false;
             this.labelNombre.ValidatingType = null;
             // 
+            // infoBusquedaDominioVehiculo
+            // 
+            this.infoBusquedaDominioVehiculo.AutoSize = true;
+            this.infoBusquedaDominioVehiculo.Depth = 0;
+            this.infoBusquedaDominioVehiculo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.infoBusquedaDominioVehiculo.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.infoBusquedaDominioVehiculo.Location = new System.Drawing.Point(44, 76);
+            this.infoBusquedaDominioVehiculo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.infoBusquedaDominioVehiculo.Name = "infoBusquedaDominioVehiculo";
+            this.infoBusquedaDominioVehiculo.Size = new System.Drawing.Size(1, 0);
+            this.infoBusquedaDominioVehiculo.TabIndex = 15;
+            // 
             // administradoraBindingSource1
             // 
             this.administradoraBindingSource1.DataSource = typeof(CapaNegocio.Administradora);
@@ -395,6 +410,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 503);
+            this.Controls.Add(this.infoBusquedaDominioVehiculo);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelGravedadInfraccion);
             this.Controls.Add(this.materialButton1);
@@ -403,7 +419,7 @@
             this.Controls.Add(this.labelDniPropietario);
             this.Controls.Add(this.materialComboBox1);
             this.Controls.Add(this.labelModeloVehiculo);
-            this.Controls.Add(this.materialMaskedTextBox1);
+            this.Controls.Add(this.inputDominioVehiculo);
             this.Controls.Add(this.materialLabel1);
             this.Name = "AgregarInfraccionVehiculo";
             this.Text = "Agregar Infraccion Vehículo";
@@ -417,7 +433,7 @@
 
         #endregion
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
+        private MaterialSkin.Controls.MaterialMaskedTextBox inputDominioVehiculo;
         private MaterialSkin.Controls.MaterialMaskedTextBox labelModeloVehiculo;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         private System.Windows.Forms.BindingSource administradoraBindingSource;
@@ -428,5 +444,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialMaskedTextBox labelGravedadInfraccion;
         private MaterialSkin.Controls.MaterialMaskedTextBox labelNombre;
+        private MaterialSkin.Controls.MaterialLabel infoBusquedaDominioVehiculo;
     }
 }
