@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    internal class InfraccionLeve : Infraccion
+    public class InfraccionLeve : Infraccion
     {
-        public InfraccionLeve(int codigo, string nombre, string descripcion, decimal importe) :
+        public InfraccionLeve(string codigo, string nombre, string descripcion, decimal importe) :
             base(codigo, nombre, descripcion, importe)
         {
         }
