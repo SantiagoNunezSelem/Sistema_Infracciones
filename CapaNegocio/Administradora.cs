@@ -13,14 +13,19 @@ namespace CapaNegocio
         private static Administradora instancia;
         private List<Infraccion> infracciones;
         private List<Vehiculo> vehiculos;
+        private List<PagoInfraccion> pagosInfracciones;
 
         public Administradora()
         {
             infracciones = new List<Infraccion>();
             vehiculos = new List<Vehiculo>();
+            pagosInfracciones = new List<PagoInfraccion>();
+
             //Hardcodeado
             InfraccionGrave infra = new InfraccionGrave("1","Mal Estacionamiento","soy una descripcion",5000);
             infracciones.Add(infra);
+            InfraccionLeve infra2 = new InfraccionLeve("2", "Exceso de Velocidad", "soy otra descripcion", 10000);
+            infracciones.Add(infra2);
 
             Vehiculo vehiculo = new Vehiculo("111","11111111","modelo1");
             vehiculos.Add(vehiculo);
@@ -36,9 +41,19 @@ namespace CapaNegocio
             return instancia;
         }
 
-        public Infraccion getInfraccion()
+        public void agregarTipoInfraccion(Infraccion inf)
         {
-            return infracciones.FirstOrDefault();
+            infracciones.Add(inf);
+        }
+
+        public void nuevoPagoInfraccion(PagoInfraccion pagoInf)
+        {
+            pagosInfracciones.Add(pagoInf);
+        }
+
+        public List<Infraccion> getInfracciones()
+        {
+            return infracciones;
         }
 
         public Vehiculo getVehiculo(string dominio)
