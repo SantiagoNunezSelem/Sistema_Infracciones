@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    internal class PagoInfraccion
+    public class PagoInfraccion
     {
         private Infraccion tipoInfraccion;
         private Vehiculo vehiculo;
