@@ -62,6 +62,12 @@
     <Compile Include="Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformacionPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformacionPagos.Designer.cs">
+      <DependentUpon>InformacionPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregarInfraccionVehiculo.resx">
@@ -69,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformacionPagos.resx">
+      <DependentUpon>InformacionPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
