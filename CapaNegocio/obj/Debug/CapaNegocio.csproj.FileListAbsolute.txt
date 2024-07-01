@@ -9,3 +9,8 @@ C:\Sistema_Infracciones\CapaNegocio\bin\Debug\Capa de Negocios.exe
 C:\Sistema_Infracciones\CapaNegocio\bin\Debug\Capa de Negocios.pdb
 C:\Sistema_Infracciones\CapaNegocio\obj\Debug\Capa de Negocios.exe
 C:\Sistema_Infracciones\CapaNegocio\obj\Debug\Capa de Negocios.pdb
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\CapaNegocio\bin\Debug\Capa de Negocios.exe.config
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\CapaNegocio\bin\Debug\Capa de Negocios.exe
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\CapaNegocio\bin\Debug\Capa de Negocios.pdb
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\CapaNegocio\obj\Debug\Capa de Negocios.exe
+C:\Users\PC\Documents\Proyectos_Santi\Sistema_Infracciones\CapaNegocio\obj\Debug\Capa de Negocios.pdb
