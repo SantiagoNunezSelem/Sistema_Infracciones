@@ -1,37 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Sistema_Infracciones\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Sistema_Infracciones\\sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|c:\\users\\pc\\documents\\proyectos_santi\\sistema_infracciones\\sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Sistema_Infracciones\\sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|C:\\Sistema_Infracciones\\capanegocio\\administradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\capanegocio\\administradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\administradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Sistema_Infracciones\\sistema infracciones\\administradoraform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\administradoraform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|c:\\sistema_infracciones\\capanegocio\\infraccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\capanegocio\\infraccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\infraccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|c:\\sistema_infracciones\\sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\pc\\documents\\proyectos_santi\\sistema_infracciones\\capanegocio\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Sistema_Infracciones\\sistema infracciones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\sistema infracciones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Sistema_Infracciones\\sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,50 +54,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Infraccion.cs",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\CapaNegocio\\Infraccion.cs",
-              "RelativeDocumentMoniker": "CapaNegocio\\Infraccion.cs",
-              "ToolTip": "C:\\Sistema_Infracciones\\CapaNegocio\\Infraccion.cs",
-              "RelativeToolTip": "CapaNegocio\\Infraccion.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T20:42:41.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Administradora.cs",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\CapaNegocio\\Administradora.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Administradora.cs",
               "RelativeDocumentMoniker": "CapaNegocio\\Administradora.cs",
-              "ToolTip": "C:\\Sistema_Infracciones\\CapaNegocio\\Administradora.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Administradora.cs",
               "RelativeToolTip": "CapaNegocio\\Administradora.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAwBUAAAAJAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAEwBUAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T19:59:22.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdministradoraForm.cs",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\Sistema Infracciones\\AdministradoraForm.cs",
-              "RelativeDocumentMoniker": "Sistema Infracciones\\AdministradoraForm.cs",
-              "ToolTip": "C:\\Sistema_Infracciones\\Sistema Infracciones\\AdministradoraForm.cs",
-              "RelativeToolTip": "Sistema Infracciones\\AdministradoraForm.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T20:01:28.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AgregarInfraccionVehiculo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
-              "ToolTip": "C:\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs [Dise\u00F1o]",
               "RelativeToolTip": "Sistema Infracciones\\AgregarInfraccionVehiculo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T18:28:33.868Z",
@@ -107,52 +81,75 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AgregarInfraccionVehiculo.cs",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
-              "ToolTip": "C:\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
               "RelativeToolTip": "Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAUwCYAAAA5AAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAApwDgAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T17:03:14.683Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Vehiculo.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Vehiculo.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\Vehiculo.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Vehiculo.cs",
+              "RelativeToolTip": "CapaNegocio\\Vehiculo.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAqwCYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T22:06:29.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Infraccion.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Infraccion.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\Infraccion.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Infraccion.cs",
+              "RelativeToolTip": "CapaNegocio\\Infraccion.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAswCQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T20:42:41.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Index.cs [Design]",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\Index.cs",
               "ToolTip": "C:\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs [Design]",
-              "RelativeToolTip": "Sistema Infracciones\\Index.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T19:48:51.164Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-30T19:48:51.164Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\Sistema Infracciones\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Program.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\Program.cs",
-              "ToolTip": "C:\\Sistema_Infracciones\\Sistema Infracciones\\Program.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Program.cs",
               "RelativeToolTip": "Sistema Infracciones\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T18:23:04.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T18:23:04.668Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Index.cs",
-              "DocumentMoniker": "C:\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\Index.cs",
-              "ToolTip": "C:\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
               "RelativeToolTip": "Sistema Infracciones\\Index.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABYAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T16:43:44.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T16:43:44.638Z"
             }
           ]
         }
