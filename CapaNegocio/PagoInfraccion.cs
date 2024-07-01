@@ -20,5 +20,48 @@ namespace CapaNegocio
             this.fechaInfraccion = fechaInfraccion;
             this.importePagado = importePagado;
         }
+
+        public bool fechaPagoVencida()
+        {
+            int a = fechaInfraccion.AddMonths(1).CompareTo(DateTime.Now);
+            if (a > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool pagoCompleto()
+        {
+            if (this.importePagado == infraccion.Importe)
+                return true;
+            else
+                return false;
+        }
+
+        public bool estadoPagoPendiente()
+        {
+            
+            if (!pagoCompleto() && !fechaPagoVencida())
+                return true;
+            else
+                return false;
+        }
+
+        public bool estadoPagoConcretado()
+        {
+
+            if (pagoCompleto())
+                return true;
+            else
+                return false;
+        }
+
+        public bool estadoPagoVencido()
+        {
+            if (fechaPagoVencida())
+                return true;
+            else
+                return false;
+        }
     }
 }
