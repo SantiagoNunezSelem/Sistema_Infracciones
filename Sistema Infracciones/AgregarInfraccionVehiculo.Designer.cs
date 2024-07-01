@@ -156,7 +156,7 @@
             this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.Hint = "Tipo de Infracción";
+            this.materialComboBox1.Hint = "Codigo Infracción";
             this.materialComboBox1.IntegralHeight = false;
             this.materialComboBox1.ItemHeight = 43;
             this.materialComboBox1.Location = new System.Drawing.Point(330, 100);
@@ -298,6 +298,7 @@
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // labelGravedadInfraccion
             // 
