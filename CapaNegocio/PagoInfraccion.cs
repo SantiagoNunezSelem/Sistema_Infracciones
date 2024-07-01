@@ -8,14 +8,14 @@ namespace CapaNegocio
 {
     public class PagoInfraccion
     {
-        private Infraccion tipoInfraccion;
+        private Infraccion infraccion;
         private Vehiculo vehiculo;
         private DateTime fechaInfraccion;
         private decimal importePagado;
 
-        public PagoInfraccion(Infraccion tipoInfraccion, Vehiculo vehiculo, DateTime fechaInfraccion, decimal importePagado)
+        public PagoInfraccion(Infraccion infraccion, Vehiculo vehiculo, DateTime fechaInfraccion, decimal importePagado)
         {
-            this.tipoInfraccion = tipoInfraccion;
+            this.infraccion = infraccion;
             this.vehiculo = vehiculo;
             this.fechaInfraccion = fechaInfraccion;
             this.importePagado = importePagado;
