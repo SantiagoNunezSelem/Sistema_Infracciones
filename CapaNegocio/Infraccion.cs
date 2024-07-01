@@ -8,12 +8,12 @@ namespace CapaNegocio
 {
     public abstract class Infraccion
     {
-        protected int codigo;
+        protected string codigo;
         protected string nombre;
         protected string descripcion;
         protected decimal importe;
 
-        public Infraccion(int codigo,string nombre, string descripcion, decimal importe)
+        public Infraccion(string codigo,string nombre, string descripcion, decimal importe)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -25,14 +25,29 @@ namespace CapaNegocio
 
         public abstract bool esInfraccionGrave();
 
-        public string getNombre()
+
+        public bool esInfraccion(string codigo)
         {
-            return nombre;
+            return (this.codigo.Equals(codigo));
+        }
+        public string Codigo
+        {
+            get { return codigo; }
         }
 
-        public int getCodigo()
+        public string Nombre
         {
-            return codigo;
+            get { return nombre; }
+        }
+
+        public string Descripcion
+        {
+            get { return descripcion; }
+        }
+
+        public decimal Importe
+        {
+            get { return importe; }
         }
     }
 }
