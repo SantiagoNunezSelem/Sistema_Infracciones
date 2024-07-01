@@ -33,15 +33,15 @@ namespace Sistema_Infracciones
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.infraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarTipoInfraccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verTipoInfraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarTipoInfraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informacionPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoTipoInfraccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarTipoInfracciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informacionPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,23 +76,6 @@ namespace Sistema_Infracciones
             this.agregarTipoInfraccionToolStripMenuItem.Text = "Agregar Infracción de Vehiculo";
             this.agregarTipoInfraccionToolStripMenuItem.Click += new System.EventHandler(this.agregarTipoInfraccionToolStripMenuItem_Click);
             // 
-            // vehiculosToolStripMenuItem
-            // 
-            this.vehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarVehiculoToolStripMenuItem,
-            this.verVehiculoToolStripMenuItem});
-            this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.vehiculosToolStripMenuItem.Text = "Vehiculos";
-            // 
-            // pagosToolStripMenuItem
-            // 
-            this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informacionPagosToolStripMenuItem});
-            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.pagosToolStripMenuItem.Text = "Pagos";
-            // 
             // verTipoInfraccionesToolStripMenuItem
             // 
             this.verTipoInfraccionesToolStripMenuItem.Name = "verTipoInfraccionesToolStripMenuItem";
@@ -105,24 +88,6 @@ namespace Sistema_Infracciones
             this.borrarTipoInfraccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.borrarTipoInfraccionesToolStripMenuItem.Text = "Borrar Infracción de Vehiculo";
             // 
-            // registrarVehiculoToolStripMenuItem
-            // 
-            this.registrarVehiculoToolStripMenuItem.Name = "registrarVehiculoToolStripMenuItem";
-            this.registrarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarVehiculoToolStripMenuItem.Text = "Registrar Vehiculo";
-            // 
-            // verVehiculoToolStripMenuItem
-            // 
-            this.verVehiculoToolStripMenuItem.Name = "verVehiculoToolStripMenuItem";
-            this.verVehiculoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.verVehiculoToolStripMenuItem.Text = "Informacion Vehiculo";
-            // 
-            // informacionPagosToolStripMenuItem
-            // 
-            this.informacionPagosToolStripMenuItem.Name = "informacionPagosToolStripMenuItem";
-            this.informacionPagosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.informacionPagosToolStripMenuItem.Text = "Informacion Pagos";
-            // 
             // nuevoTipoInfraccionToolStripMenuItem
             // 
             this.nuevoTipoInfraccionToolStripMenuItem.Name = "nuevoTipoInfraccionToolStripMenuItem";
@@ -134,6 +99,42 @@ namespace Sistema_Infracciones
             this.borrarTipoInfracciónToolStripMenuItem.Name = "borrarTipoInfracciónToolStripMenuItem";
             this.borrarTipoInfracciónToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.borrarTipoInfracciónToolStripMenuItem.Text = "Borrar Tipo Infracción";
+            // 
+            // vehiculosToolStripMenuItem
+            // 
+            this.vehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarVehiculoToolStripMenuItem,
+            this.verVehiculoToolStripMenuItem});
+            this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.vehiculosToolStripMenuItem.Text = "Vehiculos";
+            // 
+            // registrarVehiculoToolStripMenuItem
+            // 
+            this.registrarVehiculoToolStripMenuItem.Name = "registrarVehiculoToolStripMenuItem";
+            this.registrarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.registrarVehiculoToolStripMenuItem.Text = "Registrar Vehiculo";
+            // 
+            // verVehiculoToolStripMenuItem
+            // 
+            this.verVehiculoToolStripMenuItem.Name = "verVehiculoToolStripMenuItem";
+            this.verVehiculoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.verVehiculoToolStripMenuItem.Text = "Informacion Vehiculo";
+            // 
+            // pagosToolStripMenuItem
+            // 
+            this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informacionPagosToolStripMenuItem});
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            // 
+            // informacionPagosToolStripMenuItem
+            // 
+            this.informacionPagosToolStripMenuItem.Name = "informacionPagosToolStripMenuItem";
+            this.informacionPagosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informacionPagosToolStripMenuItem.Text = "Informacion Pagos";
+            this.informacionPagosToolStripMenuItem.Click += new System.EventHandler(this.informacionPagosToolStripMenuItem_Click);
             // 
             // Index
             // 
