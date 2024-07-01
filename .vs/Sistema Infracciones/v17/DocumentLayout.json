@@ -7,19 +7,23 @@
       "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\capanegocio\\administradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\administradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\pc\\documents\\proyectos_santi\\sistema_infracciones\\capanegocio\\pagoinfraccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\pagoinfraccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A4255A3C-93A6-4E2B-8321-88DEB55F1BFA}|Sistema Infracciones\\Sistema Infracciones.csproj|solutionrelative:sistema infracciones\\agregarinfraccionvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\capanegocio\\administradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\administradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\capanegocio\\infraccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\infraccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\pc\\documents\\proyectos_santi\\sistema_infracciones\\capanegocio\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\capanegocio\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D0FEADC-065E-4719-916F-340318EDF56F}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,12 +59,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PagoInfraccion.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\PagoInfraccion.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\PagoInfraccion.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\PagoInfraccion.cs",
+              "RelativeToolTip": "CapaNegocio\\PagoInfraccion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T13:53:58.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Administradora.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Administradora.cs",
               "RelativeDocumentMoniker": "CapaNegocio\\Administradora.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Administradora.cs",
               "RelativeToolTip": "CapaNegocio\\Administradora.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAEwBUAAAA6AAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAvwDIAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T19:59:22.554Z",
               "EditorCaption": ""
@@ -85,14 +102,14 @@
               "RelativeDocumentMoniker": "Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
               "RelativeToolTip": "Sistema Infracciones\\AgregarInfraccionVehiculo.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAApwDgAAABCAAAA",
+              "ViewState": "AQIAAHMAAAAAAAAAAAApwHsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T17:03:14.683Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Vehiculo.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Vehiculo.cs",
               "RelativeDocumentMoniker": "CapaNegocio\\Vehiculo.cs",
@@ -100,12 +117,11 @@
               "RelativeToolTip": "CapaNegocio\\Vehiculo.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAqwCYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T22:06:29.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T22:06:29.221Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Infraccion.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\CapaNegocio\\Infraccion.cs",
               "RelativeDocumentMoniker": "CapaNegocio\\Infraccion.cs",
@@ -113,12 +129,11 @@
               "RelativeToolTip": "CapaNegocio\\Infraccion.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAAswCQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T20:42:41.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T20:42:41.934Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Index.cs [Design]",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\Index.cs",
@@ -129,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Program.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\Program.cs",
@@ -141,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Index.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Proyectos_Santi\\Sistema_Infracciones\\Sistema Infracciones\\Index.cs",
               "RelativeDocumentMoniker": "Sistema Infracciones\\Index.cs",
