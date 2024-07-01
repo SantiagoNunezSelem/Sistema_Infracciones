@@ -38,5 +38,11 @@ namespace Sistema_Infracciones
             AgregarInfraccionVehiculo agregarInfraccionVehiculo = new AgregarInfraccionVehiculo();
             agregarInfraccionVehiculo.ShowDialog();
         }
+
+        private void informacionPagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformacionPagos infoPagos = new InformacionPagos();
+            infoPagos.ShowDialog();
+        }
     }
 }
