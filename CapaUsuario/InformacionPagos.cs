@@ -52,19 +52,25 @@ namespace Sistema_Infracciones
                     labelModeloVehiculo.Text = buscarVehiculo.Modelo;
                     labelDniPropietario.Text = buscarVehiculo.DniPropietario;
                     this.vehiculoSeleccionado = buscarVehiculo;
+
+                    getInfoPagos(dominio);
                 }
                 else
                 {
                     infoBusquedaDominioVehiculo.Text = "No existe";
                     this.vehiculoSeleccionado = null;
                 }
-                
             }
             else
             {
                 this.vehiculoSeleccionado = null;
                 infoBusquedaDominioVehiculo.Text = "";
             }
+        }
+
+        public void getInfoPagos(string dominio)
+        {
+
         }
     }
 }
