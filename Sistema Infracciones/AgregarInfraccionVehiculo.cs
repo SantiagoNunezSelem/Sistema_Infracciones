@@ -17,6 +17,8 @@ namespace Sistema_Infracciones
     public partial class AgregarInfraccionVehiculo : MaterialForm
     {
         private Administradora adm = Administradora.getInstanciaAdministradora();
+        private Vehiculo vehiculoSeleccionado;
+        private Infraccion infraccionSeleccionada;
         public AgregarInfraccionVehiculo()
         {
             InitializeComponent();
@@ -34,7 +36,11 @@ namespace Sistema_Infracciones
 
         private void AgregarInfraccionVehiculo_Load(object sender, EventArgs e)
         {
-            materialComboBox1.Items.Add(adm.getInfraccion().Codigo);
+            List<Infraccion> infracciones = adm.getInfracciones();
+            for(int i = 0; i < infracciones.Count; i++)
+            {
+                materialComboBox1.Items.Add(infracciones[i].Codigo);
+            }
 
             labelNombre.Text = "Nombre Infraccion";
             labelModeloVehiculo.Text = "Modelo Vehículo";
@@ -62,11 +68,14 @@ namespace Sistema_Infracciones
                 {
                     infoBusquedaDominioVehiculo.Text = "No existe";
                 }
+                this.vehiculoSeleccionado = buscarVehiculo;
             }
             else
             {
+                this.vehiculoSeleccionado = null;
                 infoBusquedaDominioVehiculo.Text = "";
             }
+            
         }
 
         private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,8 +88,45 @@ namespace Sistema_Infracciones
                 labelNombre.Text = buscarInfraccion.Nombre;
                 labelDescInfraccion.Text = buscarInfraccion.Descripcion;
                 labelImporte.Text = buscarInfraccion.Importe.ToString();
+                if (buscarInfraccion.esInfraccionLeve())
+                    labelGravedadInfraccion.Text = "Infraccion Leve";
+                else
+                    labelGravedadInfraccion.Text = "Infraccion Grave";
             }
-            
+
+            this.infraccionSeleccionada = buscarInfraccion; 
+        }
+
+        public bool datosValidos()
+        {
+            if(vehiculoSeleccionado != null)
+            {
+
+                if(infraccionSeleccionada != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("No seleccionó una infracción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No seleccionó un vehículo","Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            return false;
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            if (datosValidos())
+            {
+                PagoInfraccion pagoInf = new PagoInfraccion(infraccionSeleccionada, vehiculoSeleccionado, DateTime.Now, 0);
+                adm.nuevoPagoInfraccion(pagoInf);
+                MessageBox.Show("Infracción registrada con exito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
     }
 }
