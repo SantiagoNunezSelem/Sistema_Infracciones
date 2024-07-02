@@ -58,6 +58,8 @@ namespace Sistema_Infracciones
                 else
                 {
                     infoBusquedaDominioVehiculo.Text = "No existe";
+                    labelModeloVehiculo.Text = "Modelo Vehículo";
+                    labelDniPropietario.Text = "DNI Propietario";
                     this.vehiculoSeleccionado = null;
                 }
             }
