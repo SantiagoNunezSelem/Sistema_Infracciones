@@ -70,7 +70,34 @@ namespace Sistema_Infracciones
 
         public void getInfoPagos(string dominio)
         {
+            List<PagoInfraccion> pagosInfracciones = new List<PagoInfraccion>();
 
+            pagosInfracciones = vehiculoSeleccionado.getPagosInfraccionesPendientes();
+            if(pagosInfracciones != null)
+            {
+                foreach (PagoInfraccion pago in pagosInfracciones)
+                {
+                    listBoxPagosPendientes.Items.Add(pago);
+                }
+            }
+
+            pagosInfracciones = vehiculoSeleccionado.getPagosInfraccionesConcretadas();
+            if (pagosInfracciones != null)
+            {
+                foreach (PagoInfraccion pago in pagosInfracciones)
+                {
+                    listBoxPagosConcretados.Items.Add(pago);
+                }
+            }
+
+            pagosInfracciones = vehiculoSeleccionado.getPagosInfraccionesVencidas();
+            if (pagosInfracciones != null)
+            {
+                foreach (PagoInfraccion pago in pagosInfracciones)
+                {
+                    listBoxPagosVencidos.Items.Add(pago);
+                }
+            }
         }
     }
 }
