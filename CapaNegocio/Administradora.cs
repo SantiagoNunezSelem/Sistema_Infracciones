@@ -31,8 +31,12 @@ namespace CapaNegocio
             Vehiculo vehiculo = new Vehiculo("111","11111111","modelo1");
             vehiculos.Add(vehiculo);
 
-            PagoInfraccion pagInf = new PagoInfraccion(infra, vehiculo,DateTime.Now , 0);
+            PagoInfraccion pagInf = new PagoInfraccion(infra, vehiculo,DateTime.Now , 0); //Va a ser la Pendiente
             vehiculo.agregarInfraccion(pagInf);
+            PagoInfraccion pagInf2 = new PagoInfraccion(infra, vehiculo, new DateTime(2023,04,01), 0);//Va a ser la Vencida
+            vehiculo.agregarInfraccion(pagInf2);
+            PagoInfraccion pagInf3 = new PagoInfraccion(infra, vehiculo, DateTime.Now, 5000);//Va a ser la Concretada
+            vehiculo.agregarInfraccion(pagInf3);
         }
 
         public static Administradora getInstanciaAdministradora()
