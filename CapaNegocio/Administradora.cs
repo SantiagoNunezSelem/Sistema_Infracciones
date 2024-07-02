@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
@@ -29,6 +30,9 @@ namespace CapaNegocio
 
             Vehiculo vehiculo = new Vehiculo("111","11111111","modelo1");
             vehiculos.Add(vehiculo);
+
+            PagoInfraccion pagInf = new PagoInfraccion(infra, vehiculo,DateTime.Now , 0);
+            vehiculo.agregarInfraccion(pagInf);
         }
 
         public static Administradora getInstanciaAdministradora()
