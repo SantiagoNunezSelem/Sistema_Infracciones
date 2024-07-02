@@ -18,6 +18,7 @@ namespace CapaNegocio
             this.dominio = dominio;
             this.dniPropietario = dniPropietario;
             this.modelo = modelo;
+            pagosInfracciones = new List<PagoInfraccion>();
         }
 
         public bool esVehiculo(string dominio)
@@ -28,40 +29,56 @@ namespace CapaNegocio
         public List<PagoInfraccion> getPagosInfraccionesPendientes()
         {
             List<PagoInfraccion> pagosInfraccionesPendientes = new List<PagoInfraccion>();
-
-            for(int i=0;i < pagosInfracciones.Count;i++)
+            if (pagosInfracciones != null)
             {
-                if (pagosInfracciones[i].estadoPagoPendiente())
-                    pagosInfraccionesPendientes.Add(pagosInfracciones[i]);
+                for (int i = 0; i < pagosInfracciones.Count; i++)
+                {
+                    if (pagosInfracciones[i].estadoPagoPendiente())
+                        pagosInfraccionesPendientes.Add(pagosInfracciones[i]);
+                }
+
+                return pagosInfraccionesPendientes;
             }
-            
-            return pagosInfraccionesPendientes;
+            return null;
         }
 
         public List<PagoInfraccion> getPagosInfraccionesConcretadas()
         {
             List<PagoInfraccion> pagosInfraccionesConcretadas = new List<PagoInfraccion>();
 
-            for (int i = 0; i < pagosInfracciones.Count; i++)
+            if (pagosInfracciones != null)
             {
-                if (pagosInfracciones[i].estadoPagoConcretado())
-                    pagosInfraccionesConcretadas.Add(pagosInfracciones[i]);
-            }
+                for (int i = 0; i < pagosInfracciones.Count; i++)
+                {
+                    if (pagosInfracciones[i].estadoPagoConcretado())
+                        pagosInfraccionesConcretadas.Add(pagosInfracciones[i]);
+                }
 
-            return pagosInfraccionesConcretadas;
+                return pagosInfraccionesConcretadas;
+            }
+            return null;
         }
 
         public List<PagoInfraccion> getPagosInfraccionesVencidas()
         {
             List<PagoInfraccion> pagosInfraccionesVencidas = new List<PagoInfraccion>();
 
-            for (int i = 0; i < pagosInfracciones.Count; i++)
+            if(pagosInfracciones != null)
             {
-                if (pagosInfracciones[i].estadoPagoConcretado())
-                    pagosInfraccionesVencidas.Add(pagosInfracciones[i]);
-            }
+                for (int i = 0; i < pagosInfracciones.Count; i++)
+                {
+                    if (pagosInfracciones[i].estadoPagoVencido())
+                        pagosInfraccionesVencidas.Add(pagosInfracciones[i]);
+                }
 
-            return pagosInfraccionesVencidas;
+                return pagosInfraccionesVencidas;
+            }
+            return null;
+        }
+
+        public void agregarInfraccion(PagoInfraccion pagoInfraccion)
+        {
+            pagosInfracciones.Add(pagoInfraccion);
         }
 
         public string Dominio
