@@ -28,47 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
-            this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListBox3 = new MaterialSkin.Controls.MaterialListBox();
             this.labelDniPropietario = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.labelModeloVehiculo = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.inputDominioVehiculo = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.infoBusquedaDominioVehiculo = new MaterialSkin.Controls.MaterialLabel();
+            this.listBoxPagosPendientes = new System.Windows.Forms.ListBox();
+            this.listBoxPagosConcretados = new System.Windows.Forms.ListBox();
+            this.listBoxPagosVencidos = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // materialListBox1
-            // 
-            this.materialListBox1.BackColor = System.Drawing.Color.White;
-            this.materialListBox1.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox1.Depth = 0;
-            this.materialListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox1.Location = new System.Drawing.Point(380, 138);
-            this.materialListBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox1.Name = "materialListBox1";
-            this.materialListBox1.SelectedIndex = -1;
-            this.materialListBox1.SelectedItem = null;
-            this.materialListBox1.ShowScrollBar = true;
-            this.materialListBox1.Size = new System.Drawing.Size(263, 122);
-            this.materialListBox1.TabIndex = 0;
-            // 
-            // materialListBox2
-            // 
-            this.materialListBox2.BackColor = System.Drawing.Color.White;
-            this.materialListBox2.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox2.Depth = 0;
-            this.materialListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox2.Location = new System.Drawing.Point(695, 138);
-            this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox2.Name = "materialListBox2";
-            this.materialListBox2.SelectedIndex = -1;
-            this.materialListBox2.SelectedItem = null;
-            this.materialListBox2.ShowScrollBar = true;
-            this.materialListBox2.Size = new System.Drawing.Size(263, 122);
-            this.materialListBox2.TabIndex = 1;
             // 
             // materialLabel1
             // 
@@ -105,21 +75,6 @@
             this.materialLabel3.Size = new System.Drawing.Size(190, 19);
             this.materialLabel3.TabIndex = 5;
             this.materialLabel3.Text = "Infracción Pagos Vencidos";
-            // 
-            // materialListBox3
-            // 
-            this.materialListBox3.BackColor = System.Drawing.Color.White;
-            this.materialListBox3.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox3.Depth = 0;
-            this.materialListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox3.Location = new System.Drawing.Point(380, 329);
-            this.materialListBox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox3.Name = "materialListBox3";
-            this.materialListBox3.SelectedIndex = -1;
-            this.materialListBox3.SelectedItem = null;
-            this.materialListBox3.ShowScrollBar = true;
-            this.materialListBox3.Size = new System.Drawing.Size(263, 122);
-            this.materialListBox3.TabIndex = 4;
             // 
             // labelDniPropietario
             // 
@@ -263,21 +218,45 @@
             this.infoBusquedaDominioVehiculo.Size = new System.Drawing.Size(1, 0);
             this.infoBusquedaDominioVehiculo.TabIndex = 16;
             // 
+            // listBoxPagosPendientes
+            // 
+            this.listBoxPagosPendientes.FormattingEnabled = true;
+            this.listBoxPagosPendientes.Location = new System.Drawing.Point(380, 138);
+            this.listBoxPagosPendientes.Name = "listBoxPagosPendientes";
+            this.listBoxPagosPendientes.Size = new System.Drawing.Size(263, 121);
+            this.listBoxPagosPendientes.TabIndex = 17;
+            // 
+            // listBoxPagosConcretados
+            // 
+            this.listBoxPagosConcretados.FormattingEnabled = true;
+            this.listBoxPagosConcretados.Location = new System.Drawing.Point(695, 138);
+            this.listBoxPagosConcretados.Name = "listBoxPagosConcretados";
+            this.listBoxPagosConcretados.Size = new System.Drawing.Size(263, 121);
+            this.listBoxPagosConcretados.TabIndex = 18;
+            // 
+            // listBoxPagosVencidos
+            // 
+            this.listBoxPagosVencidos.FormattingEnabled = true;
+            this.listBoxPagosVencidos.Location = new System.Drawing.Point(380, 329);
+            this.listBoxPagosVencidos.Name = "listBoxPagosVencidos";
+            this.listBoxPagosVencidos.Size = new System.Drawing.Size(263, 121);
+            this.listBoxPagosVencidos.TabIndex = 19;
+            // 
             // InformacionPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 497);
+            this.Controls.Add(this.listBoxPagosVencidos);
+            this.Controls.Add(this.listBoxPagosConcretados);
+            this.Controls.Add(this.listBoxPagosPendientes);
             this.Controls.Add(this.infoBusquedaDominioVehiculo);
             this.Controls.Add(this.labelDniPropietario);
             this.Controls.Add(this.labelModeloVehiculo);
             this.Controls.Add(this.inputDominioVehiculo);
             this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.materialListBox3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialListBox2);
-            this.Controls.Add(this.materialListBox1);
             this.Name = "InformacionPagos";
             this.Text = "InformacionPagos";
             this.Load += new System.EventHandler(this.InformacionPagos_Load);
@@ -287,16 +266,15 @@
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialListBox materialListBox1;
-        private MaterialSkin.Controls.MaterialListBox materialListBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialListBox materialListBox3;
         private MaterialSkin.Controls.MaterialMaskedTextBox labelDniPropietario;
         private MaterialSkin.Controls.MaterialMaskedTextBox labelModeloVehiculo;
         private MaterialSkin.Controls.MaterialMaskedTextBox inputDominioVehiculo;
         private MaterialSkin.Controls.MaterialLabel infoBusquedaDominioVehiculo;
+        private System.Windows.Forms.ListBox listBoxPagosPendientes;
+        private System.Windows.Forms.ListBox listBoxPagosConcretados;
+        private System.Windows.Forms.ListBox listBoxPagosVencidos;
     }
 }
