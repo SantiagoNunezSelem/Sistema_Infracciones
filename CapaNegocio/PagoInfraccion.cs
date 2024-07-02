@@ -24,10 +24,15 @@ namespace CapaNegocio
         public bool fechaPagoVencida()
         {
             int a = fechaInfraccion.AddMonths(1).CompareTo(DateTime.Now);
-            if (a > 0)
+            if (a < 0)
                 return true;
             else
                 return false;
+        }
+
+        public decimal pagoPendiente()
+        {
+            return infraccion.Importe - importePagado;
         }
 
         public bool pagoCompleto()
@@ -63,5 +68,11 @@ namespace CapaNegocio
             else
                 return false;
         }
+
+        public override string ToString()
+        {
+            return " " + fechaInfraccion.ToShortDateString() + "  -  Pendiente: $" + pagoPendiente(); 
+        }
+
     }
 }
