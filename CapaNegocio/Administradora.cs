@@ -15,7 +15,7 @@ namespace CapaNegocio
         private List<Infraccion> infracciones;
         private List<Vehiculo> vehiculos;
         private List<PagoInfraccion> pagosInfracciones;
-
+       
         public Administradora()
         {
             infracciones = new List<Infraccion>();
@@ -38,6 +38,7 @@ namespace CapaNegocio
             PagoInfraccion pagInf3 = new PagoInfraccion(infra, vehiculo, DateTime.Now, 5000);//Va a ser la Concretada
             vehiculo.agregarInfraccion(pagInf3);
         }
+
 
         public static Administradora getInstanciaAdministradora()
         {

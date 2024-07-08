@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,11 +44,27 @@ namespace CapaNegocio
         public string Descripcion
         {
             get { return descripcion; }
+            set { descripcion = value; }
         }
 
         public decimal Importe
         {
             get { return importe; }
+            set { importe = value; }
         }
+
+
+        public virtual void armar(ArrayList l)
+        {
+            this.codigo = l[0].ToString();
+            this.nombre = l[1].ToString();
+            this.descripcion = l[2].ToString();
+            this.importe = decimal.Parse(l[3].ToString());
+        }
+
+        public abstract ArrayList desarmar();
+
+        public abstract double dameDescuento(DateTime fechaVencimiento);
     }
+
 }
