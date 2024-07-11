@@ -211,7 +211,6 @@
             this.Controls.Add(this.materialLabel1);
             this.Name = "InformacionPagos";
             this.Text = "InformacionPagos";
-            this.Load += new System.EventHandler(this.InformacionPagos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
