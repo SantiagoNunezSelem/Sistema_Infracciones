@@ -10,8 +10,8 @@ namespace CapaNegocio
     public class InfraccionLeve : Infraccion
     {
 
-        private const double porcentaje_descuento20 = 10 / 100;
-        private const double porcentaje_descuento10 = 15 / 100;
+        private const double porcentaje_descuento_20dias = 25 / 100;
+        private const double porcentaje_descuento_10dias = 15 / 100;
 
         public InfraccionLeve(string codigo, string nombre, string descripcion, decimal importe) :
             base(codigo, nombre, descripcion, importe)
@@ -27,7 +27,7 @@ namespace CapaNegocio
             return false;
         }
 
-        public override double dameDescuento(DateTime fechaVencimiento)
+        public override double getDescuento(DateTime fechaVencimiento)
         {
             double result = 0;
 
@@ -35,11 +35,11 @@ namespace CapaNegocio
 
             if (diff >= 20)
             {
-                result = porcentaje_descuento20;
+                result = porcentaje_descuento_20dias;
             }
             else if (diff >= 10)
             {
-                result = porcentaje_descuento10;
+                result = porcentaje_descuento_10dias;
             }
 
             return result;

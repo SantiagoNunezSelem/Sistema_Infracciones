@@ -9,7 +9,7 @@ namespace CapaNegocio
 {
     public class InfraccionGrave : Infraccion
     {
-        private const double porcentaje_descuento25 = 10 / 100;
+        private const double porcentaje_descuento_25dias = 20 / 100;
 
         public InfraccionGrave(string codigo, string nombre, string descripcion, decimal importe) :
            base(codigo, nombre,descripcion, importe)
@@ -26,7 +26,7 @@ namespace CapaNegocio
             return true;
         }
 
-        public override double dameDescuento(DateTime fechaVencimiento)
+        public override double getDescuento(DateTime fechaVencimiento)
         {
             double result = 0;
 
@@ -34,7 +34,7 @@ namespace CapaNegocio
 
             if (diff >= 25)
             {
-                result = porcentaje_descuento25;
+                result = porcentaje_descuento_25dias;
             }
 
             return result;
