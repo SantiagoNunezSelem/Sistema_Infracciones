@@ -114,6 +114,7 @@ namespace Sistema_Infracciones
             this.registrarVehiculoToolStripMenuItem.Name = "registrarVehiculoToolStripMenuItem";
             this.registrarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.registrarVehiculoToolStripMenuItem.Text = "Registrar Vehiculo";
+            this.registrarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.registrarVehiculoToolStripMenuItem_Click);
             // 
             // verVehiculoToolStripMenuItem
             // 
@@ -132,7 +133,7 @@ namespace Sistema_Infracciones
             // informacionPagosToolStripMenuItem
             // 
             this.informacionPagosToolStripMenuItem.Name = "informacionPagosToolStripMenuItem";
-            this.informacionPagosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informacionPagosToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.informacionPagosToolStripMenuItem.Text = "Informacion Pagos";
             this.informacionPagosToolStripMenuItem.Click += new System.EventHandler(this.informacionPagosToolStripMenuItem_Click);
             // 

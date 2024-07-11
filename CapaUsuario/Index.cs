@@ -44,5 +44,11 @@ namespace Sistema_Infracciones
             InformacionPagos infoPagos = new InformacionPagos();
             infoPagos.ShowDialog();
         }
+
+        private void registrarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
+            agregarVehiculo .ShowDialog();
+        }
     }
 }
