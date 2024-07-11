@@ -69,6 +69,11 @@ namespace CapaNegocio
                 return false;
         }
 
+        public Vehiculo ObtenerVehiculo
+        {
+            get{ return vehiculo; }
+        }
+
         public override string ToString()
         {
             return " " + fechaInfraccion.ToShortDateString() + "  -  Pendiente: $" + pagoPendiente(); 
