@@ -31,13 +31,13 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.labelDniPropietario = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.labelModeloVehiculo = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.inputDominioVehiculo = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.infoBusquedaDominioVehiculo = new MaterialSkin.Controls.MaterialLabel();
             this.listBoxPagosPendientes = new System.Windows.Forms.ListBox();
             this.listBoxPagosConcretados = new System.Windows.Forms.ListBox();
             this.listBoxPagosVencidos = new System.Windows.Forms.ListBox();
+            this.inputDNIPropietario = new MaterialSkin.Controls.MaterialTextBox();
+            this.inputModeloVehiculo = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -75,92 +75,6 @@
             this.materialLabel3.Size = new System.Drawing.Size(190, 19);
             this.materialLabel3.TabIndex = 5;
             this.materialLabel3.Text = "Infracción Pagos Vencidos";
-            // 
-            // labelDniPropietario
-            // 
-            this.labelDniPropietario.AllowPromptAsInput = true;
-            this.labelDniPropietario.AnimateReadOnly = false;
-            this.labelDniPropietario.AsciiOnly = false;
-            this.labelDniPropietario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.labelDniPropietario.BeepOnError = false;
-            this.labelDniPropietario.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.labelDniPropietario.Depth = 0;
-            this.labelDniPropietario.Enabled = false;
-            this.labelDniPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelDniPropietario.HidePromptOnLeave = false;
-            this.labelDniPropietario.HideSelection = true;
-            this.labelDniPropietario.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.labelDniPropietario.LeadingIcon = null;
-            this.labelDniPropietario.Location = new System.Drawing.Point(62, 267);
-            this.labelDniPropietario.Mask = "";
-            this.labelDniPropietario.MaxLength = 32767;
-            this.labelDniPropietario.MouseState = MaterialSkin.MouseState.OUT;
-            this.labelDniPropietario.Name = "labelDniPropietario";
-            this.labelDniPropietario.PasswordChar = '\0';
-            this.labelDniPropietario.PrefixSuffixText = null;
-            this.labelDniPropietario.PromptChar = '_';
-            this.labelDniPropietario.ReadOnly = false;
-            this.labelDniPropietario.RejectInputOnFirstFailure = false;
-            this.labelDniPropietario.ResetOnPrompt = true;
-            this.labelDniPropietario.ResetOnSpace = true;
-            this.labelDniPropietario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelDniPropietario.SelectedText = "";
-            this.labelDniPropietario.SelectionLength = 0;
-            this.labelDniPropietario.SelectionStart = 0;
-            this.labelDniPropietario.ShortcutsEnabled = true;
-            this.labelDniPropietario.Size = new System.Drawing.Size(223, 48);
-            this.labelDniPropietario.SkipLiterals = true;
-            this.labelDniPropietario.TabIndex = 11;
-            this.labelDniPropietario.TabStop = false;
-            this.labelDniPropietario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.labelDniPropietario.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.labelDniPropietario.TrailingIcon = null;
-            this.labelDniPropietario.UseAccent = false;
-            this.labelDniPropietario.UseSystemPasswordChar = false;
-            this.labelDniPropietario.ValidatingType = null;
-            // 
-            // labelModeloVehiculo
-            // 
-            this.labelModeloVehiculo.AllowPromptAsInput = true;
-            this.labelModeloVehiculo.AnimateReadOnly = false;
-            this.labelModeloVehiculo.AsciiOnly = false;
-            this.labelModeloVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.labelModeloVehiculo.BeepOnError = false;
-            this.labelModeloVehiculo.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.labelModeloVehiculo.Depth = 0;
-            this.labelModeloVehiculo.Enabled = false;
-            this.labelModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelModeloVehiculo.HidePromptOnLeave = false;
-            this.labelModeloVehiculo.HideSelection = true;
-            this.labelModeloVehiculo.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.labelModeloVehiculo.LeadingIcon = null;
-            this.labelModeloVehiculo.Location = new System.Drawing.Point(62, 196);
-            this.labelModeloVehiculo.Mask = "";
-            this.labelModeloVehiculo.MaxLength = 32767;
-            this.labelModeloVehiculo.MouseState = MaterialSkin.MouseState.OUT;
-            this.labelModeloVehiculo.Name = "labelModeloVehiculo";
-            this.labelModeloVehiculo.PasswordChar = '\0';
-            this.labelModeloVehiculo.PrefixSuffixText = null;
-            this.labelModeloVehiculo.PromptChar = '_';
-            this.labelModeloVehiculo.ReadOnly = false;
-            this.labelModeloVehiculo.RejectInputOnFirstFailure = false;
-            this.labelModeloVehiculo.ResetOnPrompt = true;
-            this.labelModeloVehiculo.ResetOnSpace = true;
-            this.labelModeloVehiculo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelModeloVehiculo.SelectedText = "";
-            this.labelModeloVehiculo.SelectionLength = 0;
-            this.labelModeloVehiculo.SelectionStart = 0;
-            this.labelModeloVehiculo.ShortcutsEnabled = true;
-            this.labelModeloVehiculo.Size = new System.Drawing.Size(223, 48);
-            this.labelModeloVehiculo.SkipLiterals = true;
-            this.labelModeloVehiculo.TabIndex = 10;
-            this.labelModeloVehiculo.TabStop = false;
-            this.labelModeloVehiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.labelModeloVehiculo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.labelModeloVehiculo.TrailingIcon = null;
-            this.labelModeloVehiculo.UseAccent = false;
-            this.labelModeloVehiculo.UseSystemPasswordChar = false;
-            this.labelModeloVehiculo.ValidatingType = null;
             // 
             // inputDominioVehiculo
             // 
@@ -242,17 +156,55 @@
             this.listBoxPagosVencidos.Size = new System.Drawing.Size(263, 121);
             this.listBoxPagosVencidos.TabIndex = 19;
             // 
+            // inputDNIPropietario
+            // 
+            this.inputDNIPropietario.AnimateReadOnly = false;
+            this.inputDNIPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputDNIPropietario.Depth = 0;
+            this.inputDNIPropietario.Enabled = false;
+            this.inputDNIPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputDNIPropietario.Hint = "DNI Propietario";
+            this.inputDNIPropietario.LeadingIcon = null;
+            this.inputDNIPropietario.Location = new System.Drawing.Point(62, 274);
+            this.inputDNIPropietario.MaxLength = 50;
+            this.inputDNIPropietario.MouseState = MaterialSkin.MouseState.OUT;
+            this.inputDNIPropietario.Multiline = false;
+            this.inputDNIPropietario.Name = "inputDNIPropietario";
+            this.inputDNIPropietario.Size = new System.Drawing.Size(223, 50);
+            this.inputDNIPropietario.TabIndex = 20;
+            this.inputDNIPropietario.Text = "";
+            this.inputDNIPropietario.TrailingIcon = null;
+            // 
+            // inputModeloVehiculo
+            // 
+            this.inputModeloVehiculo.AnimateReadOnly = false;
+            this.inputModeloVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputModeloVehiculo.Depth = 0;
+            this.inputModeloVehiculo.Enabled = false;
+            this.inputModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputModeloVehiculo.Hint = "Modelo";
+            this.inputModeloVehiculo.LeadingIcon = null;
+            this.inputModeloVehiculo.Location = new System.Drawing.Point(62, 199);
+            this.inputModeloVehiculo.MaxLength = 50;
+            this.inputModeloVehiculo.MouseState = MaterialSkin.MouseState.OUT;
+            this.inputModeloVehiculo.Multiline = false;
+            this.inputModeloVehiculo.Name = "inputModeloVehiculo";
+            this.inputModeloVehiculo.Size = new System.Drawing.Size(223, 50);
+            this.inputModeloVehiculo.TabIndex = 21;
+            this.inputModeloVehiculo.Text = "";
+            this.inputModeloVehiculo.TrailingIcon = null;
+            // 
             // InformacionPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 497);
+            this.Controls.Add(this.inputModeloVehiculo);
+            this.Controls.Add(this.inputDNIPropietario);
             this.Controls.Add(this.listBoxPagosVencidos);
             this.Controls.Add(this.listBoxPagosConcretados);
             this.Controls.Add(this.listBoxPagosPendientes);
             this.Controls.Add(this.infoBusquedaDominioVehiculo);
-            this.Controls.Add(this.labelDniPropietario);
-            this.Controls.Add(this.labelModeloVehiculo);
             this.Controls.Add(this.inputDominioVehiculo);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
@@ -269,12 +221,12 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialMaskedTextBox labelDniPropietario;
-        private MaterialSkin.Controls.MaterialMaskedTextBox labelModeloVehiculo;
         private MaterialSkin.Controls.MaterialMaskedTextBox inputDominioVehiculo;
         private MaterialSkin.Controls.MaterialLabel infoBusquedaDominioVehiculo;
         private System.Windows.Forms.ListBox listBoxPagosPendientes;
         private System.Windows.Forms.ListBox listBoxPagosConcretados;
         private System.Windows.Forms.ListBox listBoxPagosVencidos;
+        private MaterialSkin.Controls.MaterialTextBox inputDNIPropietario;
+        private MaterialSkin.Controls.MaterialTextBox inputModeloVehiculo;
     }
 }

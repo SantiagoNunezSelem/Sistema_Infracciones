@@ -41,13 +41,6 @@ namespace Sistema_Infracciones
             {
                 materialComboBox1.Items.Add(infracciones[i].Codigo);
             }
-
-            labelNombre.Text = "Nombre Infraccion";
-            labelModeloVehiculo.Text = "Modelo Vehículo";
-            labelDniPropietario.Text = "DNI Propietario";
-            labelDescInfraccion.Text = "Descripción";
-            labelImporte.Text = "Importe";
-            labelGravedadInfraccion.Text = "Gravedad de Infraccion";
         }
 
         private void inputDominioVehiculo_TextChanged(object sender, EventArgs e)
@@ -61,14 +54,14 @@ namespace Sistema_Infracciones
                 if (buscarVehiculo != null)
                 {
                     infoBusquedaDominioVehiculo.Text = "Encontrado";
-                    labelModeloVehiculo.Text = buscarVehiculo.Modelo;
-                    labelDniPropietario.Text = buscarVehiculo.DniPropietario;
+                    inputModeloVehiculo.Text = buscarVehiculo.Modelo;
+                    inputDNIPropietario.Text = buscarVehiculo.DniPropietario;
                 }
                 else
                 {
                     infoBusquedaDominioVehiculo.Text = "No existe";
-                    labelModeloVehiculo.Text = "Modelo Vehículo";
-                    labelDniPropietario.Text = "DNI Propietario";
+                    inputModeloVehiculo.Text = "";
+                    inputDNIPropietario.Text = "";
                 }
                 this.vehiculoSeleccionado = buscarVehiculo;
             }
@@ -87,13 +80,13 @@ namespace Sistema_Infracciones
 
             if (buscarInfraccion != null)
             {
-                labelNombre.Text = buscarInfraccion.Nombre;
+                inputNombreInfraccion.Text = buscarInfraccion.Nombre;
                 labelDescInfraccion.Text = buscarInfraccion.Descripcion;
-                labelImporte.Text = buscarInfraccion.Importe.ToString();
+                inputInporte.Text = buscarInfraccion.Importe.ToString();
                 if (buscarInfraccion.esInfraccionLeve())
-                    labelGravedadInfraccion.Text = "Infraccion Leve";
+                    inputGravedadInfraccion.Text = "Infraccion Leve";
                 else
-                    labelGravedadInfraccion.Text = "Infraccion Grave";
+                    inputGravedadInfraccion.Text = "Infraccion Grave";
             }
 
             this.infraccionSeleccionada = buscarInfraccion; 

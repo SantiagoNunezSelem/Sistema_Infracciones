@@ -34,9 +34,11 @@ namespace Sistema_Infracciones
         
         private void InformacionPagos_Load(object sender, EventArgs e)
         {
+            /*
             labelModeloVehiculo.Text = "Modelo Vehículo";
             labelDniPropietario.Text = "DNI Propietario";
             infoBusquedaDominioVehiculo.Text = "";
+            */
         }
 
         private void inputDominioVehiculo_TextChanged(object sender, EventArgs e)
@@ -49,17 +51,20 @@ namespace Sistema_Infracciones
                 if (buscarVehiculo != null)
                 {
                     infoBusquedaDominioVehiculo.Text = "Encontrado";
-                    labelModeloVehiculo.Text = buscarVehiculo.Modelo;
-                    labelDniPropietario.Text = buscarVehiculo.DniPropietario;
+                    inputModeloVehiculo.Text = buscarVehiculo.Modelo;
+                    inputDNIPropietario.Text = buscarVehiculo.DniPropietario;
                     this.vehiculoSeleccionado = buscarVehiculo;
 
                     getInfoPagos(dominio);
                 }
                 else
                 {
+                    listBoxPagosConcretados.Items.Clear();
+                    listBoxPagosPendientes.Items.Clear();
+                    listBoxPagosVencidos.Items.Clear();
                     infoBusquedaDominioVehiculo.Text = "No existe";
-                    labelModeloVehiculo.Text = "Modelo Vehículo";
-                    labelDniPropietario.Text = "DNI Propietario";
+                    inputModeloVehiculo.Text = "";
+                    inputDNIPropietario.Text = "";
                     this.vehiculoSeleccionado = null;
                 }
             }
