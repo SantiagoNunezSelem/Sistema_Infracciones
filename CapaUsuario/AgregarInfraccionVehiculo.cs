@@ -82,7 +82,7 @@ namespace Sistema_Infracciones
             {
                 inputNombreInfraccion.Text = buscarInfraccion.Nombre;
                 labelDescInfraccion.Text = buscarInfraccion.Descripcion;
-                inputInporte.Text = buscarInfraccion.Importe.ToString();
+                inputInporte.Text = "$ "+buscarInfraccion.Importe.ToString();
                 if (buscarInfraccion.esInfraccionLeve())
                     inputGravedadInfraccion.Text = "Infraccion Leve";
                 else
