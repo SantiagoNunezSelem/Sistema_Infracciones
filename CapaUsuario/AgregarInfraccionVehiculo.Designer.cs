@@ -273,6 +273,7 @@
             this.inputGravedadInfraccion.AnimateReadOnly = false;
             this.inputGravedadInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputGravedadInfraccion.Depth = 0;
+            this.inputGravedadInfraccion.Enabled = false;
             this.inputGravedadInfraccion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputGravedadInfraccion.Hint = "Gravedad de la Infraccion";
             this.inputGravedadInfraccion.LeadingIcon = null;
