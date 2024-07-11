@@ -32,8 +32,8 @@ namespace Sistema_Infracciones
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.infraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarTipoInfraccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verTipoInfraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PagarInfraccionVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AgregarInfraccionVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarTipoInfraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoTipoInfraccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarTipoInfracciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +60,8 @@ namespace Sistema_Infracciones
             // infraccionesToolStripMenuItem
             // 
             this.infraccionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarTipoInfraccionToolStripMenuItem,
-            this.verTipoInfraccionesToolStripMenuItem,
+            this.PagarInfraccionVehiculoToolStripMenuItem,
+            this.AgregarInfraccionVehiculoToolStripMenuItem,
             this.borrarTipoInfraccionesToolStripMenuItem,
             this.nuevoTipoInfraccionToolStripMenuItem,
             this.borrarTipoInfracciónToolStripMenuItem});
@@ -69,24 +69,25 @@ namespace Sistema_Infracciones
             this.infraccionesToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.infraccionesToolStripMenuItem.Text = "Infracciones";
             // 
-            // agregarTipoInfraccionToolStripMenuItem
+            // PagarInfraccionVehiculoToolStripMenuItem
             // 
-            this.agregarTipoInfraccionToolStripMenuItem.Name = "agregarTipoInfraccionToolStripMenuItem";
-            this.agregarTipoInfraccionToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.agregarTipoInfraccionToolStripMenuItem.Text = "Agregar Infracción de Vehiculo";
-            this.agregarTipoInfraccionToolStripMenuItem.Click += new System.EventHandler(this.agregarTipoInfraccionToolStripMenuItem_Click);
+            this.PagarInfraccionVehiculoToolStripMenuItem.Name = "PagarInfraccionVehiculoToolStripMenuItem";
+            this.PagarInfraccionVehiculoToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.PagarInfraccionVehiculoToolStripMenuItem.Text = "Pagar Infracción de Vehículo";
+            this.PagarInfraccionVehiculoToolStripMenuItem.Click += new System.EventHandler(this.PagarInfraccionVehiculoToolStripMenuItem_Click);
             // 
-            // verTipoInfraccionesToolStripMenuItem
+            // AgregarInfraccionVehiculoToolStripMenuItem
             // 
-            this.verTipoInfraccionesToolStripMenuItem.Name = "verTipoInfraccionesToolStripMenuItem";
-            this.verTipoInfraccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.verTipoInfraccionesToolStripMenuItem.Text = "Editar Infracción de Vehiculo";
+            this.AgregarInfraccionVehiculoToolStripMenuItem.Name = "AgregarInfraccionVehiculoToolStripMenuItem";
+            this.AgregarInfraccionVehiculoToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.AgregarInfraccionVehiculoToolStripMenuItem.Text = "Agregar Infracción Vehículo";
+            this.AgregarInfraccionVehiculoToolStripMenuItem.Click += new System.EventHandler(this.AgregarInfraccionVehiculoToolStripMenuItem_Click);
             // 
             // borrarTipoInfraccionesToolStripMenuItem
             // 
             this.borrarTipoInfraccionesToolStripMenuItem.Name = "borrarTipoInfraccionesToolStripMenuItem";
             this.borrarTipoInfraccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.borrarTipoInfraccionesToolStripMenuItem.Text = "Borrar Infracción de Vehiculo";
+            this.borrarTipoInfraccionesToolStripMenuItem.Text = "Borrar Infracción de Vehículo";
             // 
             // nuevoTipoInfraccionToolStripMenuItem
             // 
@@ -158,8 +159,8 @@ namespace Sistema_Infracciones
         private System.Windows.Forms.ToolStripMenuItem infraccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarTipoInfraccionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verTipoInfraccionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PagarInfraccionVehiculoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AgregarInfraccionVehiculoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarTipoInfraccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarVehiculoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verVehiculoToolStripMenuItem;

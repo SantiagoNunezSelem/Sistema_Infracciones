@@ -33,7 +33,13 @@ namespace Sistema_Infracciones
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        private void agregarTipoInfraccionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PagarInfraccionVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PagoInfraccionVehiculo pagoInfraccionVehiculo = new PagoInfraccionVehiculo();
+            pagoInfraccionVehiculo.ShowDialog();
+        }
+
+        private void AgregarInfraccionVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AgregarInfraccionVehiculo agregarInfraccionVehiculo = new AgregarInfraccionVehiculo();
             agregarInfraccionVehiculo.ShowDialog();
@@ -50,5 +56,7 @@ namespace Sistema_Infracciones
             AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
             agregarVehiculo .ShowDialog();
         }
+
+        
     }
 }
