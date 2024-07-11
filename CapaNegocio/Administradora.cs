@@ -65,6 +65,11 @@ namespace CapaNegocio
             return infracciones;
         }
 
+        public void agregarVehiculo(Vehiculo vehiculo)
+        {
+            vehiculos.Add(vehiculo);
+        }
+
         public Vehiculo getVehiculo(string dominio)
         {
             Vehiculo buscarVehiculo;
