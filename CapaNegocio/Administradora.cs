@@ -58,6 +58,9 @@ namespace CapaNegocio
         public void nuevoPagoInfraccion(PagoInfraccion pagoInf)
         {
             pagosInfracciones.Add(pagoInf);
+
+            Vehiculo vehiculo = pagoInf.ObtenerVehiculo;
+            vehiculo.agregarInfraccion(pagoInf);
         }
 
         public List<Infraccion> getInfracciones()
