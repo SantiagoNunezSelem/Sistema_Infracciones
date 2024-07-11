@@ -15,7 +15,7 @@ namespace Sistema_Infracciones
 {
     public partial class InformacionPagos : MaterialForm
     {
-        private Administradora adm = new Administradora();
+        private Administradora adm = Administradora.getInstanciaAdministradora();
         private Vehiculo vehiculoSeleccionado;
         public InformacionPagos()
         {
@@ -30,15 +30,6 @@ namespace Sistema_Infracciones
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-        }
-        
-        private void InformacionPagos_Load(object sender, EventArgs e)
-        {
-            /*
-            labelModeloVehiculo.Text = "Modelo Vehículo";
-            labelDniPropietario.Text = "DNI Propietario";
-            infoBusquedaDominioVehiculo.Text = "";
-            */
         }
 
         private void inputDominioVehiculo_TextChanged(object sender, EventArgs e)
