@@ -56,6 +56,12 @@
     <Compile Include="AgregarInfraccionVehiculo.Designer.cs">
       <DependentUpon>AgregarInfraccionVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarVehiculo.Designer.cs">
+      <DependentUpon>AgregarVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregarInfraccionVehiculo.resx">
       <DependentUpon>AgregarInfraccionVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarVehiculo.resx">
+      <DependentUpon>AgregarVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
