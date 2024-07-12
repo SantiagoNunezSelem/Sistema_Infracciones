@@ -10,8 +10,8 @@ namespace CapaNegocio
     public class InfraccionLeve : Infraccion
     {
 
-        private const double porcentaje_descuento_20dias = 25 / 100;
-        private const double porcentaje_descuento_10dias = 15 / 100;
+        private const decimal porcentaje_descuento_20dias = 1-(25m / 100m);
+        private const decimal porcentaje_descuento_10dias = 1-(15m / 100m);
 
         public InfraccionLeve(string codigo, string nombre, string descripcion, decimal importe) :
             base(codigo, nombre, descripcion, importe)
@@ -27,22 +27,20 @@ namespace CapaNegocio
             return false;
         }
 
-        public override double getDescuento(DateTime fechaVencimiento)
+        public override decimal getDescuento(DateTime fechaVencimiento)
         {
-            double result = 0;
-
             var diff = (fechaVencimiento - DateTime.Today).TotalDays;
 
             if (diff >= 20)
             {
-                result = porcentaje_descuento_20dias;
+                return porcentaje_descuento_20dias;
             }
-            else if (diff >= 10)
+            if (diff >= 10)
             {
-                result = porcentaje_descuento_10dias;
+                return porcentaje_descuento_10dias;
             }
 
-            return result;
+            return 1;
         }
 
         public override void armar(ArrayList l)

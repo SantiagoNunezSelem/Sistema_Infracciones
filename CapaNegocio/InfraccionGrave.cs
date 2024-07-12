@@ -9,7 +9,7 @@ namespace CapaNegocio
 {
     public class InfraccionGrave : Infraccion
     {
-        private const double porcentaje_descuento_25dias = 20 / 100;
+        private const decimal porcentaje_descuento_25dias = 1-(20m / 100m);
 
         public InfraccionGrave(string codigo, string nombre, string descripcion, decimal importe) :
            base(codigo, nombre,descripcion, importe)
@@ -26,18 +26,16 @@ namespace CapaNegocio
             return true;
         }
 
-        public override double getDescuento(DateTime fechaVencimiento)
+        public override decimal getDescuento(DateTime fechaVencimiento)
         {
-            double result = 0;
-
             var diff = (fechaVencimiento - DateTime.Today).TotalDays;
 
             if (diff >= 25)
             {
-                result = porcentaje_descuento_25dias;
+                return porcentaje_descuento_25dias;
             }
 
-            return result;
+            return 1;
         }
 
         public override void armar(ArrayList l)
@@ -56,10 +54,5 @@ namespace CapaNegocio
 
             return l;
         }
-
-
-
-
-
     }
 }
