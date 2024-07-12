@@ -36,11 +36,16 @@ namespace CapaNegocio
 
         public abstract ArrayList desarmar();
 
-        public abstract double getDescuento(DateTime fechaVencimiento);
-
         public bool esInfraccion(string codigo)
         {
             return (this.codigo.Equals(codigo));
+        }
+
+        public abstract decimal getDescuento(DateTime fechaVencimiento);
+
+        public decimal getImporteInfraccionConDescuento(DateTime fechaVencimientoInfraccion)
+        {
+            return importe * getDescuento(fechaVencimientoInfraccion);
         }
         public string Codigo
         {
@@ -61,7 +66,6 @@ namespace CapaNegocio
         public decimal Importe
         {
             get { return importe; }
-            set { importe = value; }
         }
     }
 
