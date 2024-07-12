@@ -49,7 +49,7 @@ namespace Sistema_Infracciones
                 }
                 else
                 {
-                    listBoxPagosPendientes.Items.Clear();
+                    listBoxPagosPendientes.DataSource = null;
                     inputModeloVehiculo.Text = "";
                     inputDNIPropietario.Text = "";
                     this.vehiculoSeleccionado = null;
@@ -64,20 +64,84 @@ namespace Sistema_Infracciones
         public void getInfoPagos(string dominio)
         {
             List<PagoInfraccion> pagosInfracciones = new List<PagoInfraccion>();
-
+            
             pagosInfracciones = vehiculoSeleccionado.getPagosInfraccionesPendientes();
-            if (pagosInfracciones != null)
-            {
-                foreach (PagoInfraccion pago in pagosInfracciones)
-                {
-                    listBoxPagosPendientes.Items.Add(pago);
-                }
-            }
+
+            listBoxPagosPendientes.DataSource = pagosInfracciones;
+            listBoxPagosPendientes.DisplayMember = "DisplayTextPagoPendiente";
         }
 
         private void listBoxPagosPendientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            PagoInfraccion pagoinfraccion = (PagoInfraccion)listBoxPagosPendientes.SelectedItem;
+            if (pagoinfraccion != null)
+            {
+                Infraccion infraccion = pagoinfraccion.ObtenerInfraccion;
+
+                inputIdPagoInfraccion.Text = pagoinfraccion.Id.ToString();
+                inputCodigoInfraccion.Text = infraccion.Codigo;
+                inputNombreInfraccion.Text = infraccion.Nombre;
+
+                if (infraccion.esInfraccionGrave())
+                {
+                    inputGravedadInfraccion.Text = "Infraccion Grave";
+                }
+                else
+                {
+                    inputGravedadInfraccion.Text = "Infraccion Leve";
+                }
+
+                DateTime fechaVencimiento = pagoinfraccion.getFechaVencimiento();
+
+                decimal pago = infraccion.Importe;
+                decimal pagoConDescuento = pagoinfraccion.getImportePendienteInfraccion();
+                inputImportePendiente.Text = "$ " + pago.ToString();
+
+                if (pagoConDescuento != pago)
+                {
+                    inputImportePendienteDescuento.Visible = true;
+                    inputImportePendienteDescuento.Text = "$ " + pagoConDescuento.ToString();
+
+                    int descuento = (int)(100 - pagoConDescuento * 100 / pago);
+                    inputDescuento.Visible = true;
+                    inputDescuento.Text = "% " + descuento.ToString();
+                }
+                else
+                {
+                    inputImportePendienteDescuento.Visible = false;
+                    inputDescuento.Visible = false;
+                }
+            }
+            else
+            {
+                inputIdPagoInfraccion.Text = "";
+                inputCodigoInfraccion.Text = "";
+                inputNombreInfraccion.Text = "";
+                inputGravedadInfraccion.Text = "";
+                inputImportePendiente.Text = "";
+                inputImportePendienteDescuento.Visible = false;
+                inputDescuento.Visible = false;
+            }
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            if(inputImportePendiente.Text != "")
+            {
+                PagoInfraccion pagoinfraccion = (PagoInfraccion)listBoxPagosPendientes.SelectedItem;
+                decimal importePagado;
+
+                importePagado = pagoinfraccion.getImportePendienteInfraccion();
+
+                pagoinfraccion.agregarPago(importePagado);
+
+                MessageBox.Show("Pago Infracción ralizado con exito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No seleccionó una Infracción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

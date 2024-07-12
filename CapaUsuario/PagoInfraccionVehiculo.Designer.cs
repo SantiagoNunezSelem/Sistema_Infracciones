@@ -34,11 +34,13 @@
             this.listBoxPagosPendientes = new System.Windows.Forms.ListBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.inputNombreInfraccion = new MaterialSkin.Controls.MaterialTextBox();
-            this.inputImporteAPagar = new MaterialSkin.Controls.MaterialTextBox();
             this.inputCodigoInfraccion = new MaterialSkin.Controls.MaterialTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.inputImporteFinalPendiente = new MaterialSkin.Controls.MaterialTextBox();
+            this.inputImportePendiente = new MaterialSkin.Controls.MaterialTextBox();
             this.inputGravedadInfraccion = new MaterialSkin.Controls.MaterialTextBox();
+            this.inputImportePendienteDescuento = new MaterialSkin.Controls.MaterialTextBox();
+            this.inputDescuento = new MaterialSkin.Controls.MaterialTextBox();
+            this.inputIdPagoInfraccion = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // inputModeloVehiculo
@@ -47,7 +49,7 @@
             this.inputModeloVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputModeloVehiculo.Depth = 0;
             this.inputModeloVehiculo.Enabled = false;
-            this.inputModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputModeloVehiculo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputModeloVehiculo.Hint = "Modelo";
             this.inputModeloVehiculo.LeadingIcon = null;
             this.inputModeloVehiculo.Location = new System.Drawing.Point(50, 173);
@@ -66,7 +68,7 @@
             this.inputDNIPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputDNIPropietario.Depth = 0;
             this.inputDNIPropietario.Enabled = false;
-            this.inputDNIPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputDNIPropietario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputDNIPropietario.Hint = "DNI Propietario";
             this.inputDNIPropietario.LeadingIcon = null;
             this.inputDNIPropietario.Location = new System.Drawing.Point(50, 248);
@@ -150,10 +152,10 @@
             this.inputNombreInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputNombreInfraccion.Depth = 0;
             this.inputNombreInfraccion.Enabled = false;
-            this.inputNombreInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputNombreInfraccion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputNombreInfraccion.Hint = "Nombre Infracción";
             this.inputNombreInfraccion.LeadingIcon = null;
-            this.inputNombreInfraccion.Location = new System.Drawing.Point(666, 198);
+            this.inputNombreInfraccion.Location = new System.Drawing.Point(675, 258);
             this.inputNombreInfraccion.MaxLength = 50;
             this.inputNombreInfraccion.MouseState = MaterialSkin.MouseState.OUT;
             this.inputNombreInfraccion.Multiline = false;
@@ -163,34 +165,16 @@
             this.inputNombreInfraccion.Text = "";
             this.inputNombreInfraccion.TrailingIcon = null;
             // 
-            // inputImporteAPagar
-            // 
-            this.inputImporteAPagar.AnimateReadOnly = false;
-            this.inputImporteAPagar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputImporteAPagar.Depth = 0;
-            this.inputImporteAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.inputImporteAPagar.Hint = "Importe a Pagar";
-            this.inputImporteAPagar.LeadingIcon = null;
-            this.inputImporteAPagar.Location = new System.Drawing.Point(298, 354);
-            this.inputImporteAPagar.MaxLength = 50;
-            this.inputImporteAPagar.MouseState = MaterialSkin.MouseState.OUT;
-            this.inputImporteAPagar.Multiline = false;
-            this.inputImporteAPagar.Name = "inputImporteAPagar";
-            this.inputImporteAPagar.Size = new System.Drawing.Size(223, 50);
-            this.inputImporteAPagar.TabIndex = 30;
-            this.inputImporteAPagar.Text = "";
-            this.inputImporteAPagar.TrailingIcon = null;
-            // 
             // inputCodigoInfraccion
             // 
             this.inputCodigoInfraccion.AnimateReadOnly = false;
             this.inputCodigoInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputCodigoInfraccion.Depth = 0;
             this.inputCodigoInfraccion.Enabled = false;
-            this.inputCodigoInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputCodigoInfraccion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputCodigoInfraccion.Hint = "Codigo Infracción";
             this.inputCodigoInfraccion.LeadingIcon = null;
-            this.inputCodigoInfraccion.Location = new System.Drawing.Point(666, 137);
+            this.inputCodigoInfraccion.Location = new System.Drawing.Point(675, 197);
             this.inputCodigoInfraccion.MaxLength = 50;
             this.inputCodigoInfraccion.MouseState = MaterialSkin.MouseState.OUT;
             this.inputCodigoInfraccion.Multiline = false;
@@ -218,25 +202,26 @@
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // inputImporteFinalPendiente
+            // inputImportePendiente
             // 
-            this.inputImporteFinalPendiente.AnimateReadOnly = false;
-            this.inputImporteFinalPendiente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputImporteFinalPendiente.Depth = 0;
-            this.inputImporteFinalPendiente.Enabled = false;
-            this.inputImporteFinalPendiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.inputImporteFinalPendiente.Hint = "Importe Final Pendiente";
-            this.inputImporteFinalPendiente.LeadingIcon = null;
-            this.inputImporteFinalPendiente.Location = new System.Drawing.Point(48, 354);
-            this.inputImporteFinalPendiente.MaxLength = 50;
-            this.inputImporteFinalPendiente.MouseState = MaterialSkin.MouseState.OUT;
-            this.inputImporteFinalPendiente.Multiline = false;
-            this.inputImporteFinalPendiente.Name = "inputImporteFinalPendiente";
-            this.inputImporteFinalPendiente.Size = new System.Drawing.Size(223, 50);
-            this.inputImporteFinalPendiente.TabIndex = 33;
-            this.inputImporteFinalPendiente.Text = "";
-            this.inputImporteFinalPendiente.TrailingIcon = null;
+            this.inputImportePendiente.AnimateReadOnly = false;
+            this.inputImportePendiente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputImportePendiente.Depth = 0;
+            this.inputImportePendiente.Enabled = false;
+            this.inputImportePendiente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputImportePendiente.Hint = "Importe Infraccion";
+            this.inputImportePendiente.LeadingIcon = null;
+            this.inputImportePendiente.Location = new System.Drawing.Point(48, 354);
+            this.inputImportePendiente.MaxLength = 50;
+            this.inputImportePendiente.MouseState = MaterialSkin.MouseState.OUT;
+            this.inputImportePendiente.Multiline = false;
+            this.inputImportePendiente.Name = "inputImportePendiente";
+            this.inputImportePendiente.Size = new System.Drawing.Size(223, 50);
+            this.inputImportePendiente.TabIndex = 33;
+            this.inputImportePendiente.Text = "";
+            this.inputImportePendiente.TrailingIcon = null;
             // 
             // inputGravedadInfraccion
             // 
@@ -244,10 +229,10 @@
             this.inputGravedadInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputGravedadInfraccion.Depth = 0;
             this.inputGravedadInfraccion.Enabled = false;
-            this.inputGravedadInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputGravedadInfraccion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputGravedadInfraccion.Hint = "Gravedad Infracción";
             this.inputGravedadInfraccion.LeadingIcon = null;
-            this.inputGravedadInfraccion.Location = new System.Drawing.Point(666, 258);
+            this.inputGravedadInfraccion.Location = new System.Drawing.Point(675, 318);
             this.inputGravedadInfraccion.MaxLength = 50;
             this.inputGravedadInfraccion.MouseState = MaterialSkin.MouseState.OUT;
             this.inputGravedadInfraccion.Multiline = false;
@@ -257,16 +242,77 @@
             this.inputGravedadInfraccion.Text = "";
             this.inputGravedadInfraccion.TrailingIcon = null;
             // 
+            // inputImportePendienteDescuento
+            // 
+            this.inputImportePendienteDescuento.AnimateReadOnly = false;
+            this.inputImportePendienteDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputImportePendienteDescuento.Depth = 0;
+            this.inputImportePendienteDescuento.Enabled = false;
+            this.inputImportePendienteDescuento.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputImportePendienteDescuento.Hint = "Importe con Descuento";
+            this.inputImportePendienteDescuento.LeadingIcon = null;
+            this.inputImportePendienteDescuento.Location = new System.Drawing.Point(294, 354);
+            this.inputImportePendienteDescuento.MaxLength = 50;
+            this.inputImportePendienteDescuento.MouseState = MaterialSkin.MouseState.OUT;
+            this.inputImportePendienteDescuento.Multiline = false;
+            this.inputImportePendienteDescuento.Name = "inputImportePendienteDescuento";
+            this.inputImportePendienteDescuento.Size = new System.Drawing.Size(221, 50);
+            this.inputImportePendienteDescuento.TabIndex = 30;
+            this.inputImportePendienteDescuento.Text = "";
+            this.inputImportePendienteDescuento.TrailingIcon = null;
+            this.inputImportePendienteDescuento.Visible = false;
+            // 
+            // inputDescuento
+            // 
+            this.inputDescuento.AnimateReadOnly = false;
+            this.inputDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputDescuento.Depth = 0;
+            this.inputDescuento.Enabled = false;
+            this.inputDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputDescuento.Hint = "Descuento";
+            this.inputDescuento.LeadingIcon = null;
+            this.inputDescuento.Location = new System.Drawing.Point(538, 354);
+            this.inputDescuento.MaxLength = 50;
+            this.inputDescuento.MouseState = MaterialSkin.MouseState.OUT;
+            this.inputDescuento.Multiline = false;
+            this.inputDescuento.Name = "inputDescuento";
+            this.inputDescuento.Size = new System.Drawing.Size(96, 50);
+            this.inputDescuento.TabIndex = 35;
+            this.inputDescuento.Text = "";
+            this.inputDescuento.TrailingIcon = null;
+            this.inputDescuento.Visible = false;
+            // 
+            // inputIdPagoInfraccion
+            // 
+            this.inputIdPagoInfraccion.AnimateReadOnly = false;
+            this.inputIdPagoInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputIdPagoInfraccion.Depth = 0;
+            this.inputIdPagoInfraccion.Enabled = false;
+            this.inputIdPagoInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputIdPagoInfraccion.Hint = "ID Pago Infraccion";
+            this.inputIdPagoInfraccion.LeadingIcon = null;
+            this.inputIdPagoInfraccion.Location = new System.Drawing.Point(675, 137);
+            this.inputIdPagoInfraccion.MaxLength = 50;
+            this.inputIdPagoInfraccion.MouseState = MaterialSkin.MouseState.OUT;
+            this.inputIdPagoInfraccion.Multiline = false;
+            this.inputIdPagoInfraccion.Name = "inputIdPagoInfraccion";
+            this.inputIdPagoInfraccion.Size = new System.Drawing.Size(223, 50);
+            this.inputIdPagoInfraccion.TabIndex = 36;
+            this.inputIdPagoInfraccion.Text = "";
+            this.inputIdPagoInfraccion.TrailingIcon = null;
+            // 
             // PagoInfraccionVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 505);
+            this.Controls.Add(this.inputIdPagoInfraccion);
+            this.Controls.Add(this.inputDescuento);
             this.Controls.Add(this.inputGravedadInfraccion);
-            this.Controls.Add(this.inputImporteFinalPendiente);
+            this.Controls.Add(this.inputImportePendiente);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.inputCodigoInfraccion);
-            this.Controls.Add(this.inputImporteAPagar);
+            this.Controls.Add(this.inputImportePendienteDescuento);
             this.Controls.Add(this.inputNombreInfraccion);
             this.Controls.Add(this.listBoxPagosPendientes);
             this.Controls.Add(this.materialLabel1);
@@ -288,10 +334,12 @@
         private System.Windows.Forms.ListBox listBoxPagosPendientes;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialTextBox inputNombreInfraccion;
-        private MaterialSkin.Controls.MaterialTextBox inputImporteAPagar;
         private MaterialSkin.Controls.MaterialTextBox inputCodigoInfraccion;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialTextBox inputImporteFinalPendiente;
+        private MaterialSkin.Controls.MaterialTextBox inputImportePendiente;
         private MaterialSkin.Controls.MaterialTextBox inputGravedadInfraccion;
+        private MaterialSkin.Controls.MaterialTextBox inputImportePendienteDescuento;
+        private MaterialSkin.Controls.MaterialTextBox inputDescuento;
+        private MaterialSkin.Controls.MaterialTextBox inputIdPagoInfraccion;
     }
 }
