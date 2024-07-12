@@ -27,16 +27,6 @@ namespace CapaNegocio
             infracciones.Add(infra);
             InfraccionLeve infra2 = new InfraccionLeve("2", "Exceso de Velocidad", "soy otra descripcion", 10000);
             infracciones.Add(infra2);
-
-            Vehiculo vehiculo = new Vehiculo("111","11111111","modelo1");
-            vehiculos.Add(vehiculo);
-
-            PagoInfraccion pagInf = new PagoInfraccion(infra, vehiculo,DateTime.Now , 0); //Va a ser la Pendiente
-            vehiculo.agregarInfraccion(pagInf);
-            PagoInfraccion pagInf2 = new PagoInfraccion(infra, vehiculo, new DateTime(2023,04,01), 0);//Va a ser la Vencida
-            vehiculo.agregarInfraccion(pagInf2);
-            PagoInfraccion pagInf3 = new PagoInfraccion(infra, vehiculo, DateTime.Now, 5000);//Va a ser la Concretada
-            vehiculo.agregarInfraccion(pagInf3);
         }
 
 
@@ -48,6 +38,17 @@ namespace CapaNegocio
                 instancia = adm;
             }
             return instancia;
+        }
+
+        public int getSiguienteIdPagoInfraccion()
+        {
+            //Tener en cuenta que los id van de 0 a n y el ultimo elemento de la lista es el id mas grande
+            if(pagosInfracciones.Count != 0)
+            {
+                int i = pagosInfracciones.Count -1;
+                return pagosInfracciones[i].Id+1;
+            }
+            return 1;
         }
 
         public void agregarTipoInfraccion(Infraccion inf)
@@ -90,8 +91,5 @@ namespace CapaNegocio
         static void Main()
         {
         }
-
-
-
     }
 }
