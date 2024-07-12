@@ -61,25 +61,35 @@ namespace Sistema_Infracciones
             string dniPropietario = inputDNIPropietario.Text;
             string modelo = inputModeloVehiculo.Text;
 
-            if (inputDominioVehiculo != null)
+            if (inputDominioVehiculo.Text != "")
             {
-                if( inputModeloVehiculo != null)
+                Vehiculo buscarVehiculo;
+
+                buscarVehiculo = adm.getVehiculo(dominio);
+                if (buscarVehiculo == null)
                 {
-                    if(inputDNIPropietario != null)
+                    if (inputModeloVehiculo.Text != "")
                     {
-                        Vehiculo nuevoVehiculo = new Vehiculo(dominio, dniPropietario, modelo);
-                        adm.agregarVehiculo(nuevoVehiculo);
-                        MessageBox.Show("Vehículo registrado con exito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        if (inputDNIPropietario.Text != "")
+                        {
+                            Vehiculo nuevoVehiculo = new Vehiculo(dominio, dniPropietario, modelo);
+                            adm.agregarVehiculo(nuevoVehiculo);
+                            MessageBox.Show("Vehículo registrado con exito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ingresó el DNI del propietario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No se ingresó el DNI del propietario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se ingresó el modelo del vehículo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se ingresó el modelo del vehículo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El vehículo ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
