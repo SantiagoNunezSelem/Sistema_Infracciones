@@ -35,31 +35,30 @@ namespace Sistema_Infracciones
         private void inputDominioVehiculo_TextChanged(object sender, EventArgs e)
         {
             string dominio = inputDominioVehiculo.Text;
-            if (dominio != "")
+            
+            Vehiculo buscarVehiculo = adm.getVehiculo(dominio);
+
+            if (buscarVehiculo != null)
             {
-                Vehiculo buscarVehiculo = adm.getVehiculo(dominio);
+                infoBusquedaDominioVehiculo.Text = "Encontrado";
+                inputModeloVehiculo.Text = buscarVehiculo.Modelo;
+                inputDNIPropietario.Text = buscarVehiculo.DniPropietario;
+                this.vehiculoSeleccionado = buscarVehiculo;
 
-                if (buscarVehiculo != null)
-                {
-                    infoBusquedaDominioVehiculo.Text = "Encontrado";
-                    inputModeloVehiculo.Text = buscarVehiculo.Modelo;
-                    inputDNIPropietario.Text = buscarVehiculo.DniPropietario;
-                    this.vehiculoSeleccionado = buscarVehiculo;
-
-                    getInfoPagos(dominio);
-                }
-                else
-                {
-                    listBoxPagosConcretados.Items.Clear();
-                    listBoxPagosPendientes.Items.Clear();
-                    listBoxPagosVencidos.Items.Clear();
-                    infoBusquedaDominioVehiculo.Text = "No existe";
-                    inputModeloVehiculo.Text = "";
-                    inputDNIPropietario.Text = "";
-                    this.vehiculoSeleccionado = null;
-                }
+                getInfoPagos(dominio);
             }
             else
+            {
+                listBoxPagosConcretados.Items.Clear();
+                listBoxPagosPendientes.Items.Clear();
+                listBoxPagosVencidos.Items.Clear();
+                infoBusquedaDominioVehiculo.Text = "No existe";
+                inputModeloVehiculo.Text = "";
+                inputDNIPropietario.Text = "";
+                this.vehiculoSeleccionado = null;
+            }
+
+            if(dominio == "")
             {
                 this.vehiculoSeleccionado = null;
                 infoBusquedaDominioVehiculo.Text = "";
@@ -68,32 +67,39 @@ namespace Sistema_Infracciones
 
         public void getInfoPagos(string dominio)
         {
-            List<PagoInfraccion> pagosInfracciones = new List<PagoInfraccion>();
-
-            pagosInfracciones = vehiculoSeleccionado.getPagosInfraccionesPendientes();
-            if(pagosInfracciones != null)
+            List<PagoInfraccion> pagosPendientes = vehiculoSeleccionado.getPagosInfraccionesPendientes();
+            if (pagosPendientes != null)
             {
-                foreach (PagoInfraccion pago in pagosInfracciones)
+                if (pagosPendientes.Count == 0)
+                    listBoxPagosPendientes.Items.Add("-- No tiene Pagos Pendientes --");
+                else
                 {
-                    listBoxPagosPendientes.Items.Add(pago);
+                    listBoxPagosPendientes.DataSource = pagosPendientes;
+                    listBoxPagosPendientes.DisplayMember = "DisplayTextPagoPendiente";
                 }
             }
 
-            pagosInfracciones = vehiculoSeleccionado.getPagosInfraccionesConcretadas();
-            if (pagosInfracciones != null)
+            List<PagoInfraccion> pagosConcretados = vehiculoSeleccionado.getPagosInfraccionesConcretadas();
+            if (pagosConcretados != null)
             {
-                foreach (PagoInfraccion pago in pagosInfracciones)
+                if (pagosConcretados.Count == 0)
+                    listBoxPagosConcretados.Items.Add("-- No tiene Pagos Concretados --");
+                else
                 {
-                    listBoxPagosConcretados.Items.Add(pago);
+                    listBoxPagosConcretados.DataSource = pagosConcretados;
+                    listBoxPagosConcretados.DisplayMember = "DisplayTextPagoConcretado";
                 }
             }
 
-            pagosInfracciones = vehiculoSeleccionado.getPagosInfraccionesVencidas();
-            if (pagosInfracciones != null)
+            List<PagoInfraccion> pagosVencidos = vehiculoSeleccionado.getPagosInfraccionesVencidas();
+            if (pagosVencidos != null)
             {
-                foreach (PagoInfraccion pago in pagosInfracciones)
+                if (pagosVencidos.Count == 0)
+                    listBoxPagosVencidos.Items.Add("-- No tiene Pagos Vencidos --");
+                else
                 {
-                    listBoxPagosVencidos.Items.Add(pago);
+                    listBoxPagosVencidos.DataSource = pagosVencidos;
+                    listBoxPagosVencidos.DisplayMember = "DisplayTextPagoVencido";
                 }
             }
         }
