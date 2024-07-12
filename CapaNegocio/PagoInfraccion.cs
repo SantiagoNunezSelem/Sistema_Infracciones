@@ -8,17 +8,20 @@ namespace CapaNegocio
 {
     public class PagoInfraccion
     {
+        private int id;
         private Infraccion infraccion;
         private Vehiculo vehiculo;
         private DateTime fechaInfraccion;
         private decimal importePagado;
+        private bool pagoCompletado; //Si la infraccion se paga por completo y luego un descuento se deshabilita esta variable bool va a indicar que el pago esta finalizado de igual forma
 
-        public PagoInfraccion(Infraccion infraccion, Vehiculo vehiculo, DateTime fechaInfraccion, decimal importePagado)
+        public PagoInfraccion(int id, Infraccion infraccion, Vehiculo vehiculo, DateTime fechaInfraccion)
         {
+            this.id = id;
             this.infraccion = infraccion;
             this.vehiculo = vehiculo;
             this.fechaInfraccion = fechaInfraccion;
-            this.importePagado = importePagado;
+            pagoCompletado = false;
         }
 
         public bool fechaPagoVencida()
@@ -30,17 +33,33 @@ namespace CapaNegocio
                 return false;
         }
 
-        public decimal pagoPendiente()
+        public DateTime getFechaVencimiento()
         {
-            return infraccion.Importe - importePagado;
+            return fechaInfraccion.AddMonths(1);
+        }
+
+        public decimal getImportePendienteInfraccion()
+        {
+            return getImporteInfraccion() - importePagado;
+        }
+        public decimal getImporteInfraccion()
+        {
+            return infraccion.getImporteInfraccionConDescuento(fechaInfraccion.AddMonths(1));
+        }
+
+        public void agregarPago(decimal pago)
+        {
+            importePagado += pago;
+
+            if(getImportePendienteInfraccion() == 0)
+            {
+                this.pagoCompletado = true;
+            }
         }
 
         public bool pagoCompleto()
         {
-            if (this.importePagado == infraccion.Importe)
-                return true;
-            else
-                return false;
+            return this.pagoCompletado;
         }
 
         public bool estadoPagoPendiente()
@@ -63,21 +82,48 @@ namespace CapaNegocio
 
         public bool estadoPagoVencido()
         {
-            if (fechaPagoVencida())
+            if (!pagoCompleto() && fechaPagoVencida())
                 return true;
             else
                 return false;
         }
 
+        public int Id
+        {
+            get { return id; }
+        }
+
+        public Infraccion ObtenerInfraccion
+        {
+            get { return  infraccion; }
+        }
         public Vehiculo ObtenerVehiculo
         {
-            get{ return vehiculo; }
+            get { return vehiculo; }
         }
-
-        public override string ToString()
+        /* Se utiliza en los listbox (displayMember) para mostrar informacion */
+        public string DisplayTextPagoPendiente
         {
-            return " " + fechaInfraccion.ToShortDateString() + "  -  Pendiente: $" + pagoPendiente(); 
+            get
+            {
+                return " " + fechaInfraccion.ToShortDateString() + "  -  Pendiente: $" + getImportePendienteInfraccion();
+            }
         }
 
+        public string DisplayTextPagoConcretado
+        {
+            get
+            {
+                return " " + fechaInfraccion.ToShortDateString() + "  -  Pago: $" + importePagado;
+            }
+        }
+
+        public string DisplayTextPagoVencido
+        {
+            get
+            {
+                return " " + fechaInfraccion.ToShortDateString() + "  -  Pendiente: $" + getImportePendienteInfraccion();
+            }
+        }
     }
 }
