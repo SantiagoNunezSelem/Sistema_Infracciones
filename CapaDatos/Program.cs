@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa_de_Datos
+namespace Capa_Datos
 {
-    internal class Program
+    public static class CapaDatos
     {
-        static void Main(string[] args)
+        public static List<object> getVehiculosDB()
         {
+            List<object> vehiculos = new List<object>();
+            return vehiculos;
         }
     }
 }
