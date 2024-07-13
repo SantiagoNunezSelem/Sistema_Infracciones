@@ -16,11 +16,12 @@ namespace Sistema_Infracciones
 {
     public partial class Index : MaterialForm
     {
+        Administradora adm = Administradora.getInstanciaAdministradora();
         public Index()
         {
             InitializeComponent();
 
-            Administradora adm = new Administradora();
+            this.getDataFromDB();
 
             this.Width = 1000;
             this.Height = 550;
@@ -31,6 +32,11 @@ namespace Sistema_Infracciones
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+        }
+
+        private void getDataFromDB()
+        {
+            adm.getVehiculosDB();
         }
 
         private void PagarInfraccionVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
