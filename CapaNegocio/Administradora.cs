@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Capa_Datos;
 
 namespace CapaNegocio
 {
@@ -88,8 +89,9 @@ namespace CapaNegocio
             return infraccion;
         }
 
-        static void Main()
+        public void getVehiculosDB()
         {
+            CapaDatos.getVehiculosDB();
         }
     }
 }
