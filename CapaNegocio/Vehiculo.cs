@@ -95,5 +95,12 @@ namespace CapaNegocio
         {
             get { return modelo; }
         }
+
+        public bool sosVehiculo(string dominio)
+        {
+            return Dominio == dominio;
+        }
     }
+
 }
+

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModificarTipoInfraccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarTipoInfraccion.Designer.cs">
+      <DependentUpon>ModificarTipoInfraccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarInfraccionVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ModificarTipoInfraccion.resx">
+      <DependentUpon>ModificarTipoInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarInfraccionVehiculo.resx">
       <DependentUpon>AgregarInfraccionVehiculo.cs</DependentUpon>
     </EmbeddedResource>

@@ -50,12 +50,15 @@ namespace CapaNegocio
         public string Codigo
         {
             get { return codigo; }
+            set { codigo = value; }
         }
 
         public string Nombre
         {
             get { return nombre; }
+            set { nombre = value; } 
         }
+
 
         public string Descripcion
         {
@@ -66,7 +69,19 @@ namespace CapaNegocio
         public decimal Importe
         {
             get { return importe; }
+            set { importe = value; }
         }
+
+        //Validar sos 
+        public bool sos(string unCod)
+        {
+            return codigo.Equals(unCod);
+        }
+
+
+
     }
+
+
 
 }
