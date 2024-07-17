@@ -62,7 +62,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BDDInfraccionesTransito.accdb">
+    <Content Include="Sistema_Infracciones_DB.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
