@@ -8,7 +8,7 @@ namespace CapaNegocio
 {
     public class Vehiculo
     {
-        private string dominio;
+        private string dominio; // patente
         private string dniPropietario;
         private string modelo;
         private List<PagoInfraccion> pagosInfracciones;

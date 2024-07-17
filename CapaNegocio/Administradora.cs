@@ -29,6 +29,11 @@ namespace CapaNegocio
             infracciones.Add(infra2);
         }
 
+        /** Permite obtener todos los vehículos de un propietario */
+        public List<Vehiculo> getVehiclesByOwner(String ownerDni) {
+            return vehiculos.FindAll(v => v.DniPropietario == ownerDni);
+        }
+
         public void setConnectionDBPath(string path)
         {
             //Originalmente va a traer un directorio del tipo ->    C:\Users\NICOLE\source\repos\SistemaInfracciones\CapaUsuario\bin\Debug
@@ -126,8 +131,14 @@ namespace CapaNegocio
         public void agregarVehiculo(Vehiculo vehiculo)
         {
             vehiculos.Add(vehiculo);
+
+            List<string> vehicleData = new List<string>();
+            vehicleData.Add(vehiculo.Dominio);
+            vehicleData.Add(vehiculo.DniPropietario);
+            vehicleData.Add(vehiculo.Modelo);
+
             //Guardar el vehículo en la base de datos
-            Datos.GuardarVehiculo(vehiculo);
+            Datos.GuardarVehiculo(vehicleData);
         }
 
 

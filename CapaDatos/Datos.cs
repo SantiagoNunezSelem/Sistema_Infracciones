@@ -22,10 +22,8 @@ namespace Capa_Datos
             strCon = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + databasePath;
         }
 
-
-
         //GUARDAR VEHICULO
-        public static void GuardarVehiculo(ArrayList datosVehiculo)
+        public static void GuardarVehiculo(List<string> datosVehiculo)
         {
             string query = "INSERT INTO Vehiculo (Dominio, DniPropietario, Modelo) VALUES (@Dominio, @DniPropietario, @Modelo)";
 
