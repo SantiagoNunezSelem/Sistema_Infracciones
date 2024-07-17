@@ -36,7 +36,8 @@ namespace Sistema_Infracciones
 
         private void getDataFromDB()
         {
-            adm.RecuperarVehiculoDB();
+            adm.setConnectionDBPath(Application.StartupPath);
+            bool state = adm.RecuperarVehiculoDB();
         }
 
         //DE INFRACCION
