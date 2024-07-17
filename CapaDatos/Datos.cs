@@ -18,8 +18,8 @@ namespace Capa_Datos
 
         public static void setConnectionDBPath(string path)
         {
-            string databasePath = path + "\\BDDInfraccionesTransito.accdb";
-            strCon = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + databasePath;
+            string databasePath = path + "\\Sistema_Infracciones_DB.mdb";
+            strCon = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= " + databasePath;
         }
 
         //GUARDAR VEHICULO
@@ -34,9 +34,9 @@ namespace Capa_Datos
                     conn.Open();
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@dominio", datosVehiculo[1]);
-                        cmd.Parameters.AddWithValue("@dniPropietario", datosVehiculo[2]);
-                        cmd.Parameters.AddWithValue("@modelo", datosVehiculo[3]);
+                        cmd.Parameters.AddWithValue("@Dominio", datosVehiculo[0]);
+                        cmd.Parameters.AddWithValue("@DniPropietario", datosVehiculo[1]);
+                        cmd.Parameters.AddWithValue("@Modelo", datosVehiculo[2]);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -86,17 +86,6 @@ namespace Capa_Datos
             }
         }
 
-
-
-
-
-
-
         ////connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath};Persist Security Info=False;";
-        public static List<object> getVehiculosDB()
-        {
-            List<object> vehiculos = new List<object>();
-            return vehiculos;
-        }
     }
 }
