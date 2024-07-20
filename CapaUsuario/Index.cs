@@ -85,7 +85,7 @@ namespace Sistema_Infracciones
         private void registrarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
-            agregarVehiculo .ShowDialog();
+            agregarVehiculo.ShowDialog();
         }
 
         private void infraccionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +93,10 @@ namespace Sistema_Infracciones
 
         }
 
-       
+        private void nuevoTipoInfraccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarNuevoTipoInfraccion nuevoTipoInfraccion = new AgregarNuevoTipoInfraccion();
+            nuevoTipoInfraccion.ShowDialog();
+        }
     }
 }
