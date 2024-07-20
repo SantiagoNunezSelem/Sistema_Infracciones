@@ -109,7 +109,7 @@ namespace CapaNegocio
             Datos.GuardarVehiculo(vehicleData);
         }
 
-        public void nuevoPagoInfraccion(PagoInfraccion pagoInf)
+        public void agregarNuevoPagoInfraccion(PagoInfraccion pagoInf)
         {
             pagosInfracciones.Add(pagoInf);
 
