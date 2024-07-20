@@ -26,25 +26,6 @@ namespace CapaNegocio
             return vehiculos.FindAll(v => v.DniPropietario == ownerDni);
         }
 
-        public void setConnectionDBPath(string path)
-        {
-            //Originalmente va a traer un directorio del tipo ->    C:\Users\NICOLE\source\repos\SistemaInfracciones\CapaUsuario\bin\Debug
-            //esto se debe a que toma la direccion donde se esta ejecutando, en este caso, capa usuario.
-            //hay que acomodarlo para llegar a la capa de datos->   C:\Users\NICOLE\source\repos\SistemaInfracciones\CapaDatos
-
-            string originalPath = path; //hago una copia de la direccion original para adaptarla
-
-            // Parent = te mueve a una carpeta padre, al usarla una vez nos vemos a /CapaUsuario y con la segunda a /SistemaInfracciones
-            string projectRoot = Directory.GetParent(originalPath).Parent.Parent.FullName; //de esta manera estoy parado en SistemaInfracciones
-
-            // Ahora, estando en SistemaInfracciones busco una carpeta llamada "CapaDatos"
-            string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
-
-            Datos.setConnectionDBPath(newPath);
-        }
-
-
-
         public static Administradora getInstanciaAdministradora()
         {
             if (instancia == null)
@@ -54,7 +35,6 @@ namespace CapaNegocio
             }
             return instancia;
         }
-
 
         //METODOS PARA OBTENER LISTAS
         public List<Infraccion> getInfracciones()
@@ -71,7 +51,6 @@ namespace CapaNegocio
         {
             return pagosInfracciones; 
         }
-
 
         //METODOS DE BUSQUEDA
         public int getSiguienteIdPagoInfraccion()
@@ -111,9 +90,6 @@ namespace CapaNegocio
             return null; // Retorna null si no se encuentra
         }
 
-
-
-
         //METODOS PARA AGREGAR
         public void agregarTipoInfraccion(Infraccion inf)
         {
@@ -133,7 +109,6 @@ namespace CapaNegocio
             Datos.GuardarVehiculo(vehicleData);
         }
 
-
         public void nuevoPagoInfraccion(PagoInfraccion pagoInf)
         {
             pagosInfracciones.Add(pagoInf);
@@ -141,10 +116,6 @@ namespace CapaNegocio
             Vehiculo vehiculo = pagoInf.ObtenerVehiculo;
             vehiculo.agregarInfraccion(pagoInf);
         }
-
-
-
-
 
         public void modificarTipoInfraccion(Infraccion infraccion)
         {
@@ -161,8 +132,24 @@ namespace CapaNegocio
             }
         }
 
+        //Obtener info de DB:
+        public void setConnectionDBPath(string path)
+        {
+            //Originalmente va a traer un directorio del tipo ->    C:\Users\NICOLE\source\repos\SistemaInfracciones\CapaUsuario\bin\Debug
+            //esto se debe a que toma la direccion donde se esta ejecutando, en este caso, capa usuario.
+            //hay que acomodarlo para llegar a la capa de datos->   C:\Users\NICOLE\source\repos\SistemaInfracciones\CapaDatos
 
-        //RECUPERA INFORMACION:
+            string originalPath = path; //hago una copia de la direccion original para adaptarla
+
+            // Parent = te mueve a una carpeta padre, al usarla una vez nos vemos a /CapaUsuario y con la segunda a /SistemaInfracciones
+            string projectRoot = Directory.GetParent(originalPath).Parent.Parent.FullName; //de esta manera estoy parado en SistemaInfracciones
+
+            // Ahora, estando en SistemaInfracciones busco una carpeta llamada "CapaDatos"
+            string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
+
+            Datos.setConnectionDBPath(newPath);
+        }
+
         public void getDataFromDB()
         {
             //this.RecuperarInfraccionesLeves();
@@ -170,8 +157,6 @@ namespace CapaNegocio
             this.RecuperarVehiculoDB();
             //this.RecuperarPagoInfracciones();
          }
-
-
 
         //RECUPERAR VEHICULO
         public bool RecuperarVehiculoDB()
