@@ -59,6 +59,11 @@ namespace Sistema_Infracciones
             nuevoTipoInfraccion.ShowDialog();
         }
 
+        private void borrarTipoInfracciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditarTipoInfraccion editarTipoInfraccion = new EditarTipoInfraccion();
+            editarTipoInfraccion.ShowDialog();
+        }
 
         //DE PAGOS
         private void informacionPagosToolStripMenuItem_Click(object sender, EventArgs e)
