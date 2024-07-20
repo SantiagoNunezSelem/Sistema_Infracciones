@@ -102,6 +102,7 @@ namespace Sistema_Infracciones
             this.borrarTipoInfracciónToolStripMenuItem.Name = "borrarTipoInfracciónToolStripMenuItem";
             this.borrarTipoInfracciónToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.borrarTipoInfracciónToolStripMenuItem.Text = "Editar Tipo Infracción";
+            this.borrarTipoInfracciónToolStripMenuItem.Click += new System.EventHandler(this.borrarTipoInfracciónToolStripMenuItem_Click);
             // 
             // editarTipoInfracciónToolStripMenuItem
             // 
@@ -120,7 +121,7 @@ namespace Sistema_Infracciones
             // registrarVehiculoToolStripMenuItem
             // 
             this.registrarVehiculoToolStripMenuItem.Name = "registrarVehiculoToolStripMenuItem";
-            this.registrarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.registrarVehiculoToolStripMenuItem.Text = "Registrar Vehiculo";
             this.registrarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.registrarVehiculoToolStripMenuItem_Click);
             // 
