@@ -81,6 +81,11 @@ namespace CapaNegocio
             pagosInfracciones.Add(pagoInfraccion);
         }
 
+        public void eliminarInfraccion(PagoInfraccion pagoInfraccion)
+        {
+            pagosInfracciones.Remove(pagoInfraccion);
+        }
+
         public string Dominio
         {
             get { return dominio; }
