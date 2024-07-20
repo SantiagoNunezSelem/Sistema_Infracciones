@@ -65,6 +65,12 @@ namespace Sistema_Infracciones
             editarTipoInfraccion.ShowDialog();
         }
 
+        private void BorrarTipoInfracciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminarTipoInfraccion eliminarTipoInfraccion = new EliminarTipoInfraccion();
+            eliminarTipoInfraccion.ShowDialog();
+        }
+
         //DE PAGOS
         private void informacionPagosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -78,7 +84,5 @@ namespace Sistema_Infracciones
             AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
             agregarVehiculo.ShowDialog();
         }
-
-        
     }
 }
