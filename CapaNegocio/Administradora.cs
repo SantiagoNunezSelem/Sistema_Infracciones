@@ -19,8 +19,6 @@ namespace CapaNegocio
             infracciones = new List<Infraccion>();
             vehiculos = new List<Vehiculo>();
             pagosInfracciones = new List<PagoInfraccion>();
-
-            this.RecuperarDatos();
         }
 
         /** Permite obtener todos los vehículos de un propietario */
@@ -165,7 +163,7 @@ namespace CapaNegocio
 
 
         //RECUPERA INFORMACION:
-        public void RecuperarDatos()
+        public void getDataFromDB()
         {
             //this.RecuperarInfraccionesLeves();
            // this.RecuperarInfraccionesGraves();
