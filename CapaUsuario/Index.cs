@@ -53,7 +53,7 @@ namespace Sistema_Infracciones
             agregarInfraccionVehiculo.ShowDialog();
         }
 
-        private void nuevoTipoInfraccionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nuevoTipoInfraccionToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             AgregarNuevoTipoInfraccion nuevoTipoInfraccion = new AgregarNuevoTipoInfraccion();
             nuevoTipoInfraccion.ShowDialog();
