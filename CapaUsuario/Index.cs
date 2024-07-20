@@ -53,6 +53,12 @@ namespace Sistema_Infracciones
             agregarInfraccionVehiculo.ShowDialog();
         }
 
+        private void nuevoTipoInfraccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarNuevoTipoInfraccion nuevoTipoInfraccion = new AgregarNuevoTipoInfraccion();
+            nuevoTipoInfraccion.ShowDialog();
+        }
+
 
         //DE PAGOS
         private void informacionPagosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,12 +72,6 @@ namespace Sistema_Infracciones
         {
             AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
             agregarVehiculo.ShowDialog();
-        }
-
-        private void nuevoTipoInfraccionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AgregarNuevoTipoInfraccion nuevoTipoInfraccion = new AgregarNuevoTipoInfraccion();
-            nuevoTipoInfraccion.ShowDialog();
         }
     }
 }
