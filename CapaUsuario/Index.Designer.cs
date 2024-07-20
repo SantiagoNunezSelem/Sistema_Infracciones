@@ -96,6 +96,7 @@ namespace Sistema_Infracciones
             this.nuevoTipoInfraccionToolStripMenuItem.Name = "nuevoTipoInfraccionToolStripMenuItem";
             this.nuevoTipoInfraccionToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.nuevoTipoInfraccionToolStripMenuItem.Text = "Agregar Nuevo Tipo de Infracción";
+            this.nuevoTipoInfraccionToolStripMenuItem.Click += new System.EventHandler(this.nuevoTipoInfraccionToolStripMenuItem_Click);
             // 
             // borrarTipoInfracciónToolStripMenuItem
             // 
