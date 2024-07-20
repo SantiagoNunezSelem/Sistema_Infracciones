@@ -132,6 +132,22 @@ namespace CapaNegocio
             }
         }
 
+        public void eliminarTipoInfraccion(Infraccion infraccion)
+        {
+            infracciones.Remove(infraccion);
+
+            for (int i = pagosInfracciones.Count - 1; i >= 0; i--)
+            {
+                PagoInfraccion pagoInfraccion = pagosInfracciones[i];
+
+                if (pagoInfraccion.ObtenerInfraccion == infraccion)
+                {
+                    pagoInfraccion.ObtenerVehiculo.eliminarInfraccion(pagoInfraccion);
+                    pagosInfracciones.RemoveAt(i);
+                }
+            }
+        }
+
         //Obtener info de DB:
         public void setConnectionDBPath(string path)
         {
