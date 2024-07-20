@@ -21,12 +21,6 @@ namespace CapaNegocio
             pagosInfracciones = new List<PagoInfraccion>();
 
             this.RecuperarDatos();
-
-            //Hardcodeado
-            InfraccionGrave infra = new InfraccionGrave("1","Mal Estacionamiento","soy una descripcion",5000);
-            infracciones.Add(infra);
-            InfraccionLeve infra2 = new InfraccionLeve("2", "Exceso de Velocidad", "soy otra descripcion", 10000);
-            infracciones.Add(infra2);
         }
 
         /** Permite obtener todos los vehículos de un propietario */
