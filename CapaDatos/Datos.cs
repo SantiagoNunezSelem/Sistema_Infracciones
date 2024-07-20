@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Data;
 using System.Data.OleDb;
+using System.Runtime.CompilerServices;
 
 
 namespace Capa_Datos
@@ -86,6 +87,72 @@ namespace Capa_Datos
             }
         }
 
-        ////connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath};Persist Security Info=False;";
+        public static int getIdInfraccion(string codigo)
+        {
+            int id = -1;
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    connection.Open();
+
+                    string deletePagosQuery = "SELECT Id FROM Infraccion WHERE Codigo = @Codigo";
+
+                    using (OleDbCommand command = new OleDbCommand(deletePagosQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Codigo", codigo);
+                        id = command.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch
+            {
+
+            }
+            return id;
+            
+        }
+
+        public static bool eliminarTipoInfraccion(string codigo)
+        {
+            //Obtener el id de la infracción en la DB
+            string idInfraccion = getIdInfraccion(codigo);
+
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    connection.Open();
+
+                    // Paso 1: Eliminar los pagos de infracción asociados
+                    string deletePagosQuery = "DELETE FROM PagoInfraccion WHERE idInfraccion = @idInfraccion";
+
+                    using (OleDbCommand command = new OleDbCommand(deletePagosQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@idInfraccion", idInfraccion);
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Paso 2: Eliminar la infracción
+                    string deleteInfraccionQuery = "DELETE FROM Infraccion WHERE id = @idInfraccion";
+
+                    using (OleDbCommand command = new OleDbCommand(deleteInfraccionQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@idInfraccion", idInfraccion);
+                        command.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
