@@ -69,7 +69,6 @@ namespace Sistema_Infracciones
             this.infraccionesToolStripMenuItem.Name = "infraccionesToolStripMenuItem";
             this.infraccionesToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.infraccionesToolStripMenuItem.Text = "Infracciones";
-            this.infraccionesToolStripMenuItem.Click += new System.EventHandler(this.infraccionesToolStripMenuItem_Click);
             // 
             // PagarInfraccionVehiculoToolStripMenuItem
             // 
