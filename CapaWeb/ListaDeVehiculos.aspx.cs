@@ -1,10 +1,7 @@
 ﻿using CapaNegocio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CapaWeb {
     public partial class _ListaDeVehiculos: Page {
@@ -41,6 +38,8 @@ namespace CapaWeb {
             /*Administradora adm = Session["adm"] as Administradora;*/
 
             btnSelect.Text = "Vehículo seleccionado: " + ddlVehiculos.SelectedValue + "/" + ddlVehiculos.SelectedItem;
+
+            Session["dominio"] = ddlVehiculos.SelectedValue;
         }
     }
 }

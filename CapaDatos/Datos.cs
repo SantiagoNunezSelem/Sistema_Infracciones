@@ -118,7 +118,7 @@ namespace Capa_Datos
         public static bool eliminarTipoInfraccion(string codigo)
         {
             //Obtener el id de la infracción en la DB
-            string idInfraccion = getIdInfraccion(codigo);
+            string idInfraccion = "" + getIdInfraccion(codigo);
 
             try
             {
