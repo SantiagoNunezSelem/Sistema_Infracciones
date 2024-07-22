@@ -287,12 +287,12 @@ namespace CapaNegocio
             {
                 foreach (ArrayList p in recuperarPagosDB)
                 {
-                    int id = Convert.ToInt16(p[1]);
-                    string codigoInfraccion = p[2].ToString();
-                    string dominioVehiculo = p[3].ToString();
-                    DateTime fechaInfraccion = Convert.ToDateTime(p[4]);
-                    decimal importePagado = Convert.ToDecimal(p[5]);
-                    bool pagoCompletado = Convert.ToBoolean(p[6]);
+                    int id = Convert.ToInt16(p[0]);
+                    string codigoInfraccion = Datos.getCodigoInfraccionDB(p[1].ToString()).ToString();
+                    string dominioVehiculo = Datos.getDominioVehiculoDB(p[2].ToString()).ToString();
+                    DateTime fechaInfraccion = Convert.ToDateTime(p[3]);
+                    decimal importePagado = Convert.ToDecimal(p[4]);
+                    bool pagoCompletado = Convert.ToBoolean(p[5]);
 
                     //Se obtiene la infracción y vehículo correspondientes
                     Infraccion infraccion = this.getInfraccion(codigoInfraccion);
@@ -300,15 +300,15 @@ namespace CapaNegocio
 
                     //Se crea la instancia del pago
                     PagoInfraccion pago = new PagoInfraccion(id, infraccion, vehiculo, fechaInfraccion);
-                    pago.agregarPago(importePagado);
-                    if (pagoCompletado)
+
+                    if(importePagado != 0)
                     {
-                        //Cambia el estado del pago
-                        pago.agregarPago(pago.getImportePendienteInfraccion()); //Agrega el importe pendiente para completar el pago
+                        pago.agregarPago(importePagado);
                     }
 
-                    // Agregar el pago a la lista de pagos de infraccion
-                    this.pagosInfracciones.Add(pago);
+                    pagosInfracciones.Add(pago);
+
+                    vehiculo.agregarInfraccion(pago);
                 }
                 return true;
             }
