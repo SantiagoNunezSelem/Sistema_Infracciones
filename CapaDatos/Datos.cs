@@ -187,5 +187,148 @@ namespace Capa_Datos
 
             return true;
         }
+
+        // GUARDAR INFRACCION
+        public static void GuardarInfraccion(List<string> datosInfraccion)
+        {
+            string query = "INSERT INTO Infraccion (codigo, nombre, descripcion, importe, esGrave) VALUES (@codigo, @nombre, @descripcion, @importe, @esGrave)";
+
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(strCon))
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Codigo", datosInfraccion[1]);
+                        cmd.Parameters.AddWithValue("@Nombre", datosInfraccion[2]);
+                        cmd.Parameters.AddWithValue("@Descripcion", datosInfraccion[3]);
+                        cmd.Parameters.AddWithValue("@Importe", Convert.ToDecimal(datosInfraccion[4]));
+                        cmd.Parameters.AddWithValue("@EsGrave", Convert.ToBoolean(datosInfraccion[5]));
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+
+
+        //RECUPERAR INFRACCION
+        public static bool RecuperarInfraccionDB(List<ArrayList> infracciones) //obtener lista de tipos de infracciones desde BDD
+        {
+            ArrayList infra;
+            string query = "SELECT * FROM Infraccion";
+            try
+            {
+                conn = new OleDbConnection(strCon);  //Crear instancia de la conexión
+                conn.Open();
+                da = new OleDbDataAdapter(query, conn); //Ejecuta la query
+                ds = new DataSet();
+                da.Fill(ds);  //Guardo la data obtenida
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    infra = new ArrayList();
+                    IEnumerator enumerator = ds.Tables[0].Rows[i].ItemArray.GetEnumerator();
+                    while (enumerator.MoveNext())
+                    {
+                        infra.Add(enumerator.Current);
+                    }
+                    infracciones.Add(infra);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
+        //GUARDAR PAGO INFRACCION
+        public static void GuardarPagoInfraccion(List<string> datosPagoInfraccion)
+        {
+            string query = "INSERT INTO PagoInfraccion (id, idInfraccion, idVehiculo, fechaInfraccion, importePagado, pagoCompletado) " +
+                           "VALUES (@id, @idInfraccion, @idVehiculo, @fechaInfraccion, @importePagado, @pagoCompletado)";
+
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(strCon))
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idInfraccion", datosPagoInfraccion[1]);
+                        cmd.Parameters.AddWithValue("@idVehiculo", datosPagoInfraccion[2]);
+                        cmd.Parameters.AddWithValue("@fechaInfraccion", datosPagoInfraccion[3]);
+                        cmd.Parameters.AddWithValue("@importePagado", datosPagoInfraccion[4]);
+                        cmd.Parameters.AddWithValue("@pagoCompletado", datosPagoInfraccion[5]);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        //RECUPERAR PAGO INFRACCION
+        public static bool RecuperarPagoInfraccionDB(List<ArrayList> pagos)
+        {
+            ArrayList pago;
+            string query = "SELECT * FROM PagoInfraccion";
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(strCon))
+                {
+                    conn.Open();
+                    using (OleDbDataAdapter da = new OleDbDataAdapter(query, conn))
+                    {
+                        DataSet ds = new DataSet();
+                        da.Fill(ds);  // Guardo la data obtenida
+
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            pago = new ArrayList();
+                            IEnumerator enumerator = ds.Tables[0].Rows[i].ItemArray.GetEnumerator();
+                            while (enumerator.MoveNext())
+                            {
+                                pago.Add(enumerator.Current);
+                            }
+                            pagos.Add(pago);
+                        }
+
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+
+
     }
+
 }
+
+
+
