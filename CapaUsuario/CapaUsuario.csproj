@@ -74,6 +74,12 @@
     <Compile Include="EditarTipoInfraccion.Designer.cs">
       <DependentUpon>EditarTipoInfraccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarInfraccionVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarInfraccionVehiculo.Designer.cs">
+      <DependentUpon>EliminarInfraccionVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarTipoInfraccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarTipoInfraccion.resx">
       <DependentUpon>EditarTipoInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarInfraccionVehiculo.resx">
+      <DependentUpon>EliminarInfraccionVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarTipoInfraccion.resx">
       <DependentUpon>EliminarTipoInfraccion.cs</DependentUpon>
