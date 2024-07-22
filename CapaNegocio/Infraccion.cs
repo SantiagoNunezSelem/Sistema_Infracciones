@@ -13,16 +13,14 @@ namespace CapaNegocio
         protected string nombre;
         protected string descripcion;
         protected decimal importe;
-        protected bool esGrave;
 
-        public Infraccion(string codigo,string nombre, string descripcion, decimal importe, bool esGrave)
+        public Infraccion(string codigo,string nombre, string descripcion, decimal importe)
         {
             this.codigo = codigo;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.importe = importe;
-            this.esGrave = esGrave;
-        }
+        }       
 
         public abstract bool esInfraccionLeve();
 
@@ -74,23 +72,10 @@ namespace CapaNegocio
             set { importe = value; }
         }
 
-        public bool EsGrave
-        {
-            get { return esGrave; }
-            set { esGrave = value; }
-        }
-
-
         //Validar sos 
         public bool sos(string unCod)
         {
             return codigo.Equals(unCod);
         }
-
-
-
     }
-
-
-
 }

@@ -93,7 +93,31 @@ namespace CapaNegocio
         //METODOS PARA AGREGAR
         public void agregarTipoInfraccion(Infraccion inf)
         {
-            infracciones.Add(inf);
+            try
+            {
+                infracciones.Add(inf);
+                List<string> infraData = new List<string>();
+                infraData.Add(inf.Codigo);
+                infraData.Add(inf.Nombre);
+                infraData.Add(inf.Descripcion);
+                infraData.Add(inf.Importe.ToString());
+
+                //if para agregar el tipo de infracción
+                if (inf.esInfraccionGrave())
+                {
+                    infraData.Add("Grave");
+                }
+                else
+                {
+                    infraData.Add("Leve");
+                }
+                //Guardar la infraccion en la base de datos
+                Datos.GuardarInfraccion(infraData);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al guardar la infracción: " + ex.Message);
+            }
         }
 
         public void agregarVehiculo(Vehiculo vehiculo)
@@ -115,6 +139,8 @@ namespace CapaNegocio
 
             Vehiculo vehiculo = pagoInf.ObtenerVehiculo;
             vehiculo.agregarInfraccion(pagoInf);
+
+            //Datos.GuardarPagoInfraccion()
         }
 
         public void modificarTipoInfraccion(Infraccion infraccion)
@@ -227,10 +253,10 @@ namespace CapaNegocio
                     string nombre = i[2].ToString();
                     string descripcion = i[3].ToString();
                     decimal importe = Convert.ToDecimal(i[4]);
-                    bool esGrave = Convert.ToBoolean(i[5]);
+                    string tipo = i[5].ToString(); // "Grave" o "Leve"
 
                     Infraccion inf;
-                    if (esGrave)
+                    if (tipo == "Grave")
                     {
                         inf = new InfraccionGrave(codigo, nombre, descripcion, importe);
                     }
@@ -250,9 +276,9 @@ namespace CapaNegocio
                 return false;
             }
         }
+          
 
-
-        //RECUPERAR PAGOS INFRACCIONES
+        //RECUPERAR PAGOS INFRACCIONES  
         public bool RecuperarPagoInfraccionDB()
         {
             List<ArrayList> recuperarPagosDB = new List<ArrayList>();
@@ -260,7 +286,6 @@ namespace CapaNegocio
             {
                 foreach (ArrayList p in recuperarPagosDB)
                 {
-                    //string id = i[0].ToString();
                     int id = Convert.ToInt16(p[1]);
                     string codigoInfraccion = p[2].ToString();
                     string dominioVehiculo = p[3].ToString();
