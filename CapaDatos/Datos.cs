@@ -105,14 +105,47 @@ namespace Capa_Datos
                     }
 
                     connection.Close();
+                    return id;
                 }
             }
             catch
             {
+                return id;
+            } 
+        }
 
+        public static bool updateDataTipoInfraccion(ArrayList infraccion)
+        {
+            if (infraccion.Count != 5) // Verifica que el array contenga exactamente 5 elementos
+            {
+                return false;
             }
-            return id;
-            
+
+            string query = "UPDATE Infraccion SET Nombre = ?, Descripcion = ?, Importe = ?, Tipo = ? WHERE Codigo = ?";
+
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(strCon))
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Nombre", infraccion[1]);
+                        cmd.Parameters.AddWithValue("@Descripcion", infraccion[2]);
+                        cmd.Parameters.AddWithValue("@Importe", infraccion[3]);
+                        cmd.Parameters.AddWithValue("@Tipo", infraccion[4]);
+                        cmd.Parameters.AddWithValue("@Codigo", infraccion[0]);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         public static bool eliminarTipoInfraccion(string codigo)
