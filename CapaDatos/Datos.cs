@@ -155,10 +155,10 @@ namespace Capa_Datos
             return true;
         }
 
-        // GUARDAR INFRACCION
+        // GUARDAR TIPO INFRACCION
         public static void GuardarInfraccion(List<string> datosInfraccion)
         {
-            string query = "INSERT INTO Infraccion (codigo, nombre, descripcion, importe, esGrave) VALUES (@codigo, @nombre, @descripcion, @importe, @esGrave)";
+            string query = "INSERT INTO Infraccion (codigo, nombre, descripcion, importe, tipo) VALUES (@codigo, @nombre, @descripcion, @importe, @tipo)";
 
             try
             {
@@ -167,11 +167,16 @@ namespace Capa_Datos
                     conn.Open();
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Codigo", datosInfraccion[1]);
-                        cmd.Parameters.AddWithValue("@Nombre", datosInfraccion[2]);
-                        cmd.Parameters.AddWithValue("@Descripcion", datosInfraccion[3]);
-                        cmd.Parameters.AddWithValue("@Importe", Convert.ToDecimal(datosInfraccion[4]));
-                        cmd.Parameters.AddWithValue("@EsGrave", Convert.ToBoolean(datosInfraccion[5]));
+                        cmd.Parameters.AddWithValue("@codigo", datosInfraccion[0]);
+                        cmd.Parameters.AddWithValue("@nombre", datosInfraccion[1]);
+                        cmd.Parameters.AddWithValue("@descripcion", datosInfraccion[2]);
+                        cmd.Parameters.AddWithValue("@importe", Convert.ToDecimal(datosInfraccion[3]));
+                        //cmd.Parameters.AddWithValue("@tipo", Convert.ToBoolean(datosInfraccion[4]));
+
+                        // Convertir el valor del tipo a un booleano y luego a una cadena adecuada para la base de datos.
+                        bool esLeve = datosInfraccion[4].Equals("leve", StringComparison.OrdinalIgnoreCase);
+                        string tipoInfraccion = esLeve ? "leve" : "grave";
+                        cmd.Parameters.AddWithValue("@tipo", tipoInfraccion);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -179,7 +184,7 @@ namespace Capa_Datos
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Error al guardar la infracción: " + ex.Message);
             }
         }
 
@@ -237,11 +242,11 @@ namespace Capa_Datos
                     conn.Open();
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@idInfraccion", datosPagoInfraccion[1]);
-                        cmd.Parameters.AddWithValue("@idVehiculo", datosPagoInfraccion[2]);
-                        cmd.Parameters.AddWithValue("@fechaInfraccion", datosPagoInfraccion[3]);
-                        cmd.Parameters.AddWithValue("@importePagado", datosPagoInfraccion[4]);
-                        cmd.Parameters.AddWithValue("@pagoCompletado", datosPagoInfraccion[5]);
+                        cmd.Parameters.AddWithValue("@idInfraccion", datosPagoInfraccion[0]);
+                        cmd.Parameters.AddWithValue("@idVehiculo", datosPagoInfraccion[1]);
+                        cmd.Parameters.AddWithValue("@fechaInfraccion", datosPagoInfraccion[2]);
+                        cmd.Parameters.AddWithValue("@importePagado", datosPagoInfraccion[3]);
+                        cmd.Parameters.AddWithValue("@pagoCompletado", datosPagoInfraccion[4]);
 
                         cmd.ExecuteNonQuery();
                     }
