@@ -15,17 +15,14 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-size: 20px;
         }
         .container {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 500px;
-        }
-        .section {
-            margin: 20px 0;
+            padding: 10px;
         }
         .section h3 {
             margin: 0;
@@ -34,23 +31,23 @@
             color: white;
             border-radius: 5px 5px 0 0;
         }
-        .section ul {
+        .section {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 10px;
             border: 1px solid #ccc;
             border-radius: 0 0 5px 5px;
         }
-        .section ul li {
+        .section > li {
             padding: 10px;
             border-bottom: 1px solid #ccc;
         }
-        .section ul li:last-child {
+        .section > li:last-child {
             border-bottom: none;
         }
         .pdf-button {
-            margin-top: 20px;
-            padding: 5px;
+            margin-top: 10px;
+            padding: 10px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -83,7 +80,7 @@
                     <ItemTemplate>
                         <li>
                             <%# Container.DataItem %> 
-                            <asp:Button ID="btnGeneratePDF" runat="server" Text="Generar PDF" CssClass="pdf-button" CommandArgument='<%# Container.DataItem %>' OnClick="btnGeneratePDF_Click" />
+                            <asp:Button ID="btnGeneratePDF" runat="server" Text="Generar Orden de pago en PDF" CssClass="pdf-button" CommandArgument='<%# Container.DataItem %>' OnClick="btnGeneratePDF_Click" />
                         </li>
                     </ItemTemplate>
                 </asp:Repeater>
