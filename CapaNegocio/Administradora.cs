@@ -148,6 +148,12 @@ namespace CapaNegocio
             }
         }
 
+        public void eliminarPagoInfraccion(PagoInfraccion pagoInfraccion)
+        {
+            pagosInfracciones.Remove(pagoInfraccion);
+            pagoInfraccion.ObtenerVehiculo.eliminarInfraccion(pagoInfraccion);
+        }
+
         //Obtener info de DB:
         public void setConnectionDBPath(string path)
         {
