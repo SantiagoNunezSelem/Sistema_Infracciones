@@ -125,6 +125,9 @@ namespace CapaNegocio
                 existente.Nombre = infraccion.Nombre;
                 existente.Descripcion = infraccion.Descripcion;
                 existente.Importe = infraccion.Importe;
+
+                ArrayList dataInfraccion = infraccion.desarmar();
+                Datos.updateDataTipoInfraccion(dataInfraccion);
             }
             else
             {
@@ -135,6 +138,8 @@ namespace CapaNegocio
         public void eliminarTipoInfraccion(Infraccion infraccion)
         {
             infracciones.Remove(infraccion);
+
+            Datos.eliminarTipoInfraccion(infraccion.Codigo);
 
             for (int i = pagosInfracciones.Count - 1; i >= 0; i--)
             {
