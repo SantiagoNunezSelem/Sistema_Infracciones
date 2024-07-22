@@ -149,6 +149,68 @@ namespace Capa_Datos
             return id;
         }
 
+        public static int getDominioVehiculoDB(string idVehiculo)
+        {
+            int dominio = -1;
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    connection.Open();
+
+                    string selectIdQuery = "SELECT Dominio FROM Vehiculo WHERE Id = @IdVehiculo";
+
+                    using (OleDbCommand command = new OleDbCommand(selectIdQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
+                        var result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            dominio = Convert.ToInt32(result);
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return dominio;
+        }
+
+        public static int getCodigoInfraccionDB(string idInfraccion)
+        {
+            int codigo = -1;
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    connection.Open();
+
+                    string selectIdQuery = "SELECT Codigo FROM Infraccion WHERE Id = @IdInfraccion";
+
+                    using (OleDbCommand command = new OleDbCommand(selectIdQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@IdInfraccion", idInfraccion);
+                        var result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            codigo = Convert.ToInt32(result);
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return codigo;
+        }
+
         public static bool updateDataTipoInfraccion(ArrayList infraccion)
         {
             if (infraccion.Count != 5) // Verifica que el array contenga exactamente 5 elementos
