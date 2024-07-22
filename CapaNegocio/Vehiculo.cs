@@ -76,6 +76,33 @@ namespace CapaNegocio
             return null;
         }
 
+        public List<PagoInfraccion> getPagos()
+        {
+            List<PagoInfraccion> todosLosPagos = new List<PagoInfraccion>();
+
+            List<PagoInfraccion> pagosPendientes = getPagosInfraccionesPendientes();
+            List<PagoInfraccion> pagosConcretados = getPagosInfraccionesConcretadas();
+            List<PagoInfraccion> pagosVencidos = getPagosInfraccionesVencidas();
+
+            if (pagosPendientes != null)
+            {
+                todosLosPagos.AddRange(pagosPendientes);
+            }
+
+            if (pagosConcretados != null)
+            {
+                todosLosPagos.AddRange(pagosConcretados);
+            }
+
+            if (pagosVencidos != null)
+            {
+                todosLosPagos.AddRange(pagosVencidos);
+            }
+
+            return todosLosPagos;
+        }
+
+
         public void agregarInfraccion(PagoInfraccion pagoInfraccion)
         {
             pagosInfracciones.Add(pagoInfraccion);
