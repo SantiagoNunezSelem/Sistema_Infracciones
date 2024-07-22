@@ -168,11 +168,10 @@ namespace CapaNegocio
 
         public void getDataFromDB()
         {
-            //this.RecuperarInfraccionesLeves();
-           // this.RecuperarInfraccionesGraves();
             this.RecuperarVehiculoDB();
-            //this.RecuperarPagoInfracciones();
-         }
+            this.RecuperarInfraccionDB();
+            this.RecuperarPagoInfraccionDB();
+        }
 
         //RECUPERAR VEHICULO
         public bool RecuperarVehiculoDB()
@@ -200,8 +199,87 @@ namespace CapaNegocio
                 //Error al realizar la consulta en la base de datos
                 return false;
             }
+
+        }
+
+        //RECUPERAR INFRACCION
+        public bool RecuperarInfraccionDB()
+        {
+            List<ArrayList> recuperarInfraccionesDB = new List<ArrayList>();
+            if (Datos.RecuperarInfraccionDB(recuperarInfraccionesDB))
+            {
+
+                foreach (ArrayList i in recuperarInfraccionesDB)
+                {
+                    //string id = i[0].ToString();
+                    string codigo = i[1].ToString();
+                    string nombre = i[2].ToString();
+                    string descripcion = i[3].ToString();
+                    decimal importe = Convert.ToDecimal(i[4]);
+                    bool esGrave = Convert.ToBoolean(i[5]);
+
+                    Infraccion inf;
+                    if (esGrave)
+                    {
+                        inf = new InfraccionGrave(codigo, nombre, descripcion, importe);
+                    }
+                    else
+                    {
+                        inf = new InfraccionLeve(codigo, nombre, descripcion, importe);
+                    }
+
+                    // Agregar la infracción a la lista
+                    this.infracciones.Add(inf);
+                }
+                return true;
+            }
+            else
+            {
+                //Error al realizar la consulta en la base de datos
+                return false;
+            }
+        }
+
+
+        //RECUPERAR PAGOS INFRACCIONES
+        public bool RecuperarPagoInfraccionDB()
+        {
+            List<ArrayList> recuperarPagosDB = new List<ArrayList>();
+            if (Datos.RecuperarPagoInfraccionDB(recuperarPagosDB))
+            {
+                foreach (ArrayList p in recuperarPagosDB)
+                {
+                    //string id = i[0].ToString();
+                    int id = Convert.ToInt16(p[1]);
+                    string codigoInfraccion = p[2].ToString();
+                    string dominioVehiculo = p[3].ToString();
+                    DateTime fechaInfraccion = Convert.ToDateTime(p[4]);
+                    decimal importePagado = Convert.ToDecimal(p[5]);
+                    bool pagoCompletado = Convert.ToBoolean(p[6]);
+
+                    //Se obtiene la infracción y vehículo correspondientes
+                    Infraccion infraccion = this.getInfraccion(codigoInfraccion);
+                    Vehiculo vehiculo = this.getVehiculo(dominioVehiculo);
+
+                    //Se crea la instancia del pago
+                    PagoInfraccion pago = new PagoInfraccion(id, infraccion, vehiculo, fechaInfraccion);
+                    pago.agregarPago(importePagado);
+                    if (pagoCompletado)
+                    {
+                        //Cambia el estado del pago
+                        pago.agregarPago(pago.getImportePendienteInfraccion()); //Agrega el importe pendiente para completar el pago
+                    }
+
+                    // Agregar el pago a la lista de pagos de infraccion
+                    this.pagosInfracciones.Add(pago);
+                }
+                return true;
+            }
+            else
+                return false;
         }
     }
+
 }
 
 

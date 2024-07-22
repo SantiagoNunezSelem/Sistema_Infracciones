@@ -14,7 +14,8 @@ namespace CapaNegocio
         private const decimal porcentaje_descuento_10dias = 1-(15m / 100m);
 
         public InfraccionLeve(string codigo, string nombre, string descripcion, decimal importe) :
-            base(codigo, nombre, descripcion, importe)
+            base(codigo, nombre, descripcion, importe, false) // Leve es false para EsGrave
+
         {
         }
 
