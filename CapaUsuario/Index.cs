@@ -53,6 +53,12 @@ namespace Sistema_Infracciones
             agregarInfraccionVehiculo.ShowDialog();
         }
 
+        private void borrarTipoInfraccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminarInfraccionVehiculo eliminarInfraccionVehiculo = new EliminarInfraccionVehiculo();
+            eliminarInfraccionVehiculo .ShowDialog();
+        }
+
         private void nuevoTipoInfraccionToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             AgregarNuevoTipoInfraccion nuevoTipoInfraccion = new AgregarNuevoTipoInfraccion();

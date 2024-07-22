@@ -89,6 +89,7 @@ namespace Sistema_Infracciones
             this.borrarTipoInfraccionesToolStripMenuItem.Name = "borrarTipoInfraccionesToolStripMenuItem";
             this.borrarTipoInfraccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.borrarTipoInfraccionesToolStripMenuItem.Text = "Borrar Infracción de Vehículo";
+            this.borrarTipoInfraccionesToolStripMenuItem.Click += new System.EventHandler(this.borrarTipoInfraccionesToolStripMenuItem_Click);
             // 
             // nuevoTipoInfraccionToolStripMenuItem
             // 
