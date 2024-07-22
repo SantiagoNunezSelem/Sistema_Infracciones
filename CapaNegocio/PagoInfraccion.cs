@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,18 @@ namespace CapaNegocio
             this.vehiculo = vehiculo;
             this.fechaInfraccion = fechaInfraccion;
             pagoCompletado = false;
+        }
+
+        public List<string> desarmar()
+        {
+            List<string> data = new List<string>();
+            data.Add(infraccion.Codigo);
+            data.Add(vehiculo.Dominio);
+            data.Add(fechaInfraccion.ToString());
+            data.Add(importePagado.ToString());
+            data.Add(pagoCompletado.ToString());
+
+            return data;
         }
 
         public bool fechaPagoVencida()

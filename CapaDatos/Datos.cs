@@ -87,7 +87,7 @@ namespace Capa_Datos
             }
         }
 
-        public static int getIdInfraccion(string codigo)
+        public static int getIdInfraccionDB(string codigo)
         {
             int id = -1;
             try
@@ -96,22 +96,57 @@ namespace Capa_Datos
                 {
                     connection.Open();
 
-                    string deletePagosQuery = "SELECT Id FROM Infraccion WHERE Codigo = @Codigo";
+                    string selectIdQuery = "SELECT Id FROM Infraccion WHERE Codigo = @Codigo";
 
-                    using (OleDbCommand command = new OleDbCommand(deletePagosQuery, connection))
+                    using (OleDbCommand command = new OleDbCommand(selectIdQuery, connection))
                     {
                         command.Parameters.AddWithValue("@Codigo", codigo);
-                        id = command.ExecuteNonQuery();
+                        var result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            id = Convert.ToInt32(result);
+                        }
+                    }
+                    
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return id;
+        }
+
+        public static int getIdVehiculoDB(string dominio)
+        {
+            int id = -1;
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    connection.Open();
+
+                    string selectIdQuery = "SELECT Id FROM Vehiculo WHERE Dominio = @Dominio";
+
+                    using (OleDbCommand command = new OleDbCommand(selectIdQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Dominio", dominio);
+                        var result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            id = Convert.ToInt32(result);
+                        }
                     }
 
                     connection.Close();
-                    return id;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return id;
-            } 
+                Console.WriteLine(ex.Message);
+            }
+            return id;
         }
 
         public static bool updateDataTipoInfraccion(ArrayList infraccion)
@@ -151,7 +186,7 @@ namespace Capa_Datos
         public static bool eliminarTipoInfraccion(string codigo)
         {
             //Obtener el id de la infracción en la DB
-            string idInfraccion = "" + getIdInfraccion(codigo);
+            string idInfraccion = "" + getIdInfraccionDB(codigo);
 
             try
             {
@@ -263,10 +298,19 @@ namespace Capa_Datos
         }
 
         //GUARDAR PAGO INFRACCION
-        public static void GuardarPagoInfraccion(List<string> datosPagoInfraccion)
+        public static bool GuardarPagoInfraccion(List<string> datosPagoInfraccion)
         {
-            string query = "INSERT INTO PagoInfraccion (id, idInfraccion, idVehiculo, fechaInfraccion, importePagado, pagoCompletado) " +
-                           "VALUES (@id, @idInfraccion, @idVehiculo, @fechaInfraccion, @importePagado, @pagoCompletado)";
+            if (datosPagoInfraccion.Count != 5) // Verifica que el array contenga exactamente 5 elementos
+            {
+                return false;
+            }
+
+            string idInfraccion = getIdInfraccionDB(datosPagoInfraccion[0]).ToString();
+
+            string idVehiculo = getIdVehiculoDB(datosPagoInfraccion[1]).ToString();
+
+            string query = "INSERT INTO PagoInfraccion (idInfraccion, idVehiculo, fechaInfraccion, importePagado, pagoCompletado) " +
+                           "VALUES (@idInfraccion, @idVehiculo, @fechaInfraccion, @importePagado, @pagoCompletado)";
 
             try
             {
@@ -275,19 +319,21 @@ namespace Capa_Datos
                     conn.Open();
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@idInfraccion", datosPagoInfraccion[0]);
-                        cmd.Parameters.AddWithValue("@idVehiculo", datosPagoInfraccion[1]);
-                        cmd.Parameters.AddWithValue("@fechaInfraccion", datosPagoInfraccion[2]);
-                        cmd.Parameters.AddWithValue("@importePagado", datosPagoInfraccion[3]);
-                        cmd.Parameters.AddWithValue("@pagoCompletado", datosPagoInfraccion[4]);
+                        cmd.Parameters.AddWithValue("@idInfraccion", idInfraccion);
+                        cmd.Parameters.AddWithValue("@idVehiculo", idVehiculo);
+                        cmd.Parameters.AddWithValue("@fechaInfraccion", Convert.ToDateTime(datosPagoInfraccion[2]));
+                        cmd.Parameters.AddWithValue("@importePagado", Convert.ToDecimal(datosPagoInfraccion[3]));
+                        cmd.Parameters.AddWithValue("@pagoCompletado", Convert.ToBoolean(datosPagoInfraccion[4]));
 
                         cmd.ExecuteNonQuery();
+                        return true;
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return false;
             }
         }
 

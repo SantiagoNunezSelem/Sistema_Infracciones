@@ -96,6 +96,7 @@ namespace CapaNegocio
             try
             {
                 infracciones.Add(inf);
+
                 List<string> infraData = new List<string>();
                 infraData.Add(inf.Codigo);
                 infraData.Add(inf.Nombre);
@@ -140,7 +141,7 @@ namespace CapaNegocio
             Vehiculo vehiculo = pagoInf.ObtenerVehiculo;
             vehiculo.agregarInfraccion(pagoInf);
 
-            //Datos.GuardarPagoInfraccion()
+            Datos.GuardarPagoInfraccion(pagoInf.desarmar());
         }
 
         public void modificarTipoInfraccion(Infraccion infraccion)
