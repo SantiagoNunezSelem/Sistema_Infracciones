@@ -7,11 +7,11 @@ namespace CapaWeb {
     public partial class _ListaDeVehiculos: Page {
         protected void Page_Load(object sender, EventArgs e) {
             Administradora adm = (Session["adm"] as Administradora);
-            /*
-                if (adm == null)
-                    Response.Redirect("Default.aspx");
-            */
-                string ownerDni = Session["ownerDni"] as string;
+            string ownerDni = Session["ownerDni"] as string;
+
+            if (adm == null || ownerDni == null)
+                Response.Redirect("Default.aspx");
+
 
                 List<Vehiculo> vehicles = adm.getVehiclesByOwner(ownerDni);
                 var vehiclesData = new string[vehicles.Count];

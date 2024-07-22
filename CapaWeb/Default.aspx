@@ -39,11 +39,12 @@
         }
     </style>
     <section runat="server">
+        <h1>Consulta de infracciones de vehículos</h1>
         <div class="container">
-            <h2>Ingresar DNI del Propietario</h2>
+            <h2>Ingresar el DNI del Propietario</h2>
             <asp:TextBox ID="txtDNI" runat="server" placeholder="Ingrese DNI"></asp:TextBox>
             <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Buscar Vehículos" OnClick="btnSubmit_Click" />
+            <asp:Button ID="btnSubmit" runat="server" Text="Buscar vehículos asociados" OnClick="btnSubmit_Click" />
         </div>
         <asp:Label runat="server" ID="informationLabel" />
     </section>
