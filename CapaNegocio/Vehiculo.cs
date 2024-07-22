@@ -8,7 +8,7 @@ namespace CapaNegocio
 {
     public class Vehiculo
     {
-        private string dominio;
+        private string dominio; // patente
         private string dniPropietario;
         private string modelo;
         private List<PagoInfraccion> pagosInfracciones;
@@ -81,6 +81,11 @@ namespace CapaNegocio
             pagosInfracciones.Add(pagoInfraccion);
         }
 
+        public void eliminarInfraccion(PagoInfraccion pagoInfraccion)
+        {
+            pagosInfracciones.Remove(pagoInfraccion);
+        }
+
         public string Dominio
         {
             get { return dominio; }
@@ -95,5 +100,12 @@ namespace CapaNegocio
         {
             get { return modelo; }
         }
+
+        public bool sosVehiculo(string dominio)
+        {
+            return Dominio == dominio;
+        }
     }
+
 }
+

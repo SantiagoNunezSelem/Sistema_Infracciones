@@ -36,9 +36,11 @@ namespace Sistema_Infracciones
 
         private void getDataFromDB()
         {
-            adm.getVehiculosDB();
+            adm.setConnectionDBPath(Application.StartupPath);
+            adm.getDataFromDB();
         }
 
+        //DE INFRACCION
         private void PagarInfraccionVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PagoInfraccionVehiculo pagoInfraccionVehiculo = new PagoInfraccionVehiculo();
@@ -51,18 +53,36 @@ namespace Sistema_Infracciones
             agregarInfraccionVehiculo.ShowDialog();
         }
 
+        private void nuevoTipoInfraccionToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AgregarNuevoTipoInfraccion nuevoTipoInfraccion = new AgregarNuevoTipoInfraccion();
+            nuevoTipoInfraccion.ShowDialog();
+        }
+
+        private void EditarTipoInfracciónToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            EditarTipoInfraccion editarTipoInfraccion = new EditarTipoInfraccion();
+            editarTipoInfraccion.ShowDialog();
+        }
+
+        private void BorrarTipoInfracciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminarTipoInfraccion eliminarTipoInfraccion = new EliminarTipoInfraccion();
+            eliminarTipoInfraccion.ShowDialog();
+        }
+
+        //DE PAGOS
         private void informacionPagosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InformacionPagos infoPagos = new InformacionPagos();
             infoPagos.ShowDialog();
         }
 
+        //DE VEHICULOS
         private void registrarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
-            agregarVehiculo .ShowDialog();
+            agregarVehiculo.ShowDialog();
         }
-
-        
     }
 }

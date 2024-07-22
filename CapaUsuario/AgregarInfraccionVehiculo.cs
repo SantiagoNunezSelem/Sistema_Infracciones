@@ -119,7 +119,7 @@ namespace Sistema_Infracciones
             {
                 int id = adm.getSiguienteIdPagoInfraccion();
                 PagoInfraccion pagoInf = new PagoInfraccion(id, infraccionSeleccionada, vehiculoSeleccionado, DateTime.Now);
-                adm.nuevoPagoInfraccion(pagoInf);
+                adm.agregarNuevoPagoInfraccion(pagoInf);
                 MessageBox.Show("Infracción registrada con exito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
