@@ -12,8 +12,7 @@ namespace CapaNegocio
         private const decimal porcentaje_descuento_25dias = 1-(20m / 100m);
 
         public InfraccionGrave(string codigo, string nombre, string descripcion, decimal importe) :
-           base(codigo, nombre,descripcion, importe)
-
+           base(codigo, nombre, descripcion, importe)
         {
         }
 

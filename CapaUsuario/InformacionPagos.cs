@@ -49,6 +49,10 @@ namespace Sistema_Infracciones
             }
             else
             {
+                listBoxPagosConcretados.DataSource = null;
+                listBoxPagosPendientes.DataSource = null;
+                listBoxPagosVencidos.DataSource = null;
+
                 listBoxPagosConcretados.Items.Clear();
                 listBoxPagosPendientes.Items.Clear();
                 listBoxPagosVencidos.Items.Clear();

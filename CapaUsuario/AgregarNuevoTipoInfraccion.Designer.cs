@@ -38,10 +38,12 @@
             // 
             // inputCodigoInfraccion
             // 
+            this.inputCodigoInfraccion.AcceptsTab = true;
             this.inputCodigoInfraccion.AnimateReadOnly = false;
             this.inputCodigoInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputCodigoInfraccion.BulletIndent = 1;
             this.inputCodigoInfraccion.Depth = 0;
-            this.inputCodigoInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputCodigoInfraccion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputCodigoInfraccion.Hint = "Codigo Infracción";
             this.inputCodigoInfraccion.LeadingIcon = null;
             this.inputCodigoInfraccion.Location = new System.Drawing.Point(45, 102);
@@ -50,7 +52,8 @@
             this.inputCodigoInfraccion.Multiline = false;
             this.inputCodigoInfraccion.Name = "inputCodigoInfraccion";
             this.inputCodigoInfraccion.Size = new System.Drawing.Size(223, 50);
-            this.inputCodigoInfraccion.TabIndex = 36;
+            this.inputCodigoInfraccion.TabIndex = 0;
+            this.inputCodigoInfraccion.Tag = "";
             this.inputCodigoInfraccion.Text = "";
             this.inputCodigoInfraccion.TrailingIcon = null;
             this.inputCodigoInfraccion.TextChanged += new System.EventHandler(this.inputCodigoInfraccion_TextChanged);
@@ -60,7 +63,7 @@
             this.inputNombreInfraccion.AnimateReadOnly = false;
             this.inputNombreInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputNombreInfraccion.Depth = 0;
-            this.inputNombreInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputNombreInfraccion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputNombreInfraccion.Hint = "Nombre Infracción";
             this.inputNombreInfraccion.LeadingIcon = null;
             this.inputNombreInfraccion.Location = new System.Drawing.Point(45, 174);
@@ -78,7 +81,7 @@
             this.inputImporteInfraccion.AnimateReadOnly = false;
             this.inputImporteInfraccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputImporteInfraccion.Depth = 0;
-            this.inputImporteInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.inputImporteInfraccion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputImporteInfraccion.Hint = "Importe Infracción";
             this.inputImporteInfraccion.LeadingIcon = null;
             this.inputImporteInfraccion.Location = new System.Drawing.Point(311, 174);

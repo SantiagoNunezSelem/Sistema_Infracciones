@@ -40,7 +40,14 @@ namespace CapaNegocio
 
         public decimal getImportePendienteInfraccion()
         {
-            return getImporteInfraccion() - importePagado;
+            if (pagoCompletado)
+            {
+                return 0;
+            }
+            else
+            {
+                return getImporteInfraccion() - importePagado;
+            }
         }
         public decimal getImporteInfraccion()
         {

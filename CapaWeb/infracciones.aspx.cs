@@ -13,46 +13,34 @@ using Org.BouncyCastle.Security;
 
 namespace CapaWeb {
     public partial class infracciones: Page {
-        private static readonly string[] infraccionesPagas =
-        {
-            "Infracción 1 - $100 - Pagada",
-            "Infracción 2 - $200 - Pagada"
-        };
-
-        private static readonly string[] infraccionesImpagas =
-        {
-            "Infracción 3 - $300 - Impaga",
-            "Infracción 4 - $400 - Impaga"
-        };
-
         protected void Page_Load(object sender, EventArgs e) {
             Administradora adm = (Session["adm"] as Administradora);
             string dominio = Session["dominio"] as string;
 
+            if (adm == null)
+                Response.Redirect("Default.aspx");
             if (!IsPostBack) {
-                if (adm == null)
-                    Response.Redirect("Default.aspx");
+                labelTitle.Text = dominio;
+                Vehiculo v = adm.getVehiculo(dominio);
+                List<PagoInfraccion> pagas = v.getPagosInfraccionesConcretadas();
+                List<PagoInfraccion> impagas = v.getPagosInfraccionesPendientes();
+
+                string[] infraccionesPagas = new string[pagas.Count];
+                string[] infraccionesImpagas = new string[impagas.Count];
+
+                for (int i = 0; i < pagas.Count; i++)
+                    infraccionesPagas[i] = pagas[i].DisplayTextPagoConcretado;
+
+                for (int i = 0; i < impagas.Count; i++)
+                    infraccionesImpagas[i] = impagas[i].DisplayTextPagoPendiente;
+                
+
+                rptInfraccionesPagas.DataSource = infraccionesPagas;
+                rptInfraccionesPagas.DataBind();
+
+                rptInfraccionesImpagas.DataSource = infraccionesImpagas;
+                rptInfraccionesImpagas.DataBind();
             }
-
-            labelTitle.Text = dominio;
-            Vehiculo v = adm.getVehiculo(dominio);
-            List<PagoInfraccion> pagas = v.getPagosInfraccionesConcretadas();
-            List<PagoInfraccion> impagas = v.getPagosInfraccionesPendientes();
-
-            string[] infraccionesPagas = new string[pagas.Count];
-            string[] infraccionesImpagas = new string[impagas.Count];
-
-            for (int i = 0; i < pagas.Count; i++)
-                infraccionesPagas[i] = pagas[i].DisplayTextPagoConcretado;
-
-            for (int i = 0; i < impagas.Count; i++)
-                infraccionesImpagas[i] = impagas[i].DisplayTextPagoPendiente;
-
-            rptInfraccionesPagas.DataSource = infraccionesPagas;
-            rptInfraccionesPagas.DataBind();
-
-            rptInfraccionesImpagas.DataSource = infraccionesImpagas;
-            rptInfraccionesImpagas.DataBind();
         }
 
         protected void btnGeneratePDF_Click(object sender, EventArgs e) {
@@ -68,11 +56,19 @@ namespace CapaWeb {
                 PdfDocument pdfDoc = new PdfDocument(writer);
                 Document document = new Document(pdfDoc);
 
-                document.Add(new Paragraph("Orden de Pago de Infracciones Impagas"));
+                Vehiculo v = getVehicle();
+
+                document.Add(new Paragraph("Orden de Pago para infracciones"));
+                document.Add(new Paragraph(" "));
+                document.Add(new Paragraph("Detalles del vehículo:"));
+                document.Add(new Paragraph("- DNI del titular: " + v.DniPropietario));
+                document.Add(new Paragraph("- Dominio: " + v.Dominio));
+                document.Add(new Paragraph("- Modelo: " + v.Modelo));
+
                 document.Add(new Paragraph(" "));
                 document.Add(new Paragraph("Detalles de la infracción:"));
                 document.Add(new Paragraph(" "));
-                document.Add(new Paragraph(infraccion));
+                document.Add(new Paragraph("- " + infraccion));
 
                 document.Close();
 
@@ -82,6 +78,14 @@ namespace CapaWeb {
                 Response.BinaryWrite(ms.ToArray());
                 Response.End();
             }
+        }
+        private Vehiculo getVehicle() {
+            Administradora adm = (Session["adm"] as Administradora);
+            string dominio = Session["dominio"] as string;
+
+            Vehiculo v = adm.getVehiculo(dominio);
+
+            return v;
         }
     }
 }
