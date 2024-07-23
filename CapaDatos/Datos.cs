@@ -213,7 +213,7 @@ namespace Capa_Datos
 
         public static bool updateDataTipoInfraccion(ArrayList infraccion)
         {
-            if (infraccion.Count != 4) // Verifica que el array contenga exactamente 5 elementos
+            if (infraccion.Count != 4) // Verifica que el array contenga exactamente 4 elementos
             {
                 return false;
             }
@@ -247,7 +247,7 @@ namespace Capa_Datos
         public static bool eliminarTipoInfraccion(string codigo)
         {
             //Obtener el id de la infracción en la DB
-            string idInfraccion = "" + getIdInfraccionDB(codigo);
+            string idInfraccion = getIdInfraccionDB(codigo).ToString();
 
             try
             {
@@ -361,17 +361,17 @@ namespace Capa_Datos
         //GUARDAR PAGO INFRACCION
         public static bool GuardarPagoInfraccion(List<string> datosPagoInfraccion)
         {
-            if (datosPagoInfraccion.Count != 5) // Verifica que el array contenga exactamente 5 elementos
+            if (datosPagoInfraccion.Count != 6) // Verifica que el array contenga exactamente 5 elementos
             {
                 return false;
             }
 
-            string idInfraccion = getIdInfraccionDB(datosPagoInfraccion[0]).ToString();
+            string idInfraccion = getIdInfraccionDB(datosPagoInfraccion[1]).ToString();
 
-            string idVehiculo = getIdVehiculoDB(datosPagoInfraccion[1]).ToString();
+            string idVehiculo = getIdVehiculoDB(datosPagoInfraccion[2]).ToString();
 
-            string query = "INSERT INTO PagoInfraccion (idInfraccion, idVehiculo, fechaInfraccion, importePagado, pagoCompletado) " +
-                           "VALUES (@idInfraccion, @idVehiculo, @fechaInfraccion, @importePagado, @pagoCompletado)";
+            string query = "INSERT INTO PagoInfraccion (Id, idInfraccion, idVehiculo, fechaInfraccion, importePagado, pagoCompletado) " +
+                           "VALUES (@idPago, @idInfraccion, @idVehiculo, @fechaInfraccion, @importePagado, @pagoCompletado)";
 
             try
             {
@@ -380,11 +380,12 @@ namespace Capa_Datos
                     conn.Open();
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@idInfraccion", datosPagoInfraccion[0]);
                         cmd.Parameters.AddWithValue("@idInfraccion", idInfraccion);
                         cmd.Parameters.AddWithValue("@idVehiculo", idVehiculo);
-                        cmd.Parameters.AddWithValue("@fechaInfraccion", Convert.ToDateTime(datosPagoInfraccion[2]));
-                        cmd.Parameters.AddWithValue("@importePagado", Convert.ToDecimal(datosPagoInfraccion[3]));
-                        cmd.Parameters.AddWithValue("@pagoCompletado", Convert.ToBoolean(datosPagoInfraccion[4]));
+                        cmd.Parameters.AddWithValue("@fechaInfraccion", Convert.ToDateTime(datosPagoInfraccion[3]));
+                        cmd.Parameters.AddWithValue("@importePagado", Convert.ToDecimal(datosPagoInfraccion[4]));
+                        cmd.Parameters.AddWithValue("@pagoCompletado", Convert.ToBoolean(datosPagoInfraccion[5]));
 
                         cmd.ExecuteNonQuery();
                         return true;
@@ -436,10 +437,63 @@ namespace Capa_Datos
             }
         }
 
+        public static bool updatePagoInfraccion(List<string> data)
+        {
+            if (data.Count != 6) // Verifica que el array contenga exactamente 6 elementos
+            {
+                return false;
+            }
 
+            string query = "UPDATE PagoInfraccion SET importePagado = @ImportePagado, pagoCompletado = @PagoCompletado WHERE Id = @IdPago";
 
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(strCon))
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ImportePagado", Convert.ToDecimal(data[4]));
+                        cmd.Parameters.AddWithValue("@PagoCompletado", Convert.ToBoolean(data[5]));
+                        cmd.Parameters.AddWithValue("@IdPago", data[0]);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool eliminarPagoInfraccion(string idPago)
+        {
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    connection.Open();
+
+                    string deletePagosQuery = "DELETE FROM PagoInfraccion WHERE Id = @idPago";
+
+                    using (OleDbCommand command = new OleDbCommand(deletePagosQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@idPago", idPago);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
-
 }
 
 
