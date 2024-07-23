@@ -144,6 +144,13 @@ namespace CapaNegocio
             Datos.GuardarPagoInfraccion(pagoInf.desarmar());
         }
 
+        public void registrarElPagoDeInfraccion(PagoInfraccion pagoInf, decimal importePagado)
+        {
+            pagoInf.agregarPago(importePagado);
+
+            Datos.updatePagoInfraccion(pagoInf.desarmar());
+        }
+
         public void modificarTipoInfraccion(Infraccion infraccion)
         {
             var existente = infracciones.FirstOrDefault(i => i.Codigo == infraccion.Codigo);
@@ -184,6 +191,8 @@ namespace CapaNegocio
         {
             pagosInfracciones.Remove(pagoInfraccion);
             pagoInfraccion.ObtenerVehiculo.eliminarInfraccion(pagoInfraccion);
+
+            Datos.eliminarPagoInfraccion(pagoInfraccion.Id.ToString());
         }
 
         //Obtener info de DB:
@@ -299,7 +308,7 @@ namespace CapaNegocio
                     Vehiculo vehiculo = this.getVehiculo(dominioVehiculo);
 
                     //Se crea la instancia del pago
-                    PagoInfraccion pago = new PagoInfraccion(id, infraccion, vehiculo, fechaInfraccion);
+                    PagoInfraccion pago = new PagoInfraccion(id, infraccion, vehiculo, fechaInfraccion, pagoCompletado);
 
                     if(importePagado != 0)
                     {
