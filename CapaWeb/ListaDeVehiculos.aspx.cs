@@ -11,18 +11,22 @@ namespace CapaWeb {
         }
 
         protected void Page_Load(object sender, EventArgs e) {
-                Administradora adm = (Session["adm"] as Administradora);
-                string ownerDni = Session["ownerDni"] as string;
+            Administradora adm = (Session["adm"] as Administradora);
+            string ownerDni = Session["ownerDni"] as string;
 
-                if (adm == null || ownerDni == null)
-                    Response.Redirect("Default.aspx");
+            if (adm == null || ownerDni == null)
+                Response.Redirect("Default.aspx");
+
+            if (!IsPostBack)
+            {
 
                 List<Vehiculo> vehicles = adm.getVehiclesByOwner(ownerDni);
                 VehicleData[] vehiclesData = new VehicleData[vehicles.Count];
 
                 int index = 0;
 
-                vehicles.ForEach(vehicle => {
+                vehicles.ForEach(vehicle =>
+                {
                     string text = vehicle.Dominio + " - " + vehicle.Modelo;
                     vehiclesData[index] = new VehicleData { Value = vehicle.Dominio, Text = text };
                     index++;
@@ -35,6 +39,7 @@ namespace CapaWeb {
                 ddlVehiculos.DataValueField = "Value"; // Defines the attribute that is taken to value
 
                 ddlVehiculos.DataBind();
+            }
         }
 
         protected void btnSelect_Click(object sender, EventArgs e) {
