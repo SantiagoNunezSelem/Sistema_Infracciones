@@ -19,8 +19,17 @@ namespace Capa_Datos
 
         public static void setConnectionDBPath(string path)
         {
+
             string databasePath = path + "\\Sistema_Infracciones_DB.mdb";
+
+            string access64Provider = "Microsoft.ACE.OLEDB.12.0";
+            // string access32Provider = "Microsoft.Jet.OLEDB.4.0";
+
+            strCon = "Provider=" + access64Provider + ";Data Source= " + databasePath;
+
+            /*string databasePath = path + "\\Sistema_Infracciones_DB.mdb";
             strCon = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= " + databasePath;
+            */
         }
 
         //GUARDAR VEHICULO
