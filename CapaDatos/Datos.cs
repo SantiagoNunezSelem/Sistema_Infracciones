@@ -16,9 +16,28 @@ namespace Capa_Datos
         private static OleDbDataAdapter da;
         private static OleDbConnection conn;
         private static DataSet ds;
+        private static string access32Provider = "Microsoft.Jet.OLEDB.4.0";
+        private static string access64Provider = "Microsoft.ACE.OLEDB.12.0";
 
-        public static void setConnectionDBPath(string path)
+        public static void setConnectionDBPath(string path, bool isWeb)
         {
+            string accessProvider;
+
+            if (isWeb)
+                accessProvider = access64Provider;
+            else
+                accessProvider = access32Provider;
+
+            string databasePath = path + "\\Sistema_Infracciones_DB.mdb";
+
+            strCon = "Provider=" + accessProvider + ";Data Source= " + databasePath;
+
+            /*string databasePath = path + "\\Sistema_Infracciones_DB.mdb";
+            strCon = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= " + databasePath;
+            */
+        }
+
+        public static void setConnectionDBPath(string path) {
 
             string databasePath = path + "\\Sistema_Infracciones_DB.mdb";
 

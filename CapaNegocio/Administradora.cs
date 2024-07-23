@@ -210,7 +210,7 @@ namespace CapaNegocio
             // Ahora, estando en SistemaInfracciones busco una carpeta llamada "CapaDatos"
             string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
 
-            Datos.setConnectionDBPath(newPath);
+            Datos.setConnectionDBPath(newPath, false);
         }
 
         public void setConnectionDBPathWeb(string path) {
@@ -221,7 +221,7 @@ namespace CapaNegocio
             // Ahora, estando en ClubDeportivo busco una carpeta llamada "CapaDatos"
             string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
 
-            Datos.setConnectionDBPath(newPath);
+            Datos.setConnectionDBPath(newPath, true);
         }
 
         public void getDataFromDB()
