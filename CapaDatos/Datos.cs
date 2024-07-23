@@ -177,9 +177,9 @@ namespace Capa_Datos
             return id;
         }
 
-        public static int getDominioVehiculoDB(string idVehiculo)
+        public static string getDominioVehiculoDB(string idVehiculo)
         {
-            int dominio = -1;
+            string dominio = "";
             try
             {
                 using (OleDbConnection connection = new OleDbConnection(strCon))
@@ -191,10 +191,10 @@ namespace Capa_Datos
                     using (OleDbCommand command = new OleDbCommand(selectIdQuery, connection))
                     {
                         command.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
-                        var result = command.ExecuteScalar();
-                        if (result != null)
+                        var resultado = command.ExecuteScalar();
+                        if (resultado != null)
                         {
-                            dominio = Convert.ToInt32(result);
+                            dominio = (resultado.ToString());
                         }
                     }
 
