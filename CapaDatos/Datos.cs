@@ -213,12 +213,12 @@ namespace Capa_Datos
 
         public static bool updateDataTipoInfraccion(ArrayList infraccion)
         {
-            if (infraccion.Count != 5) // Verifica que el array contenga exactamente 5 elementos
+            if (infraccion.Count != 4) // Verifica que el array contenga exactamente 5 elementos
             {
                 return false;
             }
 
-            string query = "UPDATE Infraccion SET Nombre = ?, Descripcion = ?, Importe = ?, Tipo = ? WHERE Codigo = ?";
+            string query = "UPDATE Infraccion SET nombre = @Nombre, descripcion = @Descripcion, importe = @Importe WHERE codigo = @Codigo";
 
             try
             {
@@ -230,7 +230,6 @@ namespace Capa_Datos
                         cmd.Parameters.AddWithValue("@Nombre", infraccion[1]);
                         cmd.Parameters.AddWithValue("@Descripcion", infraccion[2]);
                         cmd.Parameters.AddWithValue("@Importe", infraccion[3]);
-                        cmd.Parameters.AddWithValue("@Tipo", infraccion[4]);
                         cmd.Parameters.AddWithValue("@Codigo", infraccion[0]);
 
                         cmd.ExecuteNonQuery();
