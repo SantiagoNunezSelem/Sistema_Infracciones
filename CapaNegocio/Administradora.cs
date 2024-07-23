@@ -213,6 +213,17 @@ namespace CapaNegocio
             Datos.setConnectionDBPath(newPath);
         }
 
+        public void setConnectionDBPathWeb(string path) {
+            string originalPath = path; //hago una copia de la direccion original para adaptarla
+
+            string projectRoot = Directory.GetParent(originalPath).Parent.FullName; //de esta manera estoy parado en ClubDeportivo
+
+            // Ahora, estando en ClubDeportivo busco una carpeta llamada "CapaDatos"
+            string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
+
+            Datos.setConnectionDBPath(newPath);
+        }
+
         public void getDataFromDB()
         {
             this.RecuperarVehiculoDB();

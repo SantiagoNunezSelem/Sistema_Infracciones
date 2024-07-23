@@ -17,11 +17,13 @@ namespace CapaWeb {
 
             if (adm == null) {
                 adm = new Administradora();
+
                 string err = null;
                 
                 // Check if the connection is success.
                 // adm.setConnectionDBPathWeb(AppDomain.CurrentDomain.BaseDirectory);
-                adm.setConnectionDBPath(AppDomain.CurrentDomain.BaseDirectory);
+                adm.setConnectionDBPathWeb(AppDomain.CurrentDomain.BaseDirectory);
+                adm.getDataFromDB();
 
                 Session["adm"] = adm;
             }
@@ -36,7 +38,7 @@ namespace CapaWeb {
                 informationLabel.Text = "La persona con el DNI " + ownerDni + " no posee vehículos registrados.";
             } else {
                 Session["ownerDni"] = ownerDni;
-                Response.Redirect("ListaDeVechiculos.aspx");
+                Response.Redirect("ListaDeVehiculos.aspx");
             }
         }
     }
