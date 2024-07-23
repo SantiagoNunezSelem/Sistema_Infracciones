@@ -361,7 +361,7 @@ namespace Capa_Datos
         //GUARDAR PAGO INFRACCION
         public static bool GuardarPagoInfraccion(List<string> datosPagoInfraccion)
         {
-            if (datosPagoInfraccion.Count != 6) // Verifica que el array contenga exactamente 5 elementos
+            if (datosPagoInfraccion.Count != 6) // Verifica que el array contenga exactamente 6 elementos
             {
                 return false;
             }
