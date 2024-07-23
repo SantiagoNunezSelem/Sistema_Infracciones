@@ -277,7 +277,7 @@ namespace CapaNegocio
                     string tipo = i[5].ToString(); // "Grave" o "Leve"
 
                     Infraccion inf;
-                    if (tipo == "Grave")
+                    if (tipo == "grave")
                     {
                         inf = new InfraccionGrave(codigo, nombre, descripcion, importe);
                     }
