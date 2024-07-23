@@ -22,7 +22,7 @@ namespace CapaNegocio
         }
 
         /** Permite obtener todos los vehículos de un propietario */
-        public List<Vehiculo> getVehiclesByOwner(String ownerDni) {
+        public List<Vehiculo> getVehiclesByOwner(string ownerDni) {
             return vehiculos.FindAll(v => v.DniPropietario == ownerDni);
         }
 
