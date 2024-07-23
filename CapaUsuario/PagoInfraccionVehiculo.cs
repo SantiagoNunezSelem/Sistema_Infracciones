@@ -133,7 +133,7 @@ namespace Sistema_Infracciones
 
                 importePagado = pagoinfraccion.getImportePendienteInfraccion();
 
-                pagoinfraccion.agregarPago(importePagado);
+                adm.registrarElPagoDeInfraccion(pagoinfraccion, importePagado);
 
                 MessageBox.Show("Pago Infracción ralizado con exito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
