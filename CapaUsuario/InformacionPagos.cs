@@ -38,6 +38,14 @@ namespace Sistema_Infracciones
             
             Vehiculo buscarVehiculo = adm.getVehiculo(dominio);
 
+            listBoxPagosConcretados.DataSource = null;
+            listBoxPagosPendientes.DataSource = null;
+            listBoxPagosVencidos.DataSource = null;
+
+            listBoxPagosConcretados.Items.Clear();
+            listBoxPagosPendientes.Items.Clear();
+            listBoxPagosVencidos.Items.Clear();
+
             if (buscarVehiculo != null)
             {
                 infoBusquedaDominioVehiculo.Text = "Encontrado";
@@ -49,13 +57,6 @@ namespace Sistema_Infracciones
             }
             else
             {
-                listBoxPagosConcretados.DataSource = null;
-                listBoxPagosPendientes.DataSource = null;
-                listBoxPagosVencidos.DataSource = null;
-
-                listBoxPagosConcretados.Items.Clear();
-                listBoxPagosPendientes.Items.Clear();
-                listBoxPagosVencidos.Items.Clear();
                 infoBusquedaDominioVehiculo.Text = "No existe";
                 inputModeloVehiculo.Text = "";
                 inputDNIPropietario.Text = "";
@@ -75,7 +76,10 @@ namespace Sistema_Infracciones
             if (pagosPendientes != null)
             {
                 if (pagosPendientes.Count == 0)
+                {
+                    listBoxPagosPendientes.DataSource = null;
                     listBoxPagosPendientes.Items.Add("-- No tiene Pagos Pendientes --");
+                }
                 else
                 {
                     listBoxPagosPendientes.DataSource = pagosPendientes;
@@ -87,7 +91,10 @@ namespace Sistema_Infracciones
             if (pagosConcretados != null)
             {
                 if (pagosConcretados.Count == 0)
+                {
+                    listBoxPagosConcretados.DataSource = null;
                     listBoxPagosConcretados.Items.Add("-- No tiene Pagos Concretados --");
+                }
                 else
                 {
                     listBoxPagosConcretados.DataSource = pagosConcretados;
@@ -99,7 +106,10 @@ namespace Sistema_Infracciones
             if (pagosVencidos != null)
             {
                 if (pagosVencidos.Count == 0)
+                {
+                    listBoxPagosVencidos.DataSource = null;
                     listBoxPagosVencidos.Items.Add("-- No tiene Pagos Vencidos --");
+                }
                 else
                 {
                     listBoxPagosVencidos.DataSource = pagosVencidos;
