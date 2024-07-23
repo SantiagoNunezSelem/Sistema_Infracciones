@@ -481,7 +481,7 @@ namespace Capa_Datos
                     conn.Open();
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@ImportePagado", Convert.ToDecimal(data[4]));
+                        cmd.Parameters.AddWithValue("@ImportePagado", Convert.ToDouble(data[4]));
                         cmd.Parameters.AddWithValue("@PagoCompletado", Convert.ToBoolean(data[5]));
                         cmd.Parameters.AddWithValue("@IdPago", data[0]);
 
