@@ -25,9 +25,19 @@ namespace CapaNegocio
             pagoCompletado = false;
         }
 
+        public PagoInfraccion(int id, Infraccion infraccion, Vehiculo vehiculo, DateTime fechaInfraccion, bool pagoCompletado)
+        {
+            this.id = id;
+            this.infraccion = infraccion;
+            this.vehiculo = vehiculo;
+            this.fechaInfraccion = fechaInfraccion;
+            this.pagoCompletado = pagoCompletado;
+        }
+
         public List<string> desarmar()
         {
             List<string> data = new List<string>();
+            data.Add(id.ToString());
             data.Add(infraccion.Codigo);
             data.Add(vehiculo.Dominio);
             data.Add(fechaInfraccion.ToString());
