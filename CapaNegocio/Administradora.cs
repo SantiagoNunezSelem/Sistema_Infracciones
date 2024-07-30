@@ -113,7 +113,7 @@ namespace CapaNegocio
                     infraData.Add("Leve");
                 }
                 //Guardar la infraccion en la base de datos
-                Datos.GuardarInfraccion(infraData);
+                //Datos.GuardarInfraccion(infraData);---------------------------------
             }
             catch (Exception ex)
             {
@@ -131,7 +131,7 @@ namespace CapaNegocio
             vehicleData.Add(vehiculo.Modelo);
 
             //Guardar el vehículo en la base de datos
-            Datos.GuardarVehiculo(vehicleData);
+            //Datos.GuardarVehiculo(vehicleData);---------------------------------
         }
 
         public void agregarNuevoPagoInfraccion(PagoInfraccion pagoInf)
@@ -141,14 +141,14 @@ namespace CapaNegocio
             Vehiculo vehiculo = pagoInf.ObtenerVehiculo;
             vehiculo.agregarInfraccion(pagoInf);
 
-            Datos.GuardarPagoInfraccion(pagoInf.desarmar());
+            //Datos.GuardarPagoInfraccion(pagoInf.desarmar());---------------------------------
         }
 
         public void registrarElPagoDeInfraccion(PagoInfraccion pagoInf, decimal importePagado)
         {
             pagoInf.agregarPago(importePagado);
 
-            Datos.updatePagoInfraccion(pagoInf.desarmar());
+            //Datos.updatePagoInfraccion(pagoInf.desarmar());---------------------------------
         }
 
         public void modificarTipoInfraccion(Infraccion infraccion)
@@ -161,7 +161,7 @@ namespace CapaNegocio
                 existente.Importe = infraccion.Importe;
 
                 ArrayList dataInfraccion = infraccion.desarmar();
-                Datos.updateDataTipoInfraccion(dataInfraccion);
+                //Datos.updateDataTipoInfraccion(dataInfraccion);---------------------------------
             }
             else
             {
@@ -173,7 +173,7 @@ namespace CapaNegocio
         {
             infracciones.Remove(infraccion);
 
-            Datos.eliminarTipoInfraccion(infraccion.Codigo);
+            //Datos.eliminarTipoInfraccion(infraccion.Codigo);---------------------------------
 
             for (int i = pagosInfracciones.Count - 1; i >= 0; i--)
             {
@@ -192,7 +192,7 @@ namespace CapaNegocio
             pagosInfracciones.Remove(pagoInfraccion);
             pagoInfraccion.ObtenerVehiculo.eliminarInfraccion(pagoInfraccion);
 
-            Datos.eliminarPagoInfraccion(pagoInfraccion.Id.ToString());
+            //Datos.eliminarPagoInfraccion(pagoInfraccion.Id.ToString());---------------------------------
         }
 
         //Obtener info de DB:
@@ -210,7 +210,7 @@ namespace CapaNegocio
             // Ahora, estando en SistemaInfracciones busco una carpeta llamada "CapaDatos"
             string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
 
-            Datos.setConnectionDBPath(newPath, false);
+            //Datos.setConnectionDBPath(newPath, false);---------------------------------
         }
 
         public void setConnectionDBPathWeb(string path) {
@@ -221,20 +221,24 @@ namespace CapaNegocio
             // Ahora, estando en ClubDeportivo busco una carpeta llamada "CapaDatos"
             string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
 
-            Datos.setConnectionDBPath(newPath, true);
+            //Datos.setConnectionDBPath(newPath, true);---------------------------------
         }
 
         public void getDataFromDB()
         {
+            /*---------------------------------
             this.RecuperarVehiculoDB();
             this.RecuperarInfraccionDB();
             this.RecuperarPagoInfraccionDB();
+            */
         }
 
         //RECUPERAR VEHICULO
+        /*------------------------------------------------------------------
         public bool RecuperarVehiculoDB()
         {
             List<ArrayList> recuperarVehiculosDB = new List<ArrayList>();
+
             if (Datos.RecuperarVehiculoDB(recuperarVehiculosDB))
             {
 
@@ -259,8 +263,10 @@ namespace CapaNegocio
             }
 
         }
+        */
 
         //RECUPERAR INFRACCION
+        /*------------------------------------------------------------------
         public bool RecuperarInfraccionDB()
         {
             List<ArrayList> recuperarInfraccionesDB = new List<ArrayList>();
@@ -297,9 +303,11 @@ namespace CapaNegocio
                 return false;
             }
         }
-          
+        */
+
 
         //RECUPERAR PAGOS INFRACCIONES  
+        /* ------------------------------------------------------------------
         public bool RecuperarPagoInfraccionDB()
         {
             List<ArrayList> recuperarPagosDB = new List<ArrayList>();
@@ -335,6 +343,7 @@ namespace CapaNegocio
             else
                 return false;
         }
+        */
     }
 
 }
