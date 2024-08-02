@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Data.Entity;
 using Capa_de_Datos;
 using System.Linq;
+using System.CodeDom;
 
 namespace Capa_Datos
 {
@@ -21,6 +22,7 @@ namespace Capa_Datos
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<PagoInfraccion> PagoInfracciones { get; set; }
 
+        //Recuperar Data
         public static List<Vehiculo> recuperarVehiculosDB()
         {
             try
@@ -65,6 +67,7 @@ namespace Capa_Datos
             }
         }
 
+        //Guardar Data
         public static bool guardarVehiculoDB(List<string> vehiculoData)
         {
             try
@@ -110,6 +113,103 @@ namespace Capa_Datos
             catch
             {
                 return false;
+            }
+        }
+
+        //Buscar Data
+        public static bool guardarPagoInfraccionDB(List<string> pInfData)
+        {
+            try
+            {
+                using(var context = new Datos())
+                {
+                    int idInfraccion = buscarInfraccionConCodigoDB(pInfData[1]).idInfraccion;
+                    int idVehiculo = buscarVehiculoConDominio(pInfData[2]).idVehiculo;
+
+                    PagoInfraccion addPInf = new PagoInfraccion
+                    {
+                        idPagoInfraccion = int.Parse(pInfData[0]),
+                        idInfraccion = idInfraccion,
+                        idVehiculo = idVehiculo,
+                        fechaInfraccion = DateTime.Parse(pInfData[3]),
+                        importePago = decimal.Parse(pInfData[4]),
+                        pagoCompleto = bool.Parse(pInfData[5])
+                    };
+                    context.PagoInfracciones.Add(addPInf);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static Infraccion buscarInfraccionConIdDB(int id)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    Infraccion buscarInfraccion = context.Infracciones.Find(id);
+                    return buscarInfraccion;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static Vehiculo buscarVehiculoConIdDB(int id)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    Vehiculo buscarVehiculo = context.Vehiculos.Find(id);
+                    return buscarVehiculo;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public static Infraccion buscarInfraccionConCodigoDB(string codigo)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    Infraccion buscarInfraccion = (from infraccion in context.Infracciones
+                                                   where infraccion.codigo == codigo
+                                                   select infraccion).FirstOrDefault<Infraccion>();
+                    return buscarInfraccion;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static Vehiculo buscarVehiculoConDominio(string dominio)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    Vehiculo buscarVehiculo = (from vehiculo in context.Vehiculos
+                                               where vehiculo.dominio == dominio
+                                               select vehiculo).FirstOrDefault<Vehiculo>();
+                    return buscarVehiculo;
+                }
+            }
+            catch
+            {
+                return null;
             }
         }
     }

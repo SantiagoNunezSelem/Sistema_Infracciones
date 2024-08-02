@@ -141,7 +141,7 @@ namespace CapaNegocio
             Vehiculo vehiculo = pagoInf.ObtenerVehiculo;
             vehiculo.agregarInfraccion(pagoInf);
 
-            //Datos.GuardarPagoInfraccion(pagoInf.desarmar());---------------------------------
+            Datos.guardarPagoInfraccionDB(pagoInf.desarmar());
         }
 
         public void registrarElPagoDeInfraccion(PagoInfraccion pagoInf, decimal importePagado)
@@ -201,7 +201,7 @@ namespace CapaNegocio
         {
             this.recuperarVehiculosDB();
             this.RecuperarInfraccionDB();
-            //this.RecuperarPagoInfraccionDB();
+            this.RecuperarPagoInfraccionDB();
         }
 
         //RECUPERAR VEHICULO
@@ -234,7 +234,6 @@ namespace CapaNegocio
         }
 
         //RECUPERAR INFRACCION
-        
         public bool RecuperarInfraccionDB()
         {
             var recuperarInfraccionesDB = Datos.recuperarInfraccionesDB();
@@ -271,22 +270,23 @@ namespace CapaNegocio
             }
         }
 
-
         //RECUPERAR PAGOS INFRACCIONES  
-        /* ------------------------------------------------------------------
         public bool RecuperarPagoInfraccionDB()
         {
-            List<ArrayList> recuperarPagosDB = new List<ArrayList>();
-            if (Datos.RecuperarPagoInfraccionDB(recuperarPagosDB))
+            var recuperarPagosDB = Datos.recuperarPagoInfraccionesDB();
+            if (recuperarPagosDB != null)
             {
-                foreach (ArrayList p in recuperarPagosDB)
+                foreach(var pInf in recuperarPagosDB)
                 {
-                    int id = Convert.ToInt16(p[0]);
-                    string codigoInfraccion = Datos.getCodigoInfraccionDB(p[1].ToString()).ToString();
-                    string dominioVehiculo = Datos.getDominioVehiculoDB(p[2].ToString()).ToString();
-                    DateTime fechaInfraccion = Convert.ToDateTime(p[3]);
-                    decimal importePagado = Convert.ToDecimal(p[4]);
-                    bool pagoCompletado = Convert.ToBoolean(p[5]);
+                    int id = pInf.idPagoInfraccion;
+
+                    string codigoInfraccion = Datos.buscarInfraccionConIdDB(pInf.idInfraccion).codigo;
+
+                    string dominioVehiculo = Datos.buscarVehiculoConIdDB(pInf.idVehiculo).dominio;
+
+                    DateTime fechaInfraccion = pInf.fechaInfraccion;
+                    decimal importePago = pInf.importePago;
+                    bool pagoCompletado = pInf.pagoCompleto;
 
                     //Se obtiene la infracción y vehículo correspondientes
                     Infraccion infraccion = this.getInfraccion(codigoInfraccion);
@@ -295,9 +295,9 @@ namespace CapaNegocio
                     //Se crea la instancia del pago
                     PagoInfraccion pago = new PagoInfraccion(id, infraccion, vehiculo, fechaInfraccion, pagoCompletado);
 
-                    if(importePagado != 0)
+                    if(importePago != 0)
                     {
-                        pago.agregarPago(importePagado);
+                        pago.agregarPago(importePago);
                     }
 
                     pagosInfracciones.Add(pago);
@@ -309,9 +309,7 @@ namespace CapaNegocio
             else
                 return false;
         }
-        */
     }
-
 }
 
 
