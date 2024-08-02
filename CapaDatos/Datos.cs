@@ -21,7 +21,7 @@ namespace Capa_Datos
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<PagoInfraccion> PagoInfracciones { get; set; }
 
-        public static List<Vehiculo> recuperarVehiculos()
+        public static List<Vehiculo> recuperarVehiculosDB()
         {
             try
             {
@@ -33,7 +33,29 @@ namespace Capa_Datos
             catch{
                 return null;
             }
-            
+        }
+
+        public static bool guardarVehiculoDB(List<string> vehiculoData)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    Vehiculo addVehiculo = new Vehiculo {
+                        dominio = vehiculoData[0],
+                        dniPropietario = vehiculoData[1],
+                        modelo = vehiculoData[2]
+                    };
+
+                    context.Vehiculos.Add(addVehiculo);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -125,13 +125,13 @@ namespace CapaNegocio
         {
             vehiculos.Add(vehiculo);
 
-            List<string> vehicleData = new List<string>();
-            vehicleData.Add(vehiculo.Dominio);
-            vehicleData.Add(vehiculo.DniPropietario);
-            vehicleData.Add(vehiculo.Modelo);
+            List<string> vehiculoData = new List<string>();
+            vehiculoData.Add(vehiculo.Dominio);
+            vehiculoData.Add(vehiculo.DniPropietario);
+            vehiculoData.Add(vehiculo.Modelo);
 
             //Guardar el vehículo en la base de datos
-            //Datos.GuardarVehiculo(vehicleData);---------------------------------
+            Datos.guardarVehiculoDB(vehiculoData);
         }
 
         public void agregarNuevoPagoInfraccion(PagoInfraccion pagoInf)
@@ -226,33 +226,30 @@ namespace CapaNegocio
 
         public void getDataFromDB()
         {
-            /*---------------------------------
-            this.RecuperarVehiculoDB();
-            this.RecuperarInfraccionDB();
-            this.RecuperarPagoInfraccionDB();
-            */
+            this.recuperarVehiculosDB();
+            //this.RecuperarInfraccionDB();
+            //this.RecuperarPagoInfraccionDB();
         }
 
         //RECUPERAR VEHICULO
-        /*------------------------------------------------------------------
-        public bool RecuperarVehiculoDB()
+        public bool recuperarVehiculosDB()
         {
-            List<ArrayList> recuperarVehiculosDB = new List<ArrayList>();
+            var recuperarVehiculosDB = Datos.recuperarVehiculosDB();
 
-            if (Datos.RecuperarVehiculoDB(recuperarVehiculosDB))
+            if (recuperarVehiculosDB != null)
             {
 
-                foreach (ArrayList v in recuperarVehiculosDB)
+                foreach (var vehiculo in recuperarVehiculosDB)
                 {
-                    //string id = v[1].ToString();
-                    string dominio = v[1].ToString();
-                    string dniPropietario = v[2].ToString();
-                    string modelo = v[3].ToString();
+                    //string id = vehiculo[1].ToString();
+                    string dominio = vehiculo.dominio;
+                    string dniPropietario = vehiculo.dniPropietario;
+                    string modelo = vehiculo.modelo;
 
-                    Vehiculo veh = new Vehiculo(dominio, dniPropietario, modelo);
+                    Vehiculo newVehiculo = new Vehiculo(dominio, dniPropietario, modelo);
 
                     //Agregar vehiculos al arrayList de la Administradora
-                    this.vehiculos.Add(veh);
+                    this.vehiculos.Add(newVehiculo);
                 }
                 return true;
             }
@@ -263,7 +260,6 @@ namespace CapaNegocio
             }
 
         }
-        */
 
         //RECUPERAR INFRACCION
         /*------------------------------------------------------------------
