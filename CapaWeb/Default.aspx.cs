@@ -21,8 +21,6 @@ namespace CapaWeb {
                 string err = null;
                 
                 // Check if the connection is success.
-                // adm.setConnectionDBPathWeb(AppDomain.CurrentDomain.BaseDirectory);
-                adm.setConnectionDBPathWeb(AppDomain.CurrentDomain.BaseDirectory);
                 adm.getDataFromDB();
 
                 Session["adm"] = adm;

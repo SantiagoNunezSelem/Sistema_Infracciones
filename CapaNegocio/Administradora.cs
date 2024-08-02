@@ -195,34 +195,7 @@ namespace CapaNegocio
             //Datos.eliminarPagoInfraccion(pagoInfraccion.Id.ToString());---------------------------------
         }
 
-        //Obtener info de DB:
-        public void setConnectionDBPath(string path)
-        {
-            //Originalmente va a traer un directorio del tipo ->    C:\Users\NICOLE\source\repos\SistemaInfracciones\CapaUsuario\bin\Debug
-            //esto se debe a que toma la direccion donde se esta ejecutando, en este caso, capa usuario.
-            //hay que acomodarlo para llegar a la capa de datos->   C:\Users\NICOLE\source\repos\SistemaInfracciones\CapaDatos
-
-            string originalPath = path; //hago una copia de la direccion original para adaptarla
-
-            // Parent = te mueve a una carpeta padre, al usarla una vez nos vemos a /CapaUsuario y con la segunda a /SistemaInfracciones
-            string projectRoot = Directory.GetParent(originalPath).Parent.Parent.FullName; //de esta manera estoy parado en SistemaInfracciones
-
-            // Ahora, estando en SistemaInfracciones busco una carpeta llamada "CapaDatos"
-            string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
-
-            //Datos.setConnectionDBPath(newPath, false);---------------------------------
-        }
-
-        public void setConnectionDBPathWeb(string path) {
-            string originalPath = path; //hago una copia de la direccion original para adaptarla
-
-            string projectRoot = Directory.GetParent(originalPath).Parent.FullName; //de esta manera estoy parado en ClubDeportivo
-
-            // Ahora, estando en ClubDeportivo busco una carpeta llamada "CapaDatos"
-            string newPath = Path.Combine(projectRoot, "CapaDatos"); //de esta manera estoy parado donde temenemos la BBDD.
-
-            //Datos.setConnectionDBPath(newPath, true);---------------------------------
-        }
+        
 
         public void getDataFromDB()
         {

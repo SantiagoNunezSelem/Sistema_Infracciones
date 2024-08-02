@@ -36,7 +36,6 @@ namespace Sistema_Infracciones
 
         private void getDataFromDB()
         {
-            adm.setConnectionDBPath(Application.StartupPath);
             adm.getDataFromDB();
         }
 
