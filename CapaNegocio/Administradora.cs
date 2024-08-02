@@ -106,14 +106,14 @@ namespace CapaNegocio
                 //if para agregar el tipo de infracción
                 if (inf.esInfraccionGrave())
                 {
-                    infraData.Add("Grave");
+                    infraData.Add("grave");
                 }
                 else
                 {
-                    infraData.Add("Leve");
+                    infraData.Add("leve");
                 }
                 //Guardar la infraccion en la base de datos
-                //Datos.GuardarInfraccion(infraData);---------------------------------
+                Datos.guardarInfraccionDB(infraData);
             }
             catch (Exception ex)
             {
@@ -227,7 +227,7 @@ namespace CapaNegocio
         public void getDataFromDB()
         {
             this.recuperarVehiculosDB();
-            //this.RecuperarInfraccionDB();
+            this.RecuperarInfraccionDB();
             //this.RecuperarPagoInfraccionDB();
         }
 
@@ -255,28 +255,27 @@ namespace CapaNegocio
             }
             else
             {
-                //Error al realizar la consulta en la base de datos
                 return false;
             }
 
         }
 
         //RECUPERAR INFRACCION
-        /*------------------------------------------------------------------
+        
         public bool RecuperarInfraccionDB()
         {
-            List<ArrayList> recuperarInfraccionesDB = new List<ArrayList>();
-            if (Datos.RecuperarInfraccionDB(recuperarInfraccionesDB))
-            {
+            var recuperarInfraccionesDB = Datos.recuperarInfraccionesDB();
 
-                foreach (ArrayList i in recuperarInfraccionesDB)
+            if (recuperarInfraccionesDB != null)
+            {
+                foreach (var infraccion in recuperarInfraccionesDB)
                 {
                     //string id = i[0].ToString();
-                    string codigo = i[1].ToString();
-                    string nombre = i[2].ToString();
-                    string descripcion = i[3].ToString();
-                    decimal importe = Convert.ToDecimal(i[4]);
-                    string tipo = i[5].ToString(); // "Grave" o "Leve"
+                    string codigo = infraccion.codigo;
+                    string nombre = infraccion.nombre;
+                    string descripcion = infraccion.descripcion;
+                    decimal importe = infraccion.importe;
+                    string tipo = infraccion.tipo; // "Grave" o "Leve"
 
                     Infraccion inf;
                     if (tipo == "grave")
@@ -295,11 +294,9 @@ namespace CapaNegocio
             }
             else
             {
-                //Error al realizar la consulta en la base de datos
                 return false;
             }
         }
-        */
 
 
         //RECUPERAR PAGOS INFRACCIONES  

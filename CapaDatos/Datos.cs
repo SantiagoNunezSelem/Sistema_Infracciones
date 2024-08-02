@@ -35,6 +35,36 @@ namespace Capa_Datos
             }
         }
 
+        public static List<Infraccion> recuperarInfraccionesDB()
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    return context.Infracciones.ToList();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static List<PagoInfraccion> recuperarPagoInfraccionesDB()
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    return context.PagoInfracciones.ToList();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public static bool guardarVehiculoDB(List<string> vehiculoData)
         {
             try
@@ -48,6 +78,31 @@ namespace Capa_Datos
                     };
 
                     context.Vehiculos.Add(addVehiculo);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static bool guardarInfraccionDB(List<string> infraccionData)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    Infraccion addInfraccion = new Infraccion
+                    {
+                        codigo = infraccionData[0],
+                        nombre = infraccionData[1],
+                        descripcion = infraccionData[2],
+                        importe = decimal.Parse(infraccionData[3]),
+                        tipo = infraccionData[4]
+                    };
+
+                    context.Infracciones.Add(addInfraccion);
                     context.SaveChanges();
                     return true;
                 }
