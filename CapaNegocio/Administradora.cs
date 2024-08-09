@@ -149,7 +149,7 @@ namespace CapaNegocio
         {
             pagoInf.agregarPago(importePagado);
 
-            //Datos.updatePagoInfraccion(pagoInf.desarmar());---------------------------------
+            Datos.updatePagoInfraccion(pagoInf.desarmar());
         }
 
         public void modificarTipoInfraccion(Infraccion infraccion)

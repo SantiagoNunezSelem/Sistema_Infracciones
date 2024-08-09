@@ -106,6 +106,7 @@ namespace Capa_Datos
                 return false;
             }
         }
+
         public static bool guardarInfraccionDB(List<string> infraccionData)
         {
             try
@@ -226,6 +227,34 @@ namespace Capa_Datos
             catch
             {
                 return null;
+            }
+        }
+
+        public static bool updatePagoInfraccion(List<string> pInfData)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    int idPagoInfraccion = int.Parse(pInfData[0]);
+
+                    PagoInfraccion updatePagoInfraccion = (from pagoInf in context.PagoInfracciones
+                                                           where pagoInf.idPagoInfraccion == idPagoInfraccion
+                                                           select pagoInf).FirstOrDefault<PagoInfraccion>();
+
+                    if(updatePagoInfraccion != null)
+                    {
+                        updatePagoInfraccion.importePago = decimal.Parse(pInfData[4]);
+                        updatePagoInfraccion.pagoCompleto = bool.Parse(pInfData[5]);
+                        context.SaveChanges();
+                    }
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
     }
