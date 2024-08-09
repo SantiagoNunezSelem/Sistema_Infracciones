@@ -22,6 +22,22 @@ namespace Capa_Datos
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<PagoInfraccion> PagoInfracciones { get; set; }
 
+        public static Exception tryConnectionDB()
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    context.Vehiculos.ToList();
+                    return null;
+                }
+            }
+            catch(Exception ex) 
+            {
+                return ex;
+            }
+        }
+
         //Recuperar Data
         public static List<Vehiculo> recuperarVehiculosDB()
         {
