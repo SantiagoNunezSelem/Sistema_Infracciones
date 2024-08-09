@@ -34,9 +34,34 @@ namespace Sistema_Infracciones
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
+        private bool tryConnection()
+        {
+            string errorMessage = null;
+            bool establishedConnection = adm.tryConnectionDB(ref errorMessage);
+
+            if (establishedConnection)
+            {
+                return true;
+            }
+            else
+            {
+                DialogResult option = MessageBox.Show("Error en la base de datos:\n" + errorMessage
+                    + "\n\nNo es recomendable ejecutar la aplicación\n\nDesea continuar de todas formas?",
+                    "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (option == DialogResult.No)
+                {
+                    Environment.Exit(0);
+                }
+                return false;
+            }
+        }
+
         private void getDataFromDB()
         {
-            adm.getDataFromDB();
+            if (tryConnection())
+            {
+                adm.getDataFromDB();
+            }
         }
 
         //DE INFRACCION

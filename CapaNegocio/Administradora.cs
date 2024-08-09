@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using Capa_Datos;
 
+
 namespace CapaNegocio
 {
     public class Administradora
@@ -195,7 +196,19 @@ namespace CapaNegocio
             //Datos.eliminarPagoInfraccion(pagoInfraccion.Id.ToString());---------------------------------
         }
 
-        
+        public bool tryConnectionDB(ref string errorMessage)
+        {
+            Exception error = Datos.tryConnectionDB();
+            if (error == null)
+            {
+                return true;
+            }
+            else
+            {
+                errorMessage = error.Message;
+                return false;
+            }
+        }
 
         public void getDataFromDB()
         {
