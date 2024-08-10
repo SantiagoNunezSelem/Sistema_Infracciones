@@ -285,6 +285,42 @@ namespace Capa_Datos
                 return false;
             }
         }
+
+        public static bool eliminarTipoInfraccion(string codigoInfraccion)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    
+                    Infraccion deleteInfraccion = (from infraccion in context.Infracciones
+                                                   where infraccion.codigo == codigoInfraccion
+                                                   select infraccion).FirstOrDefault<Infraccion>();
+
+                    if (deleteInfraccion != null)
+                    {
+                        //Eliminar todos los PagosInfraccion que esten asociados a dicho TipoInfraccion
+                        List<PagoInfraccion> deletePagoInfracciones = new List<PagoInfraccion>();
+
+                        deletePagoInfracciones = (from pagoInf in context.PagoInfracciones
+                                                  where pagoInf.idInfraccion == deleteInfraccion.idInfraccion
+                                                  select pagoInf).ToList();
+
+                        deletePagoInfracciones.ForEach(pagoInf => context.PagoInfracciones.Remove(pagoInf));
+
+                        //Eliminar el TipoInfraccion
+                        context.Infracciones.Remove(deleteInfraccion);
+                        context.SaveChanges();
+                    }
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
 

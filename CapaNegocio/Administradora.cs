@@ -174,7 +174,7 @@ namespace CapaNegocio
         {
             infracciones.Remove(infraccion);
 
-            //Datos.eliminarTipoInfraccion(infraccion.Codigo);---------------------------------
+            Datos.eliminarTipoInfraccion(infraccion.Codigo);
 
             for (int i = pagosInfracciones.Count - 1; i >= 0; i--)
             {
