@@ -193,7 +193,7 @@ namespace CapaNegocio
             pagosInfracciones.Remove(pagoInfraccion);
             pagoInfraccion.ObtenerVehiculo.eliminarInfraccion(pagoInfraccion);
 
-            //Datos.eliminarPagoInfraccion(pagoInfraccion.Id.ToString());---------------------------------
+            Datos.eliminarPagoInfraccion(pagoInfraccion.Id.ToString());
         }
 
         public bool tryConnectionDB(ref string errorMessage)

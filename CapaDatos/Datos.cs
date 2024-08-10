@@ -321,6 +321,32 @@ namespace Capa_Datos
                 return false;
             }
         }
+
+        public static bool eliminarPagoInfraccion(string idPagoInf)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    int id = int.Parse(idPagoInf);
+                    PagoInfraccion deletePagoInfraccion = (from pagoInf in context.PagoInfracciones
+                                                           where pagoInf.idPagoInfraccion == id
+                                                           select pagoInf).FirstOrDefault<PagoInfraccion>();
+
+                    if (deletePagoInfraccion != null)
+                    {
+                        context.PagoInfracciones.Remove(deletePagoInfraccion);
+                        context.SaveChanges();
+                    }
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
 
