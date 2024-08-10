@@ -34,7 +34,7 @@ namespace CapaNegocio
             this.importe = decimal.Parse(l[3].ToString());
         }
 
-        public abstract ArrayList desarmar();
+        public abstract List<string> desarmar();
 
         public bool esInfraccion(string codigo)
         {

@@ -43,14 +43,14 @@ namespace CapaNegocio
             base.armar(l);
         }
 
-        public override ArrayList desarmar()
+        public override List<string> desarmar()
         {
-            ArrayList l = new ArrayList();
+            List<string> l = new List<string>();
 
             l.Add(codigo);
             l.Add(nombre);
             l.Add(descripcion);
-            l.Add(importe);
+            l.Add(importe.ToString());
 
             return l;
         }
