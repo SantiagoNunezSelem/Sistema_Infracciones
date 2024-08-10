@@ -154,6 +154,7 @@ namespace CapaNegocio
 
         public void modificarTipoInfraccion(Infraccion infraccion)
         {
+            List<string> dataInfraccion = infraccion.desarmar();
             var existente = infracciones.FirstOrDefault(i => i.Codigo == infraccion.Codigo);
             if (existente != null)
             {
@@ -161,8 +162,7 @@ namespace CapaNegocio
                 existente.Descripcion = infraccion.Descripcion;
                 existente.Importe = infraccion.Importe;
 
-                ArrayList dataInfraccion = infraccion.desarmar();
-                //Datos.updateDataTipoInfraccion(dataInfraccion);---------------------------------
+                Datos.updateDataTipoInfraccion(dataInfraccion);
             }
             else
             {

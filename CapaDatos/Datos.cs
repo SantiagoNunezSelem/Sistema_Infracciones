@@ -257,6 +257,34 @@ namespace Capa_Datos
                 return false;
             }
         }
+
+        public static bool updateDataTipoInfraccion(List<string> infoTipoInfraccion)
+        {
+            try
+            {
+                using (var context = new Datos())
+                {
+                    string codigo = infoTipoInfraccion[0];
+                    Infraccion updateInfraccion = (from inf in context.Infracciones
+                                                   where inf.codigo == codigo
+                                                   select inf).FirstOrDefault<Infraccion>();
+
+                    if(updateInfraccion != null)
+                    {
+                        updateInfraccion.nombre = infoTipoInfraccion[1];
+                        updateInfraccion.descripcion = infoTipoInfraccion[2];
+                        updateInfraccion.importe = decimal.Parse(infoTipoInfraccion[3]);
+                        context.SaveChanges();
+                    }
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
 
